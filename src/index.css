@@ -1,0 +1,40 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+  color: #f5f5f5;
+  background-color: #000000;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --bg: #fff2;
+  --bg2: #ffffff0d;
+  --radius: 8px;
+  --brand-color: #1ed760;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100dvh;
+  max-height: 100dvh;
+}
+#root {
+  height: 100%;
+}
+::-webkit-scrollbar-button {
+  /* background-color: red; */
+  height: 2px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--bg);
+  width: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #fff3;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}

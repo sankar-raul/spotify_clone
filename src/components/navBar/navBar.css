@@ -1,0 +1,169 @@
+.navBar {
+    grid-area: navBar;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.navPart {
+    /* border: 1px solid #fff4; */
+    /* flex-grow: 1; */
+}
+.spotify-button {
+    width: 72px;
+    background-image: url('/spotify.svg');
+    background-repeat: no-repeat;
+    background-size: 45%;
+    background-position: center center;
+    cursor: pointer;
+}
+.search-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    width: clamp(400px, 50vw, 550px);
+}
+.home-btn {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: url('/home.svg') , var(--bg);
+    background-repeat: no-repeat;
+    background-size: 55%;
+    background-position: center center;
+    cursor: pointer;
+}
+.search-section {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: var(--bg);
+    border-radius: 70px;
+    outline: 1px solid transparent;
+    gap: 7px;
+    flex-grow: 1;
+    transition: all .2s ease;
+}
+.search-part {
+    display: flex;
+    flex-grow: 1;
+}
+.search-part > input::placeholder {
+    color: #fff9;
+    font-size: 1rem;
+}
+.sbtn {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    background-image: url('/search.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50%;
+    filter: invert(35%);
+    transition: all ease .3s;
+    cursor: pointer;
+}
+.search-part > input {
+    font-size: 1rem;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+}
+.search-part > input:focus {
+    outline: none;
+}
+.browse {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    transition: ease filter .3s;
+    background-image: url('/browse.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 55%;
+    filter: invert(35%);
+    cursor: pointer;
+}
+.search-section:hover {
+    outline: 1px solid #fff2;
+    background: #ffffff28;
+}
+.search-part > input:focus .search-section {
+    outline: 1px solid #fff2;
+    background: #ffffff28;
+}
+.search-section:hover .sbtn {
+    filter: invert(5%);
+}
+.browse:hover {
+    filter: invert(5%);
+}
+.browse::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 2px;
+    height: calc(100% - 50%);
+    background: #fff8;
+}
+.user-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+}
+.install-btn {
+    position: relative;
+    padding-left: 7%;
+    width: 100px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 13px;
+    transition: font-weight ease .1s;
+    border-radius: 70px;
+}
+.install-btn:hover {
+    font-weight: 700;
+}
+.install-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("/install.svg");
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: left center;
+    transform: translateY(7%);
+    background-size: 12%;
+}
+.notification-btn {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    background-image: url('/notification.svg');
+    background-size: 40%;
+    filter: invert(35%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: filter ease .1s;
+    cursor: pointer;
+}
+.notification-btn:hover {
+    filter: invert(5%);
+}
+.user {
+    height: 75%;
+    aspect-ratio: 1 / 1;
+    background-image: url('/user.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50%;
+    outline: 7px solid var(--bg);
+    transition: transform ease .1s;
+    cursor: pointer;
+}
+.user:hover {
+    transform: scale(1.03);
+}

@@ -1,0 +1,120 @@
+[
+      {
+        "play_list_title": "Liked Songs",
+        "isPinned": true,
+        "captions": [
+          "Playlist",
+          "22 songs"
+        ],
+        "image": "/images/liked.png"
+      },
+      {
+        "play_list_title": "fAVs",
+        "isPinned": true,
+        "captions": [
+          "Playlist",
+          "Sankar"
+        ],
+        "image": "/images/fAVs.png"
+      },
+      {
+        "play_list_title": "Radhe Radhe 🤍",
+        "isPinned": true,
+        "captions": [
+          "Playlist",
+          "Sankar"
+        ],
+        "image": "/images/Radhe_Radhe.png"
+      },
+      {
+        "play_list_title": "Arijit Singh",
+        "isPinned": true,
+        "captions": [
+          "Artist"
+        ],
+        "image": "/images/Arijit_Singh.png"
+      },
+      {
+        "play_list_title": "😇",
+        "isPinned": true,
+        "captions": [
+          "Playlist",
+          "Sankar"
+        ],
+        "image": "/images/wow.png"
+      },
+      {
+        "play_list_title": "Monali Thakur",
+        "isPinned": true,
+        "captions": [
+          "Artist"
+        ],
+        "image": "/images/Monali_Thakur.png"
+      },
+      {
+        "play_list_title": "Diljit Dosanjh",
+        "isPinned": false,
+        "captions": [
+          "Artist"
+        ],
+        "image": "/images/diljit_dosanjh.png"
+      },
+      {
+        "play_list_title": "My recommendation playlist",
+        "isPinned": false,
+        "captions": [
+          "Playlist",
+          "Sankar"
+        ],
+        "image": "/images/my_recommendation_playlist.png"
+      },
+      {
+        "play_list_title": "Rahul Dutta",
+        "isPinned": false,
+        "captions": [
+          "Artist"
+        ],
+        "image": "/images/rahul_dutta.png"
+      },
+      {
+        "play_list_title": "Sanam",
+        "isPinned": false,
+        "captions": [
+          "Artist"
+        ],
+        "image": "/images/sanam.png"
+      },
+      {
+        "play_list_title": "Indila",
+        "isPinned": false,
+        "captions": [
+          "Artist"
+        ],
+        "image": "/images/indila.png"
+      },
+      {
+        "play_list_title": "Tasrif Khan",
+        "isPinned": false,
+        "captions": [
+          "Artist"
+        ],
+        "image": "/images/tasrif_khan.png"
+      },
+      {
+        "play_list_title": "Shreya Ghoshal",
+        "isPinned": false,
+        "captions": [
+          "Artist"
+        ],
+        "image": "/images/shreya_ghoshal.png"
+      },
+      {
+        "play_list_title": "Shaan",
+        "isPinned": false,
+        "captions": [
+          "Artist"
+        ],
+        "image": "/images/shaan.png"
+      }
+    ]
+  

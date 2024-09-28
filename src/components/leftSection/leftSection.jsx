@@ -7,14 +7,12 @@ const LeftSection = ({handleWidth, state, handleLeftCollapse}) => {
     const buttonRef = useRef(null)
     const [ currentState, setCState ] = useState(0)
     const handleCollapse = () => {
-       setCState(prev => prev + 1)
        handleLeftCollapse()
     }
     const handleEvent = () => {
         handleWidth('left', leftRef.current.offsetWidth)
     }
     useEffect(() => {
-        console.log(state)
             // alert()
             handleEvent()
             buttonRef.current.addEventListener("click", handleCollapse)
@@ -30,8 +28,13 @@ const LeftSection = ({handleWidth, state, handleLeftCollapse}) => {
                 <header>
                 <div className="top-portion-nav">
                     <div ref={buttonRef} className='library'>
+                    <div className="expand-btn"></div>
                         {
-                            state != "collapse" ? ("Your Library") : 'i'
+                            state != "collapse" ? (
+                                <p className="lib">Your Library</p>
+                            ) : (
+                                <></>
+                            )
                         }
                         </div>
                     <div className='plus-more-btns'>

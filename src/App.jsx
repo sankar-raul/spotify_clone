@@ -22,12 +22,10 @@ function App() {
 
   }
   const handleLeftCollapse = () => {
-    console.log("ok")
-    if (leftState == "collapse") {
-      setLeftState("expand")
-    } else {
-      setLeftState("collapse")
-    }
+    setLeftState(prevState => {
+      const newState = prevState === "collapse" ? "expand" : "collapse"
+      return newState
+    })
   }
   const handleWidth = (type, width) => {
       if (type == 'main') {
@@ -43,6 +41,9 @@ function App() {
   const handleRootWidth = () => {
     setRootWidth(document.body.offsetWidth)
   }
+  useEffect(() => {
+    // console.log(leftState)
+  }, [leftState])
   useEffect(() => {
     handleRootWidth()
     window.addEventListener("resize", handleRootWidth)

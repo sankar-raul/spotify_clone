@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import PropTypes from 'prop-types'
 import './rightSection.css'
 
 const RightSection = ({ handleWidth }) => {
@@ -20,4 +21,8 @@ const RightSection = ({ handleWidth }) => {
         </section>
     )
 }
+RightSection.propTypes = {
+    handleWidth: PropTypes.func.isRequired
+}
+
 export default RightSection

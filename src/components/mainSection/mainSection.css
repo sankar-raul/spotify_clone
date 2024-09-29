@@ -1,11 +1,19 @@
-.mainSection {
+.outer-main {
     grid-area: mainSection;
+    display: flex;
+    justify-content: center;
     background: var(--bg2);
+    overflow: hidden;
+    min-width: 417px;
+}
+
+.mainSection {
     border-radius: var(--radius);
     display: flex;
     flex-direction: column;
     height: 100%;
-    min-width: 417px;
+    width: 100%;
+    max-width: 1907px;
     position: relative;
     overflow-y: auto;
     scroll-behavior: smooth;
@@ -22,11 +30,14 @@
     content: '';
     top: 0;
     width: 100%;
-    height: 100%;
-    background-image: linear-gradient(var(--shadow) 0vh 1vh, transparent 25vh 100vh);
+    height: 200px;
+    /* background-image: linear-gradient(var(--shadow) 0vh 1vh, transparent 25vh 100vh); */
+    box-shadow: inset 0px 60px 60px 0px var(--shadow);
+    filter: blur(64px)  contrast(124%);
     z-index: -1;
-    filter: brightness(80%) contrast(284%) grayscale(39%) invert(30%);
-    opacity: .8;
+    /* filter: brightness(80%) contrast(284%) grayscale(39%) invert(30%); */
+    opacity: 1;
+    transition: box-shadow ease 1s;
 }
 .mainSection > * {
     /* border: 1px solid var(--bg); */
@@ -197,7 +208,7 @@
     text-decoration: underline 2px solid white;
 }
 .home > .main-section > .song-cards {
-    display: flex;
+    display: grid;
     overflow: hidden;
 }
 .home > .main-section > .song-cards > .song-card {
@@ -214,7 +225,7 @@
     cursor: pointer;
 }
 .home > .main-section > .song-cards > .song-card > .song-card-thumb {
-    background-image: url("/song_thumbs/thumb1-1.png");
+    /* background-image: url("/song_thumbs/thumb1-1.png"); */
     width: 100%;
     aspect-ratio: 1 / 1;
     background-position: center center;

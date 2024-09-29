@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 // import appIcon from './assets/react.svg'
 import NavBar from './components/navBar/navBar'
 import LeftSection from './components/leftSection/leftSection'
@@ -69,7 +70,7 @@ function App() {
       <div className="main">
       <NavBar />
       <LeftSection handleWidth={handleWidth} handleLeftCollapse={handleLeftCollapse} state={leftState}/>
-      <MainSection handleWidth={handleWidth} />
+      <MainSection monitorResize={leftState} handleWidth={handleWidth} />
       <RightSection handleWidth={handleWidth} />
       <BottomSection />
       </div>

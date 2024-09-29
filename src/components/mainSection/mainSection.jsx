@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react"
+import PropTypes from 'prop-types'
 import recentsTiles from "../../backend/recents_tile.json"
 import songSections from '../../backend/songSection.json'
 import './mainSection.css'
-const MainSection = ({handleWidth}) => {
+const MainSection = ({handleWidth, monitorResize}) => {
     const [shadow, setShadow] = useState('#501df2')
     const mainRef = useRef(null)
     const handleColorTheme = (color) => {
@@ -21,6 +22,7 @@ const MainSection = ({handleWidth}) => {
     }, [])
     return (
         <>
+        <div className="outer-main">
         <section ref={mainRef} className="mainSection" style={{'--shadow': shadow}}>
             <header className="main-nav">
                 <div className="main-nav-btns">
@@ -30,17 +32,23 @@ const MainSection = ({handleWidth}) => {
                 </div>
             </header>
             <main className="home">
-                <RecentsTiles handleThemeChange={handleColorTheme} />
-                <BodyPart />
+                <RecentsTiles fixLayout={monitorResize} handleThemeChange={handleColorTheme} />
+                <BodyPart updateLayout={monitorResize} />
             </main>
             <footer className="footer">
                 footer
             </footer>
         </section>
+        </div>
         </>
     )
 }
-const BodyPart = () => {
+MainSection.propTypes = {
+    handleWidth: PropTypes.func.isRequired,
+    monitorResize: PropTypes.string.isRequired
+}
+
+const BodyPart = ({updateLayout}) => {
     useEffect(() => {
         console.log(songSections)
     }, [])
@@ -48,13 +56,17 @@ const BodyPart = () => {
         <>
         {
         songSections.map((section, idx) => (
-            <ListSection songSection={section} key={idx}/>
+            <ListSection updateLayout={updateLayout} songSection={section} key={idx}/>
         ))
         }
         </>
     )
 }
-const ListSection = ({songSection}) => {
+BodyPart.propTypes = {
+    updateLayout: PropTypes.string.isRequired
+}
+
+const ListSection = ({songSection, updateLayout}) => {
     const [items, setItems] = useState(1)
     const mainSectionRef = useRef(null)
     const handleItemsCount = (width) => {
@@ -64,7 +76,7 @@ const ListSection = ({songSection}) => {
              setItems(prev => (prev - 2) == 0 ? 2 : prev - 1)
         }
     }
-    const intialSize = (width) => {
+    const intialSize = () => {
         const min = mainSectionRef.current.offsetWidth / 160
         const max = mainSectionRef.current.offsetWidth / 200
         const avg = Math.round((min + max) / 2)
@@ -72,24 +84,32 @@ const ListSection = ({songSection}) => {
     }
     useEffect(() => {
         intialSize()
+    }, [updateLayout])
+    useEffect(() => {
+        intialSize()
     }, [])
     return (
         <div className="main-section" ref={mainSectionRef}>
             <div className="card-section-title">
-                <div className="card-section-title-text">Made For Sankar</div>
+                <div className="card-section-title-text">{songSection.title}</div>
                 <div className="show-all">Show all</div>
             </div>
-            <div className="song-cards" name={items}>
+            <div className="song-cards" style={{gridTemplateColumns: `repeat(${items}, 1fr)`}} name={items}>
                 {
                    items && songSection.song_tracks.map((song_info, idx) => (
-                        idx < items && <Songcard key={idx} handleItemsCount={handleItemsCount} intialSize={intialSize}/>
+                        idx < items && <Songcard key={idx} songInfo={song_info} handleItemsCount={handleItemsCount} intialSize={intialSize}/>
                     ))
                 }
             </div>
         </div>
     )
 }
-const Songcard = ({handleItemsCount, intialSize}) => {
+ListSection.propTypes = {
+    songSection: PropTypes.object.isRequired,
+    updateLayout: PropTypes.string.isRequired
+}
+
+const Songcard = ({handleItemsCount, intialSize, songInfo}) => {
     const songCardRef = useRef(null)
     const handleResizeSection = () => {
         handleItemsCount(songCardRef.current.offsetWidth)
@@ -99,6 +119,7 @@ const Songcard = ({handleItemsCount, intialSize}) => {
             // alert()
             intialSize()
             window.addEventListener("resize", handleResizeSection)
+            // console.log(songInfo)
             return () => {
                 window.removeEventListener("resize", handleResizeSection)
             }
@@ -106,16 +127,22 @@ const Songcard = ({handleItemsCount, intialSize}) => {
     }, [])
     return (
         <div ref={handleItemsCount && songCardRef} className="song-card">
-            <div className="song-card-thumb">
+            <div className="song-card-thumb" style={{backgroundImage: `url(${songInfo.image})`}}>
                 <div className="pbtn"></div>
             </div>
             <div className="song-card-caption">
-                Catch all the latest music from artists you follow, plus new singles picked for you. Updates every Friday.
+                {songInfo.caption}
             </div>
         </div>
     )
 }
-const RecentsTiles = ({ handleThemeChange }) => {
+Songcard.propTypes = {
+    handleItemsCount: PropTypes.func.isRequired,
+    intialSize: PropTypes.func.isRequired,
+    songInfo: PropTypes.object.isRequired
+}
+
+const RecentsTiles = ({ handleThemeChange, fixLayout }) => {
     const [columns, setColumns] = useState(0)
     const recentTileRef = useRef(null)
     const updateLayout = () => {
@@ -125,6 +152,9 @@ const RecentsTiles = ({ handleThemeChange }) => {
     }
     useEffect(() => {
         updateLayout()
+    }, [fixLayout])
+    useEffect(() => {
+        updateLayout()
         window.addEventListener('resize', updateLayout)
         return () => {
             window.removeEventListener('resize', updateLayout)
@@ -132,23 +162,29 @@ const RecentsTiles = ({ handleThemeChange }) => {
     }, [])
     return (
         <div ref={recentTileRef} style={{gridTemplateColumns: `repeat(${columns}, 1fr)`}} className="recent-tiles">
-            <ResentTiles handleColorTheme={handleThemeChange}/>
+            <RecentTiles handleColorTheme={handleThemeChange}/>
         </div>
     )
 }
-const ResentTiles = ({ handleColorTheme }) => {
-    let o = null
-    const changeTheme = (ref) => {
-        if (!o) {
-            handleColorTheme(ref)
-            o = true
-        }
+RecentsTiles.propTypes = {
+    handleThemeChange: PropTypes.func.isRequired,
+    fixLayout: PropTypes.string.isRequired
+}
+
+const RecentTiles = ({ handleColorTheme }) => {
+    // let o = null
+    let timeout = null
+    const changeTheme = (color_theme) => {
+        timeout && clearTimeout(timeout)
+            handleColorTheme(color_theme)
     }
     const handleMouseOut = () => {
-        o = false
+        timeout = setTimeout(() => {
+            handleColorTheme(recentsTiles[0].color_theme)
+        }, 500)
     }
     useEffect(() => {
-        o = false
+        
     }, [])
     return (
         <>
@@ -166,4 +202,8 @@ const ResentTiles = ({ handleColorTheme }) => {
         </>
     )
 }
+RecentTiles.propTypes = {
+    handleColorTheme: PropTypes.func.isRequired
+}
+
 export default MainSection

@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import PropTypes from 'prop-types'
 import './songtag.css'
 
 const Songtag = ({song, state}) => {
@@ -27,4 +28,9 @@ const Songtag = ({song, state}) => {
         </div>
     )
 }
+Songtag.propTypes = {
+    song: PropTypes.object.isRequired,
+    state: PropTypes.string.isRequired
+}
+
 export default Songtag

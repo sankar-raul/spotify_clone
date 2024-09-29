@@ -1,11 +1,12 @@
 import Songtag from '../songtag/songtag'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
+import PropTypes from 'prop-types'
 import './leftSection.css'
 import playList from '../../backend/playlist_items.json'
 const LeftSection = ({handleWidth, state, handleLeftCollapse}) => {
     const leftRef = useRef(null)
     const buttonRef = useRef(null)
-    const [ currentState, setCState ] = useState(0)
+    // const [ currentState, setCState ] = useState(0)
     const handleCollapse = () => {
        handleLeftCollapse()
     }
@@ -15,10 +16,11 @@ const LeftSection = ({handleWidth, state, handleLeftCollapse}) => {
     useEffect(() => {
             // alert()
             handleEvent()
-            buttonRef.current.addEventListener("click", handleCollapse)
+            const buttonRefCopy = buttonRef.current
+            buttonRefCopy.addEventListener("click", handleCollapse)
             window.addEventListener("resize", handleEvent)
             return () => {
-                buttonRef.current.removeEventListener("click", handleCollapse)
+                buttonRefCopy.removeEventListener("click", handleCollapse)
                 window.removeEventListener("resize", handleEvent)
             }
     }, [])
@@ -63,6 +65,12 @@ const LeftSection = ({handleWidth, state, handleLeftCollapse}) => {
         </section>
     )
 }
+LeftSection.propTypes = {
+    handleWidth: PropTypes.func.isRequired,
+    state: PropTypes.string.isRequired,
+    handleLeftCollapse: PropTypes.func.isRequired
+}
+
 const PlayLists = ({state}) => {
     return (
     <>
@@ -74,4 +82,8 @@ const PlayLists = ({state}) => {
     </>
     )
 }
+PlayLists.propTypes = {
+    state: PropTypes.string.isRequired
+}
+
 export default LeftSection

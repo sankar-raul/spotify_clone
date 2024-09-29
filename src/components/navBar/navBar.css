@@ -4,10 +4,9 @@
     flex-wrap: nowrap;
     justify-content: space-between;
 }
-.navPart {
-    /* border: 1px solid #fff4; */
-    /* flex-grow: 1; */
-}
+/* .navPart {
+    border: 1px solid #fff4;
+} */
 .spotify-button {
     width: 72px;
     background-image: url('/spotify.svg');

@@ -10,10 +10,9 @@
     border-radius: var(--radius);
     overflow: hidden;
 }
-.leftSection > * {
-    /* border: 1px solid var(--bg); */
-    /* overflow: hidden; */
-}
+/* .leftSection > * {
+    border: 1px solid var(--bg);
+} */
 
 
 .top-portion {
@@ -22,9 +21,9 @@
     display: grid;
     grid-template-rows: 5fr 4fr;
 }
-.top-portion > * {
-    /* border: 1px solid var(--bg); */
-}
+/* .top-portion > * {
+    border: 1px solid var(--bg);
+} */
 .top-portion > header {
     display: flex;
     align-items: center;
@@ -138,9 +137,9 @@
     background-color: #ffffff1a;
     filter: invert(5%);
 }
-.playlists > * {
-    /* border: 1px solid var(--bg); */
-}
+/* .playlists > * {
+    border: 1px solid var(--bg);
+} */
 .playlist-nav {
     width: 100%;
     padding: 2px 8px;

@@ -1,54 +1,54 @@
 [
     {
-        "title": "Recently played",
+        "title": "Made For Sankar",
         "song_tracks": [
             {
                 "type": "daily_mix",
                 "label": "Daily Mix 1",
                 "image": "/song_thumbs/pritam.png",
-                "cption": "Pritam, Sanam, Shankar-Ehsaan-Loy and more"
+                "caption": "Pritam, Sanam, Shankar-Ehsaan-Loy and more"
             },
             {
                 "type": "daily_mix",
                 "label": "Daily Mix 2",
                 "image": "/song_thumbs/tailor_swift.png",
-                "cption": "Taylor Swift, Sabrina Carpenter, Billie Eilish and more"
+                "caption": "Taylor Swift, Sabrina Carpenter, Billie Eilish and more"
             },
             {
                 "type": "daily_mix",
                 "label": "Daily Mix 3",
                 "image": "/song_thumbs/darshan_ravel.png",
-                "cption": "Darshan Raval, Sachin-Jigar, Mohan Kannan and more"
+                "caption": "Darshan Raval, Sachin-Jigar, Mohan Kannan and more"
             },
             {
                 "type": "daily_mix",
                 "label": "Daily Mix 4",
                 "image": "/song_thumbs/akshath.png",
-                "cption": "Akshath, Mitraz, Aditya Rikhari and more"
+                "caption": "Akshath, Mitraz, Aditya Rikhari and more"
             },
             {
                 "type": "daily_mix",
                 "label": "Daily Mix 1",
                 "image": "/song_thumbs/pritam.png",
-                "cption": "Pritam, Sanam, Shankar-Ehsaan-Loy and more"
+                "caption": "Pritam, Sanam, Shankar-Ehsaan-Loy and more"
             },
             {
                 "type": "daily_mix",
                 "label": "Daily Mix 2",
                 "image": "/song_thumbs/tailor_swift.png",
-                "cption": "Taylor Swift, Sabrina Carpenter, Billie Eilish and more"
+                "caption": "Taylor Swift, Sabrina Carpenter, Billie Eilish and more"
             },
             {
                 "type": "daily_mix",
                 "label": "Daily Mix 3",
                 "image": "/song_thumbs/darshan_ravel.png",
-                "cption": "Darshan Raval, Sachin-Jigar, Mohan Kannan and more"
+                "caption": "Darshan Raval, Sachin-Jigar, Mohan Kannan and more"
             },
             {
                 "type": "daily_mix",
                 "label": "Daily Mix 4",
                 "image": "/song_thumbs/akshath.png",
-                "cption": "Akshath, Mitraz, Aditya Rikhari and more"
+                "caption": "Akshath, Mitraz, Aditya Rikhari and more"
             }
         ]
     },
@@ -59,49 +59,49 @@
                 "type": "daily_mix",
                 "label": "Daily Mix 1",
                 "image": "/song_thumbs/pritam.png",
-                "cption": "Pritam, Sanam, Shankar-Ehsaan-Loy and more"
+                "caption": "Pritam, Sanam, Shankar-Ehsaan-Loy and more"
             },
             {
                 "type": "daily_mix",
                 "label": "Daily Mix 2",
                 "image": "/song_thumbs/tailor_swift.png",
-                "cption": "Taylor Swift, Sabrina Carpenter, Billie Eilish and more"
+                "caption": "Taylor Swift, Sabrina Carpenter, Billie Eilish and more"
             },
             {
                 "type": "daily_mix",
                 "label": "Daily Mix 3",
                 "image": "/song_thumbs/darshan_ravel.png",
-                "cption": "Darshan Raval, Sachin-Jigar, Mohan Kannan and more"
+                "caption": "Darshan Raval, Sachin-Jigar, Mohan Kannan and more"
             },
             {
                 "type": "daily_mix",
                 "label": "Daily Mix 4",
                 "image": "/song_thumbs/akshath.png",
-                "cption": "Akshath, Mitraz, Aditya Rikhari and more"
+                "caption": "Akshath, Mitraz, Aditya Rikhari and more"
             },
             {
                 "type": "daily_mix",
                 "label": "Daily Mix 1",
                 "image": "/song_thumbs/pritam.png",
-                "cption": "Pritam, Sanam, Shankar-Ehsaan-Loy and more"
+                "caption": "Pritam, Sanam, Shankar-Ehsaan-Loy and more"
             },
             {
                 "type": "daily_mix",
                 "label": "Daily Mix 2",
                 "image": "/song_thumbs/tailor_swift.png",
-                "cption": "Taylor Swift, Sabrina Carpenter, Billie Eilish and more"
+                "caption": "Taylor Swift, Sabrina Carpenter, Billie Eilish and more"
             },
             {
                 "type": "daily_mix",
                 "label": "Daily Mix 3",
                 "image": "/song_thumbs/darshan_ravel.png",
-                "cption": "Darshan Raval, Sachin-Jigar, Mohan Kannan and more"
+                "caption": "Darshan Raval, Sachin-Jigar, Mohan Kannan and more"
             },
             {
                 "type": "daily_mix",
                 "label": "Daily Mix 4",
                 "image": "/song_thumbs/akshath.png",
-                "cption": "Akshath, Mitraz, Aditya Rikhari and more"
+                "caption": "Akshath, Mitraz, Aditya Rikhari and more"
             }
         ]
     }

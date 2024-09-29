@@ -2,7 +2,7 @@
     {
         "title": "Liked Songs",
         "thumb": "/images/liked.png",
-        "color_theme": "#501df2"
+        "color_theme": "#390aad"
     },
     {
         "title": "VEVO 2023",
@@ -12,31 +12,31 @@
     {
         "title": "Hot Hits Hindi",
         "thumb": "/images/Hot_Hits_Hindi.png",
-        "color_theme": "#5df250"
+        "color_theme": "#0cb028"
     },
     {
         "title": "fAVs",
         "thumb": "/images/fAVs.png",
-        "color_theme": "#6f9d9a"
+        "color_theme": "#801305"
     },
     {
         "title": "Radhe Radhe 🤍",
         "thumb": "/images/Radhe_Radhe.png",
-        "color_theme": "lime"
+        "color_theme": "green"
     },
     {
         "title": "The Weeknd",
         "thumb": "/images/The_Weeknd.png",
-        "color_theme": "#997940"
+        "color_theme": "#945606"
     },
     {
         "title": "Imagine Dragons",
         "thumb": "/images/Imagine_Dragons.png",
-        "color_theme": "#f32"
+        "color_theme": "#b0160b"
     },
     {
         "title": "Arijit Singh",
         "thumb": "/images/Arijit_Singh.png",
-        "color_theme": "#f86"
+        "color_theme": "#d45211"
     }
 ]

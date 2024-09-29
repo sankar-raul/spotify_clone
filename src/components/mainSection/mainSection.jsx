@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import PropTypes from 'prop-types'
-import Footer from '../footer/Footer'
+import Footer from '../footer/foot'
 import recentsTiles from "../../backend/recents_tile.json"
 import songSections from '../../backend/songSection.json'
 import './mainSection.css'

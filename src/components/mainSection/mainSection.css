@@ -2,9 +2,11 @@
     grid-area: mainSection;
     display: flex;
     justify-content: center;
-    background: var(--bg2);
+    background: var(--main-bg);
     overflow: hidden;
     min-width: 417px;
+    padding-bottom: 32px;
+    border-radius: var(--radius);
 }
 
 .mainSection {
@@ -276,4 +278,10 @@
 }
 .home > .main-section > .song-cards > .song-card:hover {
     background-color: var(--bg2);
+}
+.footer {
+    width: 100%;
+    padding: 8px 32px;
+    padding-bottom: 40px;
+    padding-top: 32px;
 }

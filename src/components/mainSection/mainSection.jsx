@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import PropTypes from 'prop-types'
+import Footer from '../footer/Footer'
 import recentsTiles from "../../backend/recents_tile.json"
 import songSections from '../../backend/songSection.json'
 import './mainSection.css'
@@ -36,7 +37,7 @@ const MainSection = ({handleWidth, monitorResize}) => {
                 <BodyPart updateLayout={monitorResize} />
             </main>
             <footer className="footer">
-                footer
+                <Footer />
             </footer>
         </section>
         </div>

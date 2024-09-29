@@ -1,0 +1,132 @@
+{
+  "links": [
+    {
+      "header": "Company",
+      "items": [
+        {
+          "text": "About",
+          "href": "#"
+        },
+        {
+          "text": "Jobs",
+          "href": "#"
+        },
+        {
+          "text": "For the Record",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "header": "Communities",
+      "items": [
+        {
+          "text": "For Artist",
+          "href": "#"
+        },
+        {
+          "text": "Developers",
+          "href": "#"
+        },
+        {
+          "text": "Advertising",
+          "href": "#"
+        },
+        {
+          "text": "Investors",
+          "href": "#"
+        },
+        {
+          "text": "Vendors",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "header": "Useful links",
+      "items": [
+        {
+          "text": "Support",
+          "href": "#"
+        },
+        {
+          "text": "Jobs",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "header": "Spotify Plans",
+      "items": [
+        {
+          "text": "Premium Individual",
+          "href": "#"
+        },
+        {
+          "text": "Premium Duo",
+          "href": "#"
+        },
+        {
+          "text": "Premium Family",
+          "href": "#"
+        },
+        {
+          "text": "Premium Student",
+          "href": "#"
+        },
+        {
+          "text": "Spotify Free",
+          "href": "#"
+        }
+      ]
+    }
+  ],
+  "socials": [
+    {
+      "platform": "Instagram",
+      "icon": "/instagram.svg",
+      "href": "https://www.instagram.com/sankar_raul_"
+    },
+    {
+      "platform": "Teitter",
+      "icon": "/twitter.svg",
+      "href": "https://x.com/sankar_raul"
+    },
+    {
+      "platform": "Facebook",
+      "icon": "/facebook.svg",
+      "href": "https://www.facebook.com/sankarraul.me"
+    },
+    {
+      "platform": "Github",
+      "icon": "/github.svg",
+      "href": "https://github.com/sankar-raul"
+    }
+  ],
+  "legal_links": [
+    {
+      "text": "Legal",
+      "href": "#"
+    },
+    {
+      "text": "Safety & Privacy Center",
+      "href": "#"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "#"
+    },
+    {
+      "text": "Cookies",
+      "href": "#"
+    },
+    {
+      "text": "About Ads",
+      "href": "#"
+    },
+    {
+      "text": "Accessibility",
+      "href": "#"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+.mainFooter {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 40px;
+    user-select: text;
+    padding-top: 40px;
+}
+.links {
+    border-bottom: 1px solid var(--bg);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-betweenn;
+}
+.linkSection {
+    display: flex;
+    /* border: 1px solid var(--bg); */
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+.socialLinks {
+    margin-bottom: 40px;
+    display: flex;
+    /* border: 1px solid var(--bg); */
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+.linkSet {
+    flex-basis: 0;
+    /* border: 1px solid var(--bg); */
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex-grow: 1;
+    /* flex-shrink: 1; */
+}
+.linkSectionTitle {
+    cursor: text;
+    font-weight: 700;
+    filter: invert(5%);
+}
+.links_set {
+    display: flex;
+    flex-direction: column;
+}
+.final_link {
+    text-decoration: none;
+    color: #fff;
+    filter: invert(30%);
+    padding-bottom: 8px;
+    display: inline;
+    /* background-color: red; */
+}
+.final_link:hover {
+    filter: invert(5%);
+    text-decoration: underline 1px solid #fffa;
+}
+.social {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    background-size: 16px;
+    border-radius: 50%;
+    background-color: #ffffff13;
+}
+.social:hover {
+    background-color: #ffffff2a;
+}
+.legal {
+    padding-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.legal_links {
+    display: flex;
+    flex-wrap: wrap;
+    /* column-gap: 16px;
+    row-gap: 8px; */
+}
+.legal_links > a {
+    text-decoration: none;
+    color: #fff;
+    filter: invert(30%);
+    margin-right: 16px;
+    margin-bottom: 8px;
+}
+.legal_links > a:hover {
+    filter: invert(5%);
+}
+.copyRight {
+    padding-right: 16px;
+    color: #fff;
+    filter: invert(30%);
+}

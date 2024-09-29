@@ -6,7 +6,7 @@
     grid-template-rows: var(--topportion-height) 1fr;
     /* flex-direction: column; */
     /* padding: 8px; */
-    background: var(--bg2);
+    background: var(--main-bg);
     border-radius: var(--radius);
     overflow: hidden;
 }

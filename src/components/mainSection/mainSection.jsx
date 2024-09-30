@@ -46,7 +46,7 @@ const MainSection = ({handleWidth, monitorResize}) => {
 }
 MainSection.propTypes = {
     handleWidth: PropTypes.func.isRequired,
-    monitorResize: PropTypes.string.isRequired
+    monitorResize: PropTypes.bool.isRequired
 }
 
 const BodyPart = ({updateLayout}) => {
@@ -64,7 +64,7 @@ const BodyPart = ({updateLayout}) => {
     )
 }
 BodyPart.propTypes = {
-    updateLayout: PropTypes.string.isRequired
+    updateLayout: PropTypes.bool.isRequired
 }
 
 const ListSection = ({songSection, updateLayout}) => {
@@ -107,7 +107,7 @@ const ListSection = ({songSection, updateLayout}) => {
 }
 ListSection.propTypes = {
     songSection: PropTypes.object.isRequired,
-    updateLayout: PropTypes.string.isRequired
+    updateLayout: PropTypes.bool.isRequired
 }
 
 const Songcard = ({handleItemsCount, intialSize, songInfo}) => {
@@ -169,7 +169,7 @@ const RecentsTiles = ({ handleThemeChange, fixLayout }) => {
 }
 RecentsTiles.propTypes = {
     handleThemeChange: PropTypes.func.isRequired,
-    fixLayout: PropTypes.string.isRequired
+    fixLayout: PropTypes.bool.isRequired
 }
 
 const RecentTiles = ({ handleColorTheme }) => {

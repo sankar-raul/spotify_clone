@@ -18,7 +18,8 @@ function App() {
   const [ maxWidthLeft, setmaxWidthLeft ] = useState(350)
   const [ minWidthLeft, setminWidthLeft ] = useState(leftMin)
   const [ leftState, setLeftState ] = useState("collapse")
-
+  const [ rightState, setRightState ] = useState("expand")
+  const [ layoutChanged, setLayoutChanged ] = useState(false)
   const handleLayout = () => {
 
   }
@@ -28,6 +29,13 @@ function App() {
       return newState
     })
   }
+  const handleRightCollapse = () => {
+    setRightState(prevState => {
+      const newState = prevState === "collapse" ? "expand" : "collapse"
+      return newState
+    })
+  }
+  
   const handleWidth = (type, width) => {
       if (type == 'main') {
         setmainwidth(width)
@@ -42,6 +50,12 @@ function App() {
   const handleRootWidth = () => {
     setRootWidth(document.body.offsetWidth)
   }
+  useEffect(() => {
+    setLayoutChanged(prev => prev === false)
+  }, [leftState])
+  useEffect(() => {
+    setLayoutChanged(prev => prev === false)
+  }, [rightState])
   useEffect(() => {
     // console.log(leftState)
   }, [leftState])
@@ -70,9 +84,10 @@ function App() {
       <div className="main">
       <NavBar />
       <LeftSection handleWidth={handleWidth} handleLeftCollapse={handleLeftCollapse} state={leftState}/>
-      <MainSection monitorResize={leftState} handleWidth={handleWidth} />
-      <RightSection handleWidth={handleWidth} />
-      <BottomSection />
+      <MainSection monitorResize={layoutChanged} handleWidth={handleWidth} />
+      {/* {console.log(rightState)} */}
+      <RightSection state={rightState} handleRightCollapse={handleRightCollapse} handleWidth={handleWidth} />
+      <BottomSection handleRightCollapse={handleRightCollapse} />
       </div>
     </>
   )

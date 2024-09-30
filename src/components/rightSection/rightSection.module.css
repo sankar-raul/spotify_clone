@@ -1,0 +1,67 @@
+.rightSection {
+    grid-area: rightSection;
+    width: clamp(280px, 25vw, 300px);
+    display: grid;
+    grid-template-rows: 64px 1fr;
+    padding: 0px 16px;
+    border-radius: var(--radius);
+    background-color: var(--main-bg);
+}
+.heading {
+    border: 1px solid var(--bg);
+    padding: 8px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.main {
+    border: 1px solid var(--bg);
+}
+.song_heading {
+    border: 1px solid var(--bg);
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 800;
+    filter: invert(5%);
+    text-decoration: underline 1.5px solid transparent;
+}
+.song_heading:hover {
+    text-decoration: underline 1.5px solid #fff;
+}
+.navigator {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: #121212;
+}
+.threeDots, .closeBtn {
+    height: 32px;
+    aspect-ratio: 1 / 1;
+    /* border: 1px solid lime; */
+    /* margin: 8px; */
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50%;
+    cursor: pointer;
+    filter: invert(25%);
+}
+.threeDots {
+    background-image: url('/three-dots.svg');
+}
+.threeDots:hover {
+    filter: invert(0%);
+}
+.closeBtn {
+    background-image: url('/cut.svg');
+    transition: background-color .3s ease;
+}
+.closeBtn:hover {
+    background-color: var(--bg);
+    filter: invert(5%);
+}
+.closeBtn:active, .threeDots:active {
+    filter: invert(45%);
+}

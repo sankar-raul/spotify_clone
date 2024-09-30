@@ -1,4 +1,0 @@
-.rightSection {
-    grid-area: rightSection;
-    width: clamp(280px, 25vw, 300px);
-}

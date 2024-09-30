@@ -67,6 +67,7 @@
     background-size: 16px;
     border-radius: 50%;
     background-color: #ffffff13;
+    cursor: pointer;
 }
 .social:hover {
     background-color: #ffffff2a;

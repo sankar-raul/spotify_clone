@@ -35,30 +35,6 @@ function App() {
       console.log("ok")
   }
 
-  const rearrangeUI = () => {
-    const currentMainPlusRightWidth = mainWidth + rightWidth
-    const minMainPlusRightWidth = mainMin + rightWidth
-    console.log(currentMainPlusRightWidth, minMainPlusRightWidth)
-    if (currentMainPlusRightWidth - 1 < minMainPlusRightWidth) {
-      if (leftState == "expand") {
-        setLeftState('collapse')
-        console.log("short")
-      } else {
-        if (rightState == 'expand') {
-          setRightState('collapse')
-        } else {
-          // console.log(canAutoExpandRight)
-          // canAutoExpandRight && setRightState('expand')
-        }
-      }
-    } else {
-      console.log("good", currentMainPlusRightWidth < minMainPlusRightWidth)
-        if (rightState == 'collapse') {
-          // canAutoExpandRight && setRightState('expand')
-        }
-    }
-  }
-
   const handleLeftCollapse = () => {
     setLeftState(prevState => {
       const newState = prevState === "collapse" ? "expand" : "collapse"
@@ -68,12 +44,7 @@ function App() {
     console.log("clicked")
     // rearrangeUI()
   }
-  // useEffect(() => {
-  //   console.log(canAutoExpandLeft)
-  // }, [canAutoExpandLeft])
-  // useEffect(() => {
-  //   console.log(canAutoExpandRight)
-  // }, [canAutoExpandRight])
+
   const handleRightCollapse = () => {
     setRightState(prevState => {
       const newState = prevState === "collapse" ? "expand" : "collapse"

@@ -13,7 +13,11 @@ const RightSection = ({ state, handleWidth, handleRightCollapse }) => {
         handleWidth('right', rightRef.current.offsetWidth)
     }
     useEffect(() => {
-        // setDisplay(prev => prev == "grid" ? "none" : "grid")
+        if (state == 'expand') {
+            setDisplay("grid")
+        } else {
+            setDisplay('none')
+        }
     }, [state])
     useEffect(() => {
             // alert()

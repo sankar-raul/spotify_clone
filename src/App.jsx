@@ -32,7 +32,7 @@ function App() {
   const [deviceType, setDeviceType] = useState("Desktop")
   const handleLayout = () => {
       // rearrangeUI()
-      console.log("ok")
+      // console.log("ok")
   }
 
   const handleLeftCollapse = () => {
@@ -87,7 +87,7 @@ function App() {
   }, [])
   useEffect(() => {
     // console.log(mainWidth, leftWidth, rightWidth)
-    console.log(rightWidth, "dfdkfk")
+    // console.log(rightWidth, "dfdkfk")
   }, [rightWidth])
   useEffect(() => {
     // console.log(rootWidth , "dfdfj")

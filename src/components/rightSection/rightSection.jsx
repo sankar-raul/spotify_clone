@@ -40,7 +40,7 @@ const RightSection = ({ state, handleWidth, handleRightCollapse }) => {
                 </div>
             </div>
             <div className={styles.main}>
-                body
+                <SongBody />
             </div>
         </section>
     )
@@ -49,6 +49,37 @@ RightSection.propTypes = {
     handleWidth: PropTypes.func.isRequired,
     handleRightCollapse: PropTypes.func.isRequired,
     state: PropTypes.string.isRequired
+}
+
+const SongBody = () => {
+
+    return (
+        <>
+            <div className={styles.song_details}>
+                <div className={styles.song_thumb}></div>
+                <div className={styles.song_info}>
+                    <div className={styles.song_title}>
+                        <p>One The Floor</p>
+                        <div className={styles.artists}>Jennifer Lopez, Pitbull</div>
+                    </div>
+                    <div className={styles.actions}>
+                        <div title='Copy Song Link' className={styles.copy_btn}></div>
+                        <div title='Add to Liked Songs' className={styles.add_song_btn}></div>
+                    </div>
+                </div>
+            </div>
+            <div className={styles.about_artist}>
+                <div>
+                    <p>About the artist</p>
+                </div>
+                <div className={styles.artist_info}>
+                    Jennifer Lopez
+                </div>
+            </div>
+            <div className={styles.credits}>credits</div>
+            <div className={styles.next_queue}>next queue</div>
+        </>
+    )
 }
 
 export default RightSection

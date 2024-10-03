@@ -1,23 +1,23 @@
 .rightSection {
     grid-area: rightSection;
-    width: clamp(280px, 25vw, 300px);
+    width: clamp(280px, 25vw, 350px);
     display: grid;
     grid-template-rows: 64px 1fr;
     padding: 0px 16px;
     border-radius: var(--radius);
     background-color: var(--main-bg);
+    overflow: hidden;
 }
 .heading {
-    border: 1px solid var(--bg);
+    /* border: 1px solid var(--bg); */
     padding: 8px 0px;
     display: flex;
     justify-content: space-between;
-}
-.main {
-    border: 1px solid var(--bg);
+    /* box-shadow: 0px 4px 10px 0px #0f0f0f; */
+    z-index: 1;
 }
 .song_heading {
-    border: 1px solid var(--bg);
+    /* border: 1px solid var(--bg); */
     display: flex;
     align-items: center;
     font-size: 1rem;
@@ -64,4 +64,141 @@
 }
 .closeBtn:active, .threeDots:active {
     filter: invert(45%);
+}
+.main {
+    /* border: 1px solid var(--bg); */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 16px;
+    overflow: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    position: relative;
+}
+.main::-webkit-scrollbar {
+    width: 0;
+}
+.main > * {
+    /* border: 1px solid var(--bg); */
+}
+.song_details {
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* align-items: center; */
+}
+.song_thumb {
+    background-image: url('/song_thumbs/on_the_floor.png');
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    border-radius: var(--radius);
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+}
+.song_info {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+}
+.song_title {
+    flex-grow: 1;
+    /* border: 1px solid blue; */
+    display: grid;
+    overflow: hidden;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+}
+.song_title::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30px;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, #0f0f0f);
+    transform: translate(2px);
+}
+.song_title > * {
+    white-space: nowrap;
+}
+.song_title > p {
+    font-size: 20px;
+    text-decoration: 1.5px solid underline transparent;
+    font-weight: 750;
+    cursor: pointer;
+}
+.song_title > p:hover {
+    text-decoration: 1.5px solid underline #fff;
+}
+.artists {
+    filter: invert(30%);
+    text-decoration: 1.5px solid underline transparent;
+    cursor: pointer;
+}
+.artists:hover {
+    filter: invert(0%);
+    text-decoration: 1px solid underline #fff;
+}
+.actions {
+    /* border: 1px solid green; */
+    display: flex;
+    align-items: center;
+}
+.add_song_btn, .copy_btn {
+    /* width: 40%; */
+    height: 50%;
+    aspect-ratio: 1 / 1;
+    /* background-color: red; */
+    background-image: url('/add_song.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 60%;
+    border-radius: 50%;
+    cursor: pointer;
+    filter: invert(5%);
+}
+.copy_btn {
+    background-image: url('/share.svg');
+    filter: invert(30%);
+    transition: ease filter .1s;
+}
+.copy_btn:hover {
+    filter: invert(5%);
+    transform: scale(1.04);
+}
+.add_song_btn:hover {
+    transform: scale(1.04);
+}
+.about_artist {
+    /* border: 1px solid blue; */
+    background-color: var(--main-bg);
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+.about_artist > div:nth-child(1) {
+    /* background-color: red; */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%), url("/song_thumbs/jennifer_lopez.png");
+    width: 100%;
+    aspect-ratio: 2 / 1.3;
+    border-radius: 8px 8px 0px 0px;
+    background-position: center center;
+    background-size: cover;
+}
+.about_artist > div:nth-child(1) > p {
+    padding: 16px;
+    font-weight: 700;
+}
+.artist_info {
+    /* border: 1px solid red; */
+    padding: 16px;
+}
+.next_queue {
+
+}
+.credits {
+
 }

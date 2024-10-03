@@ -25,8 +25,8 @@ function App() {
   const [ leftState, setLeftState ] = useState("collapse")
   const [ rightState, setRightState ] = useState("expand")
 
-  const [ canAutoExpandLeft, setCanAutoExpandLeft ] = useState(false)
-  const [ canAutoExpandRight, setCanAutoExpandRight ] = useState(true)
+  // const [ canAutoExpandLeft, setCanAutoExpandLeft ] = useState(false)
+  // const [ canAutoExpandRight, setCanAutoExpandRight ] = useState(true)
 
   const [ layoutChanged, setLayoutChanged ] = useState(false)
   const [deviceType, setDeviceType] = useState("Desktop")
@@ -47,14 +47,14 @@ function App() {
         if (rightState == 'expand') {
           setRightState('collapse')
         } else {
-          console.log(canAutoExpandRight)
-          canAutoExpandRight && setRightState('expand')
+          // console.log(canAutoExpandRight)
+          // canAutoExpandRight && setRightState('expand')
         }
       }
     } else {
       console.log("good", currentMainPlusRightWidth < minMainPlusRightWidth)
         if (rightState == 'collapse') {
-          canAutoExpandRight && setRightState('expand')
+          // canAutoExpandRight && setRightState('expand')
         }
     }
   }
@@ -62,7 +62,7 @@ function App() {
   const handleLeftCollapse = () => {
     setLeftState(prevState => {
       const newState = prevState === "collapse" ? "expand" : "collapse"
-      setCanAutoExpandLeft(newState == "expand")
+      // setCanAutoExpandLeft(newState == "expand")
       return newState
     })
     console.log("clicked")
@@ -105,7 +105,7 @@ function App() {
   }, [leftState])
   useEffect(() => {
     setLayoutChanged(prev => prev === false)
-    setCanAutoExpandRight(rightState == "expand")
+    // setCanAutoExpandRight(rightState == "expand")
   }, [rightState])
   useEffect(() => {
     handleRootWidth()

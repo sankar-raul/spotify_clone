@@ -1,6 +1,5 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
-import { useState } from 'react'
 import styles from './rightSection.module.css'
 
 const RightSection = ({ state, handleWidth, handleRightCollapse }) => {

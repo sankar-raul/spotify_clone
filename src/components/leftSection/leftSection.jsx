@@ -1,18 +1,28 @@
 import Songtag from '../songtag/songtag'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import './leftSection.css'
 import playList from '../../backend/playlist_items.json'
 const LeftSection = ({handleWidth, state, handleLeftCollapse}) => {
     const leftRef = useRef(null)
     const buttonRef = useRef(null)
-    // const [ currentState, setCState ] = useState(0)
+    const [ currentState, setCState ] = useState("collapse")
     const handleCollapse = () => {
-       handleLeftCollapse()
+       setCState(prev => prev == 'collapse' ? 'expand' : 'collapse')
     }
     const handleEvent = () => {
         handleWidth('left', leftRef.current.offsetWidth)
     }
+    useEffect(() => {
+        if (currentState != state) {
+            handleLeftCollapse(currentState)
+        }
+    }, [currentState])
+    useEffect(() => {
+        if (currentState != state) {
+            setCState(state)
+        }
+    }, [state])
     useEffect(() => {
             // alert()
             handleEvent()

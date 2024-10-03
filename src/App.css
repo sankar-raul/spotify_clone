@@ -9,11 +9,11 @@
    grid-template-columns: max-content 1fr max-content;
    grid-template-rows: 48px 1fr 80px;
    gap: 7px;
-   padding: 7px;
+   padding: 8px;
 }
-.main::-webkit-scrollbar {
+/* .main::-webkit-scrollbar {
   height: 0;
-}
+} */
 /* .main > * {
   border: 1px solid #fff3;
 } */

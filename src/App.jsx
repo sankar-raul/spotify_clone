@@ -95,7 +95,7 @@ function App() {
   }, [rootWidth])
   useEffect(() => {
     // console.log(mainWidth, leftWidth, rightWidth)
-    console.log(mainWidth)
+    // console.log(mainWidth)
   }, [mainWidth])
   useEffect(() => {
     // console.log(mainWidth, leftWidth, rightWidth)

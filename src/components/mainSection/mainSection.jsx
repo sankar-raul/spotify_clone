@@ -198,7 +198,7 @@ const RecentTiles = ({ handleColorTheme }) => {
                     <div className="pbtn"></div>
                 </div>
             </div>
-))
+    ))
         }
         </>
     )

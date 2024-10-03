@@ -41,7 +41,6 @@ function App() {
     console.log(currentMainPlusRightWidth, minMainPlusRightWidth)
     if (currentMainPlusRightWidth - 1 < minMainPlusRightWidth) {
       if (leftState == "expand") {
-        
         setLeftState('collapse')
         console.log("short")
       } else {

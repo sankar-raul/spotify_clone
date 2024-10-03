@@ -182,7 +182,7 @@ const RecentTiles = ({ handleColorTheme }) => {
     const handleMouseOut = () => {
         timeout = setTimeout(() => {
             handleColorTheme(recentsTiles[0].color_theme)
-        }, 500)
+        }, 20)
     }
     useEffect(() => {
         

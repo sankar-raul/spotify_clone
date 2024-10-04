@@ -93,22 +93,22 @@ const SongBody = () => {
                 </div>
                 <div>
                     <div>
-                        <div><span>Calvin Harris</span></div>
-                        <div><span>Main Artist, Producer</span></div>
+                        <div><span>Jennifer Lopez</span></div>
+                        <div><span>Main Artist</span></div>
                     </div>
                     <SecondaryButton text='Follow'/>
                 </div>
                 <div>
                     <div>
-                        <div><span>Dua Lipa</span></div>
-                        <div><span>Main Artist, Composer, Lyricist</span></div>
+                        <div><span>Pitbull</span></div>
+                        <div><span>Featured Artist</span></div>
                     </div>
                     <SecondaryButton text='Follow'/>
                 </div>
                 <div>
                     <div>
-                        <div><span>Adam Wiles</span></div>
-                        <div><span>Composer, Lyricist</span></div>
+                        <div><span>Nadir Khayat</span></div>
+                        <div><span>Composer</span></div>
                     </div>
                 </div>
             </div>

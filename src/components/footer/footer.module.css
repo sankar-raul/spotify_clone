@@ -37,24 +37,26 @@
     flex-grow: 1;
     /* flex-shrink: 1; */
 }
-.linkSectionTitle {
+.linkSectionTitle > span {
     cursor: text;
     font-weight: 700;
     filter: invert(5%);
+    /* color: red; */
+    /* border: 1px solid red; */
+
 }
 .links_set {
     display: flex;
     flex-direction: column;
 }
-.final_link {
+.final_link > a {
     text-decoration: none;
     color: #fff;
     filter: invert(30%);
     padding-bottom: 8px;
-    display: inline;
-    /* background-color: red; */
+    /* display: inline; */
 }
-.final_link:hover {
+.final_link > a:hover {
     filter: invert(5%);
     text-decoration: underline 1px solid #fffa;
 }

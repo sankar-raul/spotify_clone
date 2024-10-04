@@ -45,12 +45,14 @@ const Links = ({ linkSet }) => {
     return (
         <div className={styles.linkSet}>
             <header className={styles.linkSectionTitle}>
-                { linkSet.header }
+                <span>{ linkSet.header }</span>
             </header>
             <div className={styles.links_set}>
                 {
                     linkSet.items.map((link_details, idx) => (
-                        <a href={link_details.href} className={styles.final_link} key={idx}>{ link_details.text }</a>
+                        <p className={styles.final_link} key={idx}>
+                        <a href={link_details.href}>{ link_details.text }</a>
+                        </p>
                     ))
                 }
             </div>

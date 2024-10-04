@@ -12,6 +12,7 @@
   --main-bg:  #ffffff0f;
   --radius: 8px;
   --brand-color: #1ed760;
+  --secondary-color: #b3b3b3;
 }
 * {
   box-sizing: border-box;

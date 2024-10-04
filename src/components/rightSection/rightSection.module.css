@@ -230,20 +230,6 @@
     -webkit-line-clamp: 2;
     line-clamp: 2;
 }
-.follow_section > div:nth-child(2) {
-    padding: 3px 15px;
-    height: 32px;
-    border: 1.5px solid #949494;
-    border-radius: 9999px;
-    font-size: 13px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-}
-.follow_section > div:nth-child(2):hover {
-    border-color: #fff;
-    transform: scale(1.04);
-}
 .artist_description {
     display: -webkit-box;
     line-clamp: 3;
@@ -256,9 +242,71 @@
     /* filter: invert(30%); */
     color: var(--secondary-color);
 }
-.next_queue {
+.credits {
+ padding: 16px;
+ display: flex;
+ flex-direction: column;
+ gap: 16px;
+ background-color: var(--main-bg);
+ border-radius: var(--radius);
+}
+.credits > * {
+    /* border: 1px solid red; */
+}
+.credit_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.credit_title > div:nth-child(2) {
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: underline 1px solid transparent;
+    cursor: pointer;
+}
+.credit_title > div:nth-child(1) {
+    font-weight: 700;
+    cursor: text;
+    user-select: text;
+}
+.credit_title > div:nth-child(2):hover {
+    text-decoration: underline 1px solid #fff;
+    font-weight: 750;
+    transform: scale(1.02);
 
 }
-.credits {
+.credits > div:not(:nth-child(1)) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.credits > div:not(:nth-child(1)) > div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+}
+.credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) {
+    font-weight: 400;
+}
+.credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) > span {
+    cursor: pointer;
+    text-decoration: underline 1.5px solid transparent;
+}
+.credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) > span:hover {
+    text-decoration: underline 1.5px solid #fff;
+}
+.credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(2) {
+    font-size: 13px;
+    font-weight: 400;
+    /* color: var(--secondary-color); */
+    filter: invert(5%);
+}
+.credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(2) > span {
+    cursor: text;
+    user-select: text;
+}
+.next_queue {
 
 }

@@ -77,7 +77,7 @@ const SongBody = () => {
                     <div className={styles.artist_name}><p>Jennifer Lopez</p></div>
                     <div className={styles.follow_section}>
                         <div>
-                        19,982,788 monthly listeners dfd d s
+                        19,982,788 monthly listeners
                         </div>
                         <SecondaryButton text='Follow'/>
                     </div>

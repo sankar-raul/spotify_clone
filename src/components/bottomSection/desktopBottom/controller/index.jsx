@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styles from './Controller.module.css'
+import styles from './controller.module.css'
 const repeatStates = ["no repeat", "repeat all", "repeat one"]
 export default function Controller() {
     const [ isPlaying, setIsPlaying ] = useState(false)

@@ -29,7 +29,7 @@ function App() {
   // const [ canAutoExpandRight, setCanAutoExpandRight ] = useState(true)
 
   const [ layoutChanged, setLayoutChanged ] = useState(false)
-  const [deviceType, setDeviceType] = useState("Desktop")
+  const [deviceType, setDeviceType] = useState(null)
   const handleLayout = () => {
       // rearrangeUI()
       // console.log("ok")
@@ -69,8 +69,8 @@ function App() {
     setRootWidth(document.body.offsetWidth)
   }
   useEffect(() => {
-    console.log(deviceType)
-}, [deviceType])
+    deviceType && console.log(deviceType)
+  }, [deviceType])
   useEffect(() => {
     setLayoutChanged(prev => prev === false)
   }, [leftState])
@@ -107,9 +107,8 @@ function App() {
       <NavBar />
       <LeftSection handleWidth={handleWidth} handleLeftCollapse={handleLeftCollapse} state={leftState}/>
       <MainSection monitorResize={layoutChanged} handleWidth={handleWidth} />
-      {/* {console.log(rightState)} */}
       <RightSection state={rightState} handleRightCollapse={handleRightCollapse} handleWidth={handleWidth} />
-      <BottomSection handleRightCollapse={handleRightCollapse} />
+      {deviceType != null && <BottomSection handleRightCollapse={handleRightCollapse} deviceType={deviceType} /> }
       </div>
     </>
   )

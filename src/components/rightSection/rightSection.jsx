@@ -33,7 +33,7 @@ const RightSection = ({ state, handleWidth, handleRightCollapse }) => {
     return (
         <section style={{display: display}} ref={rightRef} className={styles.rightSection}>
             <div className={styles.heading}>
-                <div className={styles.song_heading}>One The Floor</div>
+                <div className={styles.song_heading}>On The Floor</div>
                 <div className={styles.navigator}>
                     <div className={styles.threeDots}>
                 </div>
@@ -60,7 +60,7 @@ const SongBody = () => {
                 <div className={styles.song_thumb}></div>
                 <div className={styles.song_info}>
                     <div className={styles.song_title}>
-                        <div><span>One The Floor</span></div>
+                        <div><span>On The Floor</span></div>
                         <div className={styles.artists}><span>Jennifer Lopez, Pitbull</span></div>
                     </div>
                     <div className={styles.actions}>

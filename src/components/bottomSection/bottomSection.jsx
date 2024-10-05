@@ -1,30 +1,30 @@
 import PropTypes from 'prop-types'
-import { useRef, useEffect } from 'react'
-import './bottomSection.css'
+import { useEffect, useState } from 'react'
+import DesktopBottom from './desktopBottom'
+import styles from './bottomSection.module.css'
 
-const BottomSection = ({ handleRightCollapse }) => {
-    const buttonRef = useRef(null)
-    const handleClick = () => {
-        handleRightCollapse()
-    }
+const BottomSection = ({ handleRightCollapse, deviceType }) => {
+    const [ device, setDevice ] = useState(null)
     useEffect(() => {
-        const buttonRefCopy = buttonRef.current
-        buttonRefCopy.addEventListener("click", handleClick)
-        return () => {
-            buttonRefCopy.removeEventListener("click", handleClick)
-        }
+        setDevice(deviceType)
     }, [])
     return (
-        <section className="bottomSection">
-                Bottom Section
-                <button ref={buttonRef}>
-                collapse
-                </button>
-        </section>
+    <>
+        {
+            deviceType && device == 'desktop' ? (
+                <DesktopBottom handleRightCollapse={handleRightCollapse}/>
+            ) : (
+                <section className={styles.bottomSection}>
+                    {device}
+                </section>
+            )
+        }
+    </>
     )
 }
 BottomSection.propTypes = {
-    handleRightCollapse: PropTypes.func.isRequired
+    handleRightCollapse: PropTypes.func.isRequired,
+    deviceType: PropTypes.string.isRequired
 }
 
 export default BottomSection

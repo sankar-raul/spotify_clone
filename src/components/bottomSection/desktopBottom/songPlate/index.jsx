@@ -1,13 +1,24 @@
+import { useState, useEffect, Fragment } from 'react'
+import PropTypes from 'prop-types'
 import styles from './songPlate.module.css'
-const Songplate = () => {
+
+const Songplate = ({songData}) => {
 
     return (
         <div className={styles.songplate}>
-                <div></div>
+                <div style={songData && {backgroundImage: `url(${songData.song_thumb})`}}></div>
                 <div className={styles.songplate_details}>
                     <div>
-                        <div><span>On the floor</span></div>
-                        <div><span>Jennifer Lopez</span>, <span>Pitbull</span></div>
+                        <div><span>{songData && songData.title}</span></div>
+                        <div>
+                            {
+                                songData && songData.artists.join(',#$').split('#$').map((artist, idx) => (
+                                    <Fragment key={idx}>
+                                        <span>{artist}</span>&nbsp;
+                                    </Fragment>
+                                ))
+                            }
+                        </div>
                     </div>
                     <div className={styles.heart_icon}></div>
                 </div>
@@ -15,4 +26,7 @@ const Songplate = () => {
     )
 }
 
+Songplate.propTypes = {
+    songData: PropTypes.object
+}
 export default Songplate

@@ -1,25 +1,27 @@
 class MusicPlayer {
-    constructor(songList, update) {
+    constructor(songList, update, client) {
         this.songList = songList
         this.songListLength = songList.length
         this.currentSongIndex = 0
         this.currentSongInfo = songList[this.currentSongIndex]
         this.currentSong = new Audio(this.currentSongInfo.src)
         this.isSuffle = false
-        this.repeatState = false
-        this.queueNext = null
+        this.repeatState = 0
+        this.queueNext = 1
         this.first = true
         this.songStack = []
         this.updateTimeout = null
+        this.client = client
         // controller
+        this.update = update
         this.isPlaying = false
         this._duration = this.currentSong.duration
+        this.update(this.currentSongInfo)
     }
     get played() {
         return 100 / (this.duration / this.currentSong.currentTime)
     }
     set currentTime(time) {
-        console.log(time)
         if (time != 0 && !time) {
             return
         }
@@ -40,41 +42,37 @@ class MusicPlayer {
         const idx = Math.floor(Math.random() * this.songListLength)
         return idx != this.currentSongIndex ? idx : this.suffle()
     }
-    process() {
-        this.currentSongInfo = this.songList[this.currentSongIndex]
-        this.currentSong.src = this.currentSongInfo.src
-        this.duration = this.currentSong.duration
-        this.currentSong.load()
-        this.currentSong.ontimeupdate = () => {
-            // if (!this.updateTimeout) {
-            // this.updateTimeout = setTimeout(() => {
-                this.currentSong.onended = () => {}
-                // update()
-
-                // this.updateTimeout = null
-            // }, 1000)
-        // }
-        }
-        this.currentSong.onended = () => {
-            this.currentSong.onended = () => {}
+    onended() {
             if (this.repeatState == 0) {
-                if (this.currentSongIndex < this.songListLength) {
+                if (this.currentSongIndex >= this.songListLength - 1) {
                     if (this.isSuffle) {
-                            this.next()
-                        } else {
-                            this.next()
-                            this.pause()
-                        }
+                        this.next()
+                    } else {
+                        this.next(false)
+                        this.client.setIsPlaying(false)
+                        this.pause()
+                    }
                 } else {
                     this.next()
                 }
             } else if (this.repeatState == 1) {
                 this.next()
             } else {
+                this.pause()
                 this.currentTime = 0
                 this.play()
+                this.currentSong.onended = () => this.onended()
             }
         }
+    process() {
+        this.currentSongInfo = this.songList[this.currentSongIndex]
+        this.currentSong.src = this.currentSongInfo.src
+        this.currentSong.load()
+        this.currentSong.ontimeupdate = () => {
+            
+        }
+        // console.log("op")
+        this.currentSong.onended = () => this.onended()
 
     }
     // song controller
@@ -88,27 +86,8 @@ class MusicPlayer {
             this.currentSong.ontimeupdate = () => {
                 // update()
             }
-            this.currentSong.onended = () => {
-                this.currentSong.onended = () => {}
-                    console.log("ok")
-                if (this.repeatState == 0) {
-                    if (this.currentSongIndex < this.songListLength) {
-                        if (this.isSuffle) {
-                            this.next()
-                        } else {
-                            this.next()
-                            this.pause()
-                        }
-                    } else {
-                        this.next()
-                    }
-                } else if (this.repeatState == 1) {
-                    this.next()
-                } else {
-                    this.currentTime = 0
-                    this.play()
-                }
-            }
+            this.currentSong.onended = () => this.onended()
+            this.update(this.currentSongInfo)
             this.queueNext = this.getQueueSong()
             this.first = false
             this.songStack.push(this.currentSongIndex)
@@ -120,17 +99,20 @@ class MusicPlayer {
             this.isPlaying = false
         }
     }
-    next() {
+    next(startPlaying = true) {
         this.isPlaying && this.currentSong.pause()
-        if (this.repeatState == 3) {
+        if (this.repeatState == 2) {
+            this.pause()
             this.currentTime = 0
             this.play()
+            this.currentSong.onended = () => this.onended()
             return
         }
         this.currentSongIndex = this.queueNext
         this.songStack.push(this.currentSongIndex)
         this.process()
-        this.currentSong.play()
+        this.update(this.currentSongInfo)
+        startPlaying && this.currentSong.play()
         this.isPlaying = true
         this.queueNext = this.getQueueSong()
     }
@@ -144,6 +126,7 @@ class MusicPlayer {
             this.currentSongIndex = prev_idx
         }
         this.process()
+        this.update(this.currentSongInfo)
         this.currentSong.play()
         this.isPlaying = true
     }

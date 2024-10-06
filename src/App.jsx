@@ -30,6 +30,7 @@ function App() {
 
   const [ layoutChanged, setLayoutChanged ] = useState(false)
   const [deviceType, setDeviceType] = useState(null)
+  const [songInfo, setSongInfo] = useState(null)
   const handleLayout = () => {
       // rearrangeUI()
       // console.log("ok")
@@ -67,6 +68,9 @@ function App() {
   const handleRootWidth = () => {
     setDeviceType(userAgent())
     setRootWidth(document.body.offsetWidth)
+  }
+  const updateSongInfo = (songData) => {
+      songData && setSongInfo(songData)
   }
   useEffect(() => {
     deviceType && console.log(deviceType)
@@ -107,8 +111,8 @@ function App() {
       <NavBar />
       <LeftSection handleWidth={handleWidth} handleLeftCollapse={handleLeftCollapse} state={leftState}/>
       <MainSection monitorResize={layoutChanged} handleWidth={handleWidth} />
-      <RightSection state={rightState} handleRightCollapse={handleRightCollapse} handleWidth={handleWidth} />
-      {deviceType != null && <BottomSection handleRightCollapse={handleRightCollapse} deviceType={deviceType} /> }
+      <RightSection state={rightState} songData={songInfo} handleRightCollapse={handleRightCollapse} handleWidth={handleWidth} />
+      {deviceType != null && <BottomSection updateSongInfo={(data) => updateSongInfo(data)} handleRightCollapse={handleRightCollapse} deviceType={deviceType} /> }
       </div>
     </>
   )

@@ -1,41 +1,70 @@
-import songList from '../../backend/songlist.json'
-export default class Song {
-    constructor(songList, isSuffle = false, repeatState = 0) {
+class MusicPlayer {
+    constructor(songList, update) {
         this.songList = songList
         this.songListLength = songList.length
         this.currentSongIndex = 0
         this.currentSongInfo = songList[this.currentSongIndex]
         this.currentSong = new Audio(this.currentSongInfo.src)
-        this.suffle = isSuffle
-        this.repeatState = repeatState
+        this.isSuffle = false
+        this.repeatState = false
         this.queueNext = null
         this.first = true
         this.songStack = []
+        this.updateTimeout = null
         // controller
         this.isPlaying = false
-        this.duration = this.currentSong.duration
+        this._duration = this.currentSong.duration
     }
     get played() {
-        return  100 / (this.duration / this.currentSong.currentTime)
+        return 100 / (this.duration / this.currentSong.currentTime)
     }
     set currentTime(time) {
-        this.currentSong.currentTime = time
+        console.log(time)
+        if (time != 0 && !time) {
+            return
+        }
+        this.currentSong.currentTime = parseInt(time)
     }
     get currentTime() {
         return this.currentSong.currentTime
     }
+    get duration() {
+        return this.currentSong.duration
+    }
+    set duration(time) {
+        this._duration = time
+    }
     // key handlers
     // prepare song to play
+    suffle() {
+        const idx = Math.floor(Math.random() * this.songListLength)
+        return idx != this.currentSongIndex ? idx : this.suffle()
+    }
     process() {
         this.currentSongInfo = this.songList[this.currentSongIndex]
         this.currentSong.src = this.currentSongInfo.src
         this.duration = this.currentSong.duration
         this.currentSong.load()
+        this.currentSong.ontimeupdate = () => {
+            // if (!this.updateTimeout) {
+            // this.updateTimeout = setTimeout(() => {
+                this.currentSong.onended = () => {}
+                // update()
+
+                // this.updateTimeout = null
+            // }, 1000)
+        // }
+        }
         this.currentSong.onended = () => {
             this.currentSong.onended = () => {}
             if (this.repeatState == 0) {
                 if (this.currentSongIndex < this.songListLength) {
-                    this.pause()
+                    if (this.isSuffle) {
+                            this.next()
+                        } else {
+                            this.next()
+                            this.pause()
+                        }
                 } else {
                     this.next()
                 }
@@ -55,6 +84,31 @@ export default class Song {
             this.isPlaying = true
         }
         if (this.first) {
+            // this.process()
+            this.currentSong.ontimeupdate = () => {
+                // update()
+            }
+            this.currentSong.onended = () => {
+                this.currentSong.onended = () => {}
+                    console.log("ok")
+                if (this.repeatState == 0) {
+                    if (this.currentSongIndex < this.songListLength) {
+                        if (this.isSuffle) {
+                            this.next()
+                        } else {
+                            this.next()
+                            this.pause()
+                        }
+                    } else {
+                        this.next()
+                    }
+                } else if (this.repeatState == 1) {
+                    this.next()
+                } else {
+                    this.currentTime = 0
+                    this.play()
+                }
+            }
             this.queueNext = this.getQueueSong()
             this.first = false
             this.songStack.push(this.currentSongIndex)
@@ -82,6 +136,7 @@ export default class Song {
     }
     prev() {
         this.isPlaying && this.currentSong.pause()
+        this.songStack.pop()
         const prev_idx = this.songStack.pop()
         if (!prev_idx) {
             this.currentSongIndex = this.currentSongIndex == 0 ? this.songListLength - 1 : this.currentSongIndex - 1
@@ -92,18 +147,13 @@ export default class Song {
         this.currentSong.play()
         this.isPlaying = true
     }
-    suffle() {
-        const idx = Math.floor(Math.random() * this.songListLength)
-        return idx != this.currentSongIndex ? idx : this.suffle()
-    }
     getQueueSong() {
-        if (this.suffle) {
+        if (this.isSuffle) {
             return this.suffle()
         } else {
-            return this.currentSongIndex < this.songListLength ? this.currentSongIndex + 1 : 0
+            return this.currentSongIndex < this.songListLength - 1 ? this.currentSongIndex + 1 : 0
         }
     }
 }
 
-const Player = new Song(songList)
-Player.play()
+export default MusicPlayer

@@ -32,12 +32,11 @@
     content: '';
     top: 0;
     width: 100%;
-    height: 200px;
+    height: 300px;
     /* background-image: linear-gradient(var(--shadow) 0vh 1vh, transparent 25vh 100vh); */
-    box-shadow: inset 0px 60px 60px 0px var(--shadow);
-    filter: blur(64px)  contrast(124%);
+    box-shadow: inset 0px 90px 60px 0px var(--shadow);
+    filter: blur(80px) contrast(164%) brightness(104%) saturate(80%);
     z-index: -1;
-    /* filter: brightness(80%) contrast(284%) grayscale(39%) invert(30%); */
     opacity: 1;
     transition: box-shadow ease 1s;
 }
@@ -274,7 +273,7 @@
     -webkit-box-orient: vertical;
     line-clamp: 2;
     -webkit-line-clamp: 2;
-    filter: invert(30%);
+    color: var(--secondary-color);
 }
 .home > .main-section > .song-cards > .song-card:hover {
     background-color: var(--bg2);

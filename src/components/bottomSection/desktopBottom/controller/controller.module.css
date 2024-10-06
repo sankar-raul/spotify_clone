@@ -39,55 +39,95 @@
     background-position: center center;
     background-size: var(--bgSize);
     background-color: #fff;
-}
-.controll_button:nth-last-child(1) {
-    background-image: url('/repeat.svg');
+    transform: scale(1);
 }
 .controll_button:nth-child(1), .controll_button:nth-last-child(1) {
-    filter: invert(20%);
-    background-size: 50%;
+    --display-dot: block;
 }
-.controll_button:nth-child(1) {
-    background-image: url('/suffle.svg');
+.controll_button:nth-child(1) > div:nth-child(1) {
+    mask: url('/suffle.svg') no-repeat center center;
+    background-color: var(--brand-color);
+    filter: none;
+    mask-size: 50%;
+    width: 100%;
+    height: 100%;
+}
+.controll_button:nth-last-child(1) > div:nth-child(1) {
+    mask: url('/repeat.svg') no-repeat center center;
+    background-color: var(--brand-color);
+    filter: none;
+    mask-size: 50%;
+    width: 100%;
+    height: 100%;
+}
+.controll_button:nth-child(1), .controll_button:nth-last-child(1) {
+    opacity: 1;
+    background-size: 50%;
 }
 .controll_button:nth-last-child(2) {
     background-image: url('/next-song.svg');
 }
 .controll_button:nth-child(2), .controll_button:nth-last-child(2) {
     background-size: 50%;
-    filter: invert(20%);
+    /* filter: hue-rotate(90deg) brightness(0.7) saturate(5) invert(0); */
+    opacity: .75;
 }
 .controll_button:nth-child(2) {
     background-image: url('/prev-song.svg');
 }
+.controll_button:not(:nth-child(3)) {
+    transform: scale(1);
+}
 .controll_button:not(:nth-child(3)):hover {
-    filter: invert(0%) brightness(150%);
-    transform: scale(1.001);
+    transform: scale(1);
+    opacity: 1;
+    filter: none;
+    /* background-color: red; */
 }
 .controll_button:not(:nth-child(3)):active {
-    filter: brightness(75%);
+    opacity: .65;
     transform: scale(1);
 }
 .controll_button:nth-child(3):hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
 }
 .controll_button:nth-child(3):active {
     filter: brightness(75%);
     transform: scale(.98);
 }
-.suffle-svg-icon {
+/* .suffle-svg-icon {
     fill: red;
-}
+} */
 .controll_button:nth-child(1)::before, .controll_button:nth-last-child(1)::before {
     content: '';
     position: absolute;
-    background-color: var(--brand-color);
     height: 4px;
+    mask-image: none;
     width: 4px;
     border-radius: 50%;
     left: 50%;
     bottom: 0;
+    display: var(--display-dot);
     transform: translate(-50%);
+    /* background: none; */
+    background-color: var(--brand-color);
+    z-index: 4;
+}
+.btn_icon {
+   
+}
+.dot {
+    background-color: #0ff;
+    height: 50%;
+    mask-image: none;
+    width: 100%;
+    border-radius: 50%;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    /* background: none; */
+    /* background-color: red; */
+    z-index: 4;
 }
 .controll_button:nth-last-child(1) {
     /* background-color: red; */

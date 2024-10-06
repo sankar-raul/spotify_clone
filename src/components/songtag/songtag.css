@@ -29,7 +29,6 @@
     aspect-ratio: 1 / 1;
     background-image: url('/play-btn.svg');
     opacity: 0;
-    filter: invert(5%);
 }
 .songTag > .song-details {
     display: flex;
@@ -45,17 +44,18 @@
 }
 .songTag > .song-details > .playlist-title {
     font-size: 1rem;
-    filter: invert(10%);
+    filter: invert(5%);
     font-weight: 500;
     overflow: hidden;
     display: -webkit-box;
     text-overflow: ellipsis;
     padding-right: 2px;
     -webkit-line-clamp: 1;
+    line-clamp: 1;
     -webkit-box-orient: vertical;
 }
 .songTag > .song-details > .caption {
-    color: #fff8;
+    color: var(--secondary-color);
     font-size: .9rem;
 }
 

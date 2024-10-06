@@ -51,14 +51,13 @@
 }
 .final_link > a {
     text-decoration: none;
-    color: #fff;
-    filter: invert(30%);
+    color: var(--secondary-color);
     padding-bottom: 8px;
     /* display: inline; */
 }
 .final_link > a:hover {
-    filter: invert(5%);
-    text-decoration: underline 1px solid #fffa;
+    text-decoration: underline 1px solid #fff;
+    color: #fff;
 }
 .social {
     width: 40px;
@@ -89,16 +88,14 @@
 }
 .legal_links > a {
     text-decoration: none;
-    color: #fff;
-    filter: invert(30%);
+    color: var(--secondary-color);
     margin-right: 16px;
     margin-bottom: 8px;
 }
 .legal_links > a:hover {
-    filter: invert(5%);
+    color: #fff;
 }
 .copyRight {
     padding-right: 16px;
-    color: #fff;
-    filter: invert(30%);
+    color: var(--secondary-color);
 }

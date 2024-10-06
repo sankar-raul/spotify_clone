@@ -1,0 +1,45 @@
+[
+    {
+        "title": "On The Floor",
+        "src": "/songs/On The Floor.mp3",
+        "isLiked": false,
+        "artists": [
+            "Jennifer Lopez",
+            "Pitbull"
+        ],
+        "credits": {
+            "Jennifer Lopez": ["Main Artist"],
+            "Pitbull": ["Featured Artist"],
+            "Nadir Khayat": ["Composer"]
+        },
+        "song_thumb": "/song_thumbs/on_the_floor.png"
+    },
+    {
+        "title": "Bad Boy",
+        "src": "/songs/Bad Boy.mp3",
+        "isLiked": false,
+        "artists": [
+            "Marwa Loud"
+        ],
+        "credits": {
+            "Marwa Loud": ["Main Artist"],
+            "Kevin Kali": ["Composer"],
+            "Soriba Konde": ["Composer"]
+        },
+        "song_thumb": "/song_thumbs/bad_boy.png"
+    },
+    {
+        "title": "Replay",
+        "src": "/songs/Replay.mp3",
+        "isLiked": false,
+        "artists": [
+            "Iyaz"
+        ],
+        "credits": {
+            "Iyaz": ["Main Artist"],
+            "J.R. Rotem": ["Producer"],
+            "Jason Desrouleaux": ["Writer"]
+        },
+        "song_thumb": "/song_thumbs/on_the_floor.png"
+    }
+]

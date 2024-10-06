@@ -307,6 +307,10 @@
     cursor: text;
     user-select: text;
 }
+.circle_artist {
+    --image: none;
+    background-image: url(var(--image));
+}
 .next_queue {
 
 }

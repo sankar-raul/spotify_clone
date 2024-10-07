@@ -51,7 +51,7 @@ MainSection.propTypes = {
 
 const BodyPart = ({updateLayout}) => {
     useEffect(() => {
-        console.log(songSections)
+        // console.log(songSections)
     }, [])
     return (
         <>

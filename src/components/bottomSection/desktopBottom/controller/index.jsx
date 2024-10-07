@@ -3,7 +3,6 @@ import styles from './controller.module.css'
 import PropTypes from 'prop-types'
 import songList from '../../../../backend/songlist.json'
 import MusicPlayer from '../../../../functions/songPlayer/play'
-const repeatStates = ["no repeat", "repeat all", "repeat one"]
 export default function Controller({updateSongDetails}) {
     const [ isPlaying, setIsPlaying ] = useState(false)
     const [ isSuffle, setIsSuffle ] = useState(false)

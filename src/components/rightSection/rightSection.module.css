@@ -290,6 +290,9 @@
 .credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) {
     font-weight: 400;
 }
+.credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) {
+    cursor: text;
+}
 .credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) > span {
     cursor: pointer;
     text-decoration: underline 1.5px solid transparent;
@@ -308,8 +311,16 @@
     user-select: text;
 }
 .circle_artist {
-    --image: none;
-    background-image: url(var(--image));
+    display: flex;
+    flex-direction: column;
+}
+.circle_artist_cover {
+    object-fit: cover;
+    width: 80px;
+    aspect-ratio: 1 / 1;
+    object-position: center center;
+    border-radius: 50%;
+    margin: auto 16px;
 }
 .next_queue {
 

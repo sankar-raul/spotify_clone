@@ -62,6 +62,7 @@ class MusicPlayer {
                 this.currentTime = 0
                 this.play()
                 this.currentSong.onended = () => this.onended()
+                
             }
         }
     process() {
@@ -73,7 +74,14 @@ class MusicPlayer {
         }
         // console.log("op")
         this.currentSong.onended = () => this.onended()
-
+        this.currentSong.onpause = () => {
+            this.pause()
+            // console.log("ok")
+        }
+        this.currentSong.onplay = () => {
+            this.play()
+            // console.log("ok")
+        }
     }
     // song controller
     play() {
@@ -81,12 +89,21 @@ class MusicPlayer {
             this.currentSong.play()
             this.isPlaying = true
         }
+        this.client.setIsPlaying(true)
         if (this.first) {
             // this.process()
             this.currentSong.ontimeupdate = () => {
                 // update()
             }
             this.currentSong.onended = () => this.onended()
+            this.currentSong.onpause = () => {
+                this.pause()
+                // console.log("ok")
+            }
+            this.currentSong.onplay = () => {
+                this.play()
+                // console.log("ok")
+            }
             this.update(this.currentSongInfo)
             this.queueNext = this.getQueueSong()
             this.first = false
@@ -97,6 +114,7 @@ class MusicPlayer {
         if (this.isPlaying) {
             this.currentSong.pause()
             this.isPlaying = false
+            this.client.setIsPlaying(false)
         }
     }
     next(startPlaying = true) {

@@ -7,11 +7,22 @@
             "Jennifer Lopez",
             "Pitbull"
         ],
-        "credits": {
-            "Jennifer Lopez": ["Main Artist"],
-            "Pitbull": ["Featured Artist"],
-            "Nadir Khayat": ["Composer"]
-        },
+        "credits": [
+            {
+                "artist": "Jennifer Lopez",
+                "credit": ["Main Artist"],
+                "artistId": "artist113b"
+            },
+            {
+                "artist": "Pitbull",
+                "credit": ["Featured Artist"],
+                "artistId": "artist113c"
+            },
+            {
+                "artist": "Nadir Khayat",
+                "credit": ["Composer"]
+            }
+        ],
         "song_thumb": "/song_thumbs/on_the_floor.png"
     },
     {
@@ -21,11 +32,21 @@
         "artists": [
             "Marwa Loud"
         ],
-        "credits": {
-            "Marwa Loud": ["Main Artist"],
-            "Kevin Kali": ["Composer"],
-            "Soriba Konde": ["Composer"]
-        },
+        "credits": [
+            {
+                "artist": "Marwa Loud",
+                "credit": ["Main Artist"],
+                "artistId": "artist183a"
+            },
+            {
+                "artist": "Kevin Kali",
+                "credit": ["Composer"]
+            },
+            {
+                "artist": "oriba Konde",
+                "credit": ["Composer"]
+            }
+        ],
         "song_thumb": "/song_thumbs/bad_boy.png"
     },
     {
@@ -35,11 +56,21 @@
         "artists": [
             "Iyaz"
         ],
-        "credits": {
-            "Iyaz": ["Main Artist"],
-            "J.R. Rotem": ["Producer"],
-            "Jason Desrouleaux": ["Writer"]
-        },
+        "credits": [
+            {
+                "artist": "Iyaz",
+                "credit": ["Main Artist"],
+                "artistId": "artist123a"
+            },
+            {
+                "artist": "J.R. Rotem",
+                "credit": ["Producer"]
+            },
+            {
+                "artist": "Jason Desrouleaux",
+                "credit": ["Writer"]
+            }
+        ],
         "song_thumb": "/song_thumbs/replay.png"
     }
 ]

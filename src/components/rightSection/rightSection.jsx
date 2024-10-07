@@ -53,10 +53,10 @@ RightSection.propTypes = {
 }
 
 const SongBody = ({songData}) => {
-    console.log(songData)
+    // console.log(songData)
     const [mainArtistInfo, setMainArtistInfo] = useState(null)
     useEffect(() => {
-        console.log(mainArtistInfo)
+        // console.log(mainArtistInfo)
     }, [mainArtistInfo])
     useEffect(() => {
         songData && setMainArtistInfo(artist_details[songData.artists[0]])
@@ -85,8 +85,9 @@ const SongBody = ({songData}) => {
                 </div>
             </div>
             <div className={styles.about_artist}>
-                <div className={mainArtistInfo && mainArtistInfo.type == 'circle' && styles.circle_artist} style={mainArtistInfo && {backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%), url(${mainArtistInfo.cover})`}}>
+                <div className={mainArtistInfo && mainArtistInfo.type == 'circle' ? styles.circle_artist : ""} style={mainArtistInfo && mainArtistInfo.type == 'circle' ? {background: "linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%)"} : mainArtistInfo && {backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%), url(${mainArtistInfo.cover})`}}>
                     <p>About the artist</p>
+                    {mainArtistInfo && mainArtistInfo.type == 'circle' && (<img className={styles.circle_artist_cover} src={mainArtistInfo.cover}/>)}
                 </div>
                 <div className={styles.artist_info}>
                     <div className={styles.artist_name}><p>{songData && songData.artists[0]}</p></div>
@@ -107,13 +108,13 @@ const SongBody = ({songData}) => {
                     <div>Show all</div>
                 </div>
                 {
-                    songData && Object.keys(songData.credits).map((key, idx) => (
+                    songData && songData.credits.map((artistInfo, idx) => (
                         <div key={idx}>
                             <div>
-                                <div><span>{key}</span></div>
+                                <div>{artistInfo.artistId ? <span>{artistInfo.artist}</span> : artistInfo.artist}</div>
                                 <div>
                                     {
-                                        songData.credits[key].join(',#$').split('#$').map((type, idx) => (
+                                        artistInfo.credit.join(',#$').split('#$').map((type, idx) => (
                                             <Fragment key={idx}>
                                                 <span>{type}</span>&nbsp;
                                             </Fragment>
@@ -121,7 +122,7 @@ const SongBody = ({songData}) => {
                                     }
                                 </div>
                             </div>
-                            <SecondaryButton text='Follow'/>
+                            {artistInfo.artistId && <SecondaryButton text='Follow'/> }
                         </div>
                     ))
                 }

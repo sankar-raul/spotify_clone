@@ -85,7 +85,7 @@ const SongBody = ({songData}) => {
                 </div>
             </div>
             <div className={styles.about_artist}>
-                <div className={mainArtistInfo && mainArtistInfo.type == 'circle' ? styles.circle_artist : ""} style={mainArtistInfo && mainArtistInfo.type == 'circle' ? {background: "linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%)"} : mainArtistInfo && {backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%), url(${mainArtistInfo.cover})`}}>
+                <div className={mainArtistInfo && mainArtistInfo.type == 'circle' ? styles.circle_artist : ""} style={mainArtistInfo && mainArtistInfo.type == 'circle' ? {background: "none"} : mainArtistInfo && {backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%), url(${mainArtistInfo.cover})`}}>
                     <p>About the artist</p>
                     {mainArtistInfo && mainArtistInfo.type == 'circle' && (<img className={styles.circle_artist_cover} src={mainArtistInfo.cover}/>)}
                 </div>

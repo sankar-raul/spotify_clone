@@ -16,7 +16,7 @@ class MusicPlayer {
         this.update = update
         this.isPlaying = false
         this._duration = this.currentSong.duration
-        this.update(this.currentSongInfo)
+        this.update({...this.currentSongInfo, queue: songList[this.queueNext]})
     }
     get played() {
         return 100 / (this.duration / this.currentSong.currentTime)
@@ -104,8 +104,8 @@ class MusicPlayer {
                 this.play()
                 // console.log("ok")
             }
-            this.update(this.currentSongInfo)
             this.queueNext = this.getQueueSong()
+            // this.update({...this.currentSongInfo, queue: this.songList[this.queueNext]})
             this.first = false
             this.songStack.push(this.currentSongIndex)
         }
@@ -129,13 +129,14 @@ class MusicPlayer {
         this.currentSongIndex = this.queueNext
         this.songStack.push(this.currentSongIndex)
         this.process()
-        this.update(this.currentSongInfo)
         startPlaying && this.currentSong.play()
         this.isPlaying = true
         this.queueNext = this.getQueueSong()
+        this.update({...this.currentSongInfo, queue: this.songList[this.queueNext]})
     }
     prev() {
         this.isPlaying && this.currentSong.pause()
+        this.queueNext = this.currentSongIndex
         this.songStack.pop()
         const prev_idx = this.songStack.pop()
         if (!prev_idx) {
@@ -144,7 +145,7 @@ class MusicPlayer {
             this.currentSongIndex = prev_idx
         }
         this.process()
-        this.update(this.currentSongInfo)
+        this.update({...this.currentSongInfo, queue: this.songList[this.queueNext]})
         this.currentSong.play()
         this.isPlaying = true
     }

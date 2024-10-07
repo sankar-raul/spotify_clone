@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 
-const SecondaryButton = ({text, onClick, styles}) => {
+const SecondaryButton = ({onClick = () => {}, styles}) => {
     const [ isHovered, setIsHovered ] = useState(false)
     const defaultStyles = {
     padding: '3px 15px',
@@ -18,13 +18,12 @@ const SecondaryButton = ({text, onClick, styles}) => {
     transform: isHovered ? 'scale(1.04)' : 'scale(1)'
     }
     return (
-        <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => {setIsHovered(false)}} onClick={onClick} style={{...defaultStyles, ...styles}}>
-            {text}
+        <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => {setIsHovered(false)}} onClick={() => onClick()} style={{...defaultStyles, ...styles}}>
+            Follow
         </div>
     )
 }
 SecondaryButton.propTypes = {
-    text: PropTypes.string.isRequired,
     onClick: PropTypes.func,
     styles: PropTypes.object
 }

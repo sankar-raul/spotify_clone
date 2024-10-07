@@ -75,6 +75,7 @@
     overflow-y: auto;
     scroll-behavior: smooth;
     position: relative;
+    padding-bottom: 16px;
 }
 .main::-webkit-scrollbar {
     width: 0;
@@ -250,9 +251,6 @@
  background-color: var(--main-bg);
  border-radius: var(--radius);
 }
-.credits > * {
-    /* border: 1px solid red; */
-}
 .credit_title {
     display: flex;
     justify-content: space-between;
@@ -303,7 +301,7 @@
 .credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(2) {
     font-size: 13px;
     font-weight: 400;
-    /* color: var(--secondary-color); */
+    color: #c3c3c3;
     filter: invert(5%);
 }
 .credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(2) > span {
@@ -324,5 +322,118 @@
     -webkit-user-drag: none;
 }
 .next_queue {
-
+    background-color: var(--main-bg);
+    border-radius: var(--radius);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.queue_title {
+    display: flex;
+    justify-content: space-between;
+}
+.queue_title > span:nth-child(1) {
+    font-weight: 700;
+    cursor: text;
+    user-select: text;
+}
+.queue_title > span:nth-child(2) {
+    font-size: 13px;
+    padding-left: 10px;
+    color: var(--secondary-color);
+    font-weight: 600;
+    transition: transform .2s ease, text-decoration 0s;
+    cursor: pointer;
+}
+.queue_title > span:nth-child(2):hover {
+    color: #fff;
+    transform: scale(1.02);
+    text-decoration: underline 1px solid #fff;
+}
+.queue_next {
+    margin: auto -8px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    padding: 8px;
+    gap: 10px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    overflow: hidden;
+}
+.queue_next > div:nth-child(1) {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-image: linear-gradient(#0004, #0008);
+    background-position: center center;
+    background-size: cover;
+    border-radius: 4px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    background-color: transparent;
+    background-blend-mode: multiply;
+}
+.queue_next:hover {
+    background-color: var(--main-bg);
+}
+.queue_next:hover :is(div:nth-child(2) > span:nth-child(3), .queue_btn) {
+    opacity: 1;
+}
+.queue_next:hover > div:nth-child(1) {
+    background-color: #0006;
+}
+.queue_btn {
+    height: 22px;
+    aspect-ratio: 1 / 1;
+    /* background-color: red; */
+    background-image: url('/play-btn.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 85%;
+    border-radius: 50%;
+    opacity: 0;
+}
+.queue_next > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding-right: 34px;
+    overflow: hidden;
+}
+.queue_next > div:nth-child(2) > span:nth-child(1) {
+    font-size: 1rem;
+    font-weight: 500;
+}
+.queue_next > div:nth-child(2) > span:nth-child(2) {
+    font-size: 13px;
+}
+.queue_next > div:nth-child(2) > span:nth-child(2) > span:hover {
+    text-decoration: underline 1px solid #fff;
+}
+.queue_next > div:nth-child(2) > span:nth-child(3) {
+    position: absolute;
+    right: 4px;
+    width: 24px;
+    height: 15px;
+    background-image: url('/three-dots.svg');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    /* background-color: red; */
+    background-position: center center;
+    filter: invert(30%);
+}
+.queue_next > div:nth-child(2) > span:nth-child(3):hover {
+    filter: invert(0);
+}
+.queue_next > div:nth-child(2) > span:is(:nth-child(1), :nth-child(2)) {
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    line-clamp: 1;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }

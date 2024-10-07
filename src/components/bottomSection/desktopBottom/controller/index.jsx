@@ -38,7 +38,7 @@ export default function Controller({updateSongDetails}) {
         setIsPlaying(true)
     }
     useEffect(() => {
-        // console.log(songData)
+        console.log(songData)
         songData && updateSongDetails(songData)
     }, [songData])
     useEffect(() => {

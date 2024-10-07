@@ -95,7 +95,7 @@ const SongBody = ({songData}) => {
                         <div>
                         {mainArtistInfo && mainArtistInfo.listeners} monthly listeners
                         </div>
-                        <SecondaryButton text='Follow'/>
+                        <SecondaryButton />
                     </div>
                     <div className={styles.artist_description}>
                         {mainArtistInfo && mainArtistInfo.description}
@@ -122,12 +122,35 @@ const SongBody = ({songData}) => {
                                     }
                                 </div>
                             </div>
-                            {artistInfo.artistId && <SecondaryButton text='Follow'/> }
+                            {artistInfo.artistId && <SecondaryButton /> }
                         </div>
                     ))
                 }
             </div>
-            <div className={styles.next_queue}>next queue</div>
+            <div className={styles.next_queue}>
+                <div className={styles.queue_title}>
+                    <span>Next in queue</span>
+                    <span>Open queue</span>
+                </div>
+                <div className={styles.queue_next}>
+                    <div style={songData && {backgroundImage: `url(${songData.queue.song_thumb})`}}>
+                        <div className={styles.queue_btn}></div>
+                    </div>
+                    <div>
+                        <span>{songData && songData.queue.title}</span>
+                        <span>
+                        {
+                            songData && songData.queue.artists.join(',#$').split('#$').map((type, idx) => (
+                                <Fragment key={idx}>
+                                    <span>{type}</span>&nbsp;
+                                </Fragment>
+                            ))
+                        }
+                        </span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

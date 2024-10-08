@@ -1,3 +1,4 @@
+
 class MusicPlayer {
     constructor(songList, update, client) {
         this.songList = songList
@@ -17,6 +18,7 @@ class MusicPlayer {
         this.isPlaying = false
         this._duration = this.currentSong.duration
         this.update({...this.currentSongInfo, queue: songList[this.queueNext]})
+        this.setUpAccessibility()
     }
     get played() {
         return 100 / (this.duration / this.currentSong.currentTime)
@@ -33,6 +35,7 @@ class MusicPlayer {
     get duration() {
         return this.currentSong.duration
     }
+
     set duration(time) {
         this._duration = time
     }
@@ -85,6 +88,7 @@ class MusicPlayer {
     }
     // song controller
     play() {
+        document.title = `${this.currentSongInfo.title} • ${this.currentSongInfo.artists.join(',$#').split('$#').join(' ')}`
         if (!this.isPlaying) {
             this.currentSong.play()
             this.isPlaying = true
@@ -111,6 +115,7 @@ class MusicPlayer {
         }
     }
     pause() {
+        document.title = "Spotify - Web Player: Music for everyone"
         if (this.isPlaying) {
             this.currentSong.pause()
             this.isPlaying = false
@@ -133,6 +138,7 @@ class MusicPlayer {
         this.isPlaying = true
         this.queueNext = this.getQueueSong()
         this.update({...this.currentSongInfo, queue: this.songList[this.queueNext]})
+        this.setMediaSessionMetadata()
     }
     prev() {
         this.isPlaying && this.currentSong.pause()
@@ -148,6 +154,7 @@ class MusicPlayer {
         this.update({...this.currentSongInfo, queue: this.songList[this.queueNext]})
         this.currentSong.play()
         this.isPlaying = true
+        this.setMediaSessionMetadata()
     }
     getQueueSong() {
         if (this.isSuffle) {
@@ -156,6 +163,26 @@ class MusicPlayer {
             return this.currentSongIndex < this.songListLength - 1 ? this.currentSongIndex + 1 : 0
         }
     }
+
+
+    // accessibility
+
+    setMediaSessionMetadata() {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: this.currentSongInfo.title,
+            artist: this.currentSongInfo.artists.join(',$#').split('$#').join(' '),
+            artwork: [
+              { src: this.currentSongInfo.song_thumb, sizes: "512x512", type: "image/png" }
+            ]
+          })
+      }
+    setUpAccessibility() {
+    this.setMediaSessionMetadata()
+      navigator.mediaSession.setActionHandler('previoustrack', () => this.prev())
+    
+      navigator.mediaSession.setActionHandler('nexttrack', () => this.next())
+    }
+    
 }
 
 export default MusicPlayer

@@ -52,7 +52,7 @@ export default function Controller({updateSongDetails}) {
     }
 
     useEffect(() => {
-        console.log(songDuration)
+        // console.log(songDuration)
         setDurationTimeStamp(`${Math.floor(songDuration / 60)}:${Math.floor(songDuration % 60)}`)
         played()
     }, [songDuration])

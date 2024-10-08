@@ -6,7 +6,7 @@
     align-items: center;
 }
 .deskBottom > * {
-    border: 1px solid var(--bg);
+    /* border: 1px solid var(--bg); */
     height: 100%;
 }
 .navigators {

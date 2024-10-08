@@ -34,7 +34,6 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    background-color: #121212;
 }
 .threeDots, .closeBtn {
     height: 32px;

@@ -9,7 +9,7 @@
     align-items: center;
 }
 .controllers > * {
-    border: 1px solid var(--bg);
+    /* border: 1px solid var(--bg); */
     overflow: hidden;
 }
 .controll_buttons {
@@ -19,10 +19,10 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    max-height: 40px;
+    max-height: 50px;
 }
 .controll_button {
-    height: 85%;
+    height: 65%;
     aspect-ratio: 1 / 1;
     /* background-color: red; */
     /* border: 1px solid var(--bg); */

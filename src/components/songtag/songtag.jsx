@@ -5,7 +5,7 @@ import './songtag.css'
 const Songtag = ({song, state}) => {
     const style = {
         backgroundImage: `url(${song.image})`,
-        borderRadius: song.captions[0] === "Artist" ? "50%" : "6px"
+        '--rad': song.captions[0] === "Artist" ? "50%" : "6px"
     }
     return (
         <div className="songTag" name={state} key={song.keY}>

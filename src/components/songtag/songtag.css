@@ -13,16 +13,37 @@
 }
 .songTag > .image {
     /* background-color: red; */
+    --rad: 6px;
     align-self: center;
     background-size: cover;
     background-repeat: no-repeat;
     width: 85.7%;
-    border-radius: 6px;
+    border-radius: var(--rad);
     aspect-ratio: 1 / 1;
     background-position: center center;
     display: grid;
     place-items: center;
     background-blend-mode: multiply;
+    position: relative;
+}
+.songTag > .image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* background-blend-mode: unset; */
+    background-color: white;
+    filter: invert(90%);
+    z-index: -1;
+    border-radius: var(--rad);
+    animation: animate 2s linear infinite;
+}
+@keyframes animate {
+    50% {
+        opacity: .4;
+    }
 }
 .songTag > .image > .play-btn-tag {
     height: 45%;

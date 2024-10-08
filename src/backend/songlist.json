@@ -1,5 +1,33 @@
 [
     {
+        "title": "Dancin - Krono Remix",
+        "src": "/songs/Dancin Krono.mp3",
+        "isLiked": true,
+        "artists": [
+            "Aaron Smith",
+            "Luvli",
+            "Krono"
+        ],
+        "credits": [
+            {
+                "artist": "Aaron Smith",
+                "credit": ["Main Artist", "Writer"],
+                "artistId": "artist121b"
+            },
+            {
+                "artist": "Luvli",
+                "credit": ["Featured Artist"],
+                "artistId": "artist115d"
+            },
+            {
+                "artist": "Krono",
+                "credit": ["Remixer"],
+                "artistId": "artist113e"
+            }
+        ],
+        "song_thumb": "/song_thumbs/dancin_krono.png"
+    },
+    {
         "title": "On The Floor",
         "src": "/songs/On The Floor.mp3",
         "isLiked": false,

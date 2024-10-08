@@ -42,7 +42,7 @@ function App() {
       // setCanAutoExpandLeft(newState == "expand")
       return newState
     })
-    console.log("clicked")
+    // console.log("clicked")
     // rearrangeUI()
   }
 

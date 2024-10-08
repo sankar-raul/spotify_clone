@@ -72,7 +72,6 @@ class MusicPlayer {
         this.currentSongInfo = this.songList[this.currentSongIndex]
         this.currentSong.src = this.currentSongInfo.src
         this.currentSong.load()
-        
         // console.log("op")
         this.currentSong.onended = () => this.onended()
         this.currentSong.onpause = () => {
@@ -196,6 +195,7 @@ class MusicPlayer {
       navigator.mediaSession.setActionHandler('nexttrack', () => this.next())
       this.currentSong.onloadedmetadata = () => {
             this.client.setSongDuration(this.currentSong.duration)
+            this.currentTime = 0
         }
         this.currentSong.ontimeupdate = () => {
             this.client.setCurrentTime(this.currentTime)

@@ -10,7 +10,7 @@
     height: 100%;
 }
 .navigators {
-    width: clamp(240px, 30%, 340px);
+    width: clamp(240px, 30%, 400px);
 }
 
 

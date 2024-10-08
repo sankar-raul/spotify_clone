@@ -1,14 +1,16 @@
 .songplate {
     display: flex;
     flex-wrap: nowrap;
-    width: clamp(240px, 30%, 340px);
+    width: clamp(240px, 30%, 400px);
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 8px;
+    /* overflow: hidden; */
+    position: relative;
 }
 .songplate > * {
-    border: 1px solid var(--bg);
+    /* border: 1px solid var(--bg); */
 }
 
 .songplate > div:nth-child(1) {
@@ -18,34 +20,55 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    border-radius: var(--radius);
+    border-radius: 4px;
     cursor: pointer;
 }
 .songplate_details {
     display: flex;
     justify-content: space-between;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     align-items: center;
+    overflow: hidden;
+    gap: 10px;
+}
+.songplate_details::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 38px;
+    width: 15px;
+    pointer-events: none;
+    z-index: 1;
+    background: linear-gradient(90deg, transparent, #000 90%);
 }
 .songplate_details > * {
-    border: 1px solid var(--bg);
+    /* border: 1px solid var(--bg); */
     overflow: hidden;
 }
 .heart_icon {
     width: 24px;
-    aspect-ratio: 1 / 1;
+    height: 24px;
+    /* aspect-ratio: 1 / 1; */
     background-image: url('/add_song.svg');
     background-repeat: no-repeat;
-    background-size: 70%;
+    background-size: 80%;
     border-radius: 50%;
     background-position: center center;
     position: relative;
     cursor: pointer;
+    opacity: .8;
+    transition: .2;
+    z-index: 1;
+}
+.heart_icon:hover {
+    opacity: 1;
 }
 .songplate_details > div:nth-child(1) {
     position: relative;
     white-space: nowrap;
     flex-grow: 1;
+    width: 100%;
 }
 .songplate_details > div:nth-child(1) > div:nth-child(1) > span {
     font-weight: 600;
@@ -73,7 +96,6 @@
     right: 0;
     height: 100%;
     width: 20px;
-    background: linear-gradient(90deg, transparent, #000);
     pointer-events: none;
     /* transform: translate(-100%); */
 }

@@ -72,9 +72,7 @@ class MusicPlayer {
         this.currentSongInfo = this.songList[this.currentSongIndex]
         this.currentSong.src = this.currentSongInfo.src
         this.currentSong.load()
-        this.currentSong.ontimeupdate = () => {
-            
-        }
+        
         // console.log("op")
         this.currentSong.onended = () => this.onended()
         this.currentSong.onpause = () => {
@@ -96,9 +94,6 @@ class MusicPlayer {
         this.client.setIsPlaying(true)
         if (this.first) {
             // this.process()
-            this.currentSong.ontimeupdate = () => {
-                // update()
-            }
             this.currentSong.onended = () => this.onended()
             this.currentSong.onpause = () => {
                 this.pause()
@@ -152,6 +147,7 @@ class MusicPlayer {
         }
         this.process()
         this.update({...this.currentSongInfo, queue: this.songList[this.queueNext]})
+        
         this.currentSong.play()
         this.isPlaying = true
         this.setMediaSessionMetadata()
@@ -166,7 +162,6 @@ class MusicPlayer {
 
 
     // accessibility
-
     setMediaSessionMetadata() {
         navigator.mediaSession.metadata = new MediaMetadata({
             title: this.currentSongInfo.title,
@@ -177,12 +172,36 @@ class MusicPlayer {
           })
       }
     setUpAccessibility() {
+    
+      // key controllers
+      document.onkeydown = (e) => {
+        if (e.code === 'Space') {
+            this.isPlaying ? this.pause() : this.play()
+        } else if (e.code === 'ArrowRight') {
+            if (this.currentTime + 5 >= this.duration) {
+                this.next()
+            } else {
+                this.currentTime += 5
+            }
+        } else if (e.code === 'ArrowLeft') {
+            this.currentTime -= 5
+        } else {
+            // console.log(e.code)
+        }
+    }
+
     this.setMediaSessionMetadata()
       navigator.mediaSession.setActionHandler('previoustrack', () => this.prev())
     
       navigator.mediaSession.setActionHandler('nexttrack', () => this.next())
+      this.currentSong.onloadedmetadata = () => {
+            this.client.setSongDuration(this.currentSong.duration)
+        }
+        this.currentSong.ontimeupdate = () => {
+            this.client.setCurrentTime(this.currentTime)
+        }
     }
-    
+
 }
 
 export default MusicPlayer

@@ -13,6 +13,11 @@ export default function Controller({updateSongDetails}) {
     const [ Player, setPlayer ] = useState(null)
     const [ repeatState, setRepeatState ] = useState(0)
     const [songData, setSongData] = useState(null)
+    const [currentTime, setCurrentTime] = useState(0)
+    const [songDuration, setSongDuration] = useState(0)
+    const [playedPercentage, setPlayedPercentage] = useState(0)
+    const [currentTimeStamp, setCurrentTimeStamp] = useState('0:00')
+    const [durationTimeStamp, setDurationTimeStamp] = useState('0:00')
     const handlePlay = () => {
         setIsPlaying(prev => !prev)
     }
@@ -37,6 +42,28 @@ export default function Controller({updateSongDetails}) {
         Player.prev()
         setIsPlaying(true)
     }
+    const onChange = (element) => {
+        setCurrentTime(element.target.value)
+        if (Player) Player.currentTime = element.target.value
+    }
+    const played = () => {
+        let playedPercentage = (currentTime / songDuration) * 100
+        setPlayedPercentage(playedPercentage)
+    }
+
+    useEffect(() => {
+        console.log(songDuration)
+        setDurationTimeStamp(`${Math.floor(songDuration / 60)}:${Math.floor(songDuration % 60)}`)
+        played()
+    }, [songDuration])
+    useEffect(() => {
+        // console.log(currentTime)
+        played()
+        setCurrentTimeStamp(`${Math.floor(currentTime / 60)}:${Math.floor(currentTime % 60)}`)
+    }, [currentTime])
+    useEffect(() => {
+        // console.log(playedPercentage)
+    }, [playedPercentage])
     useEffect(() => {
         songData && updateSongDetails(songData)
     }, [songData])
@@ -54,7 +81,7 @@ export default function Controller({updateSongDetails}) {
         Player.repeatState = repeatState
     }, [repeatState])
     useEffect(() => {
-        !Player && setPlayer(new MusicPlayer(songList, update, {setIsPlaying}))
+        !Player && setPlayer(new MusicPlayer(songList, update, {setIsPlaying, setCurrentTime, setSongDuration}))
     }, [])
     return (
         <div className={styles.controllers}>
@@ -70,7 +97,13 @@ export default function Controller({updateSongDetails}) {
                     </div>
                 </div>
                 <div className={styles.song_slider}>
-        slider
+                    <div className={styles.currentTime}>{currentTimeStamp}</div>
+                    <div className={styles.slider}>
+                        <div className={styles.slider_input}>
+                        <input style={{backgroundImage: `linear-gradient(to right, var(--deep-color) ${playedPercentage}%, var(--light-color) ${playedPercentage}%)`}} type="range" value={currentTime} max={songDuration} onChange={function(ok) {onChange(ok)}}/>
+                        </div>
+                    </div>
+                    <div className={styles.songDuration}>{durationTimeStamp}</div>
                 </div>
             </div>
     )

@@ -1,0 +1,5 @@
+@keyframes animate {
+    50% {
+        opacity: .4;
+    }
+}

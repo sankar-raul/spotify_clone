@@ -175,9 +175,9 @@
     height: 3px;
     --light-color: #b3b3b356;
     --deep-color: #fff;
+    background-color: var(--light-color);
     outline: none;
     /* padding: 10px; */
-    background: linear-gradient(90deg, var(--deep-color) 0% 50%,var(--light-color) 50% 100%);
 }
 .slider > .slider_input > input:hover {
     --deep-color: var(--brand-color);

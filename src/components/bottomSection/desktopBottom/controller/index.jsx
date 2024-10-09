@@ -65,7 +65,7 @@ export default function Controller({updateSongDetails}) {
         // console.log(playedPercentage)
     }, [playedPercentage])
     useEffect(() => {
-        songData && updateSongDetails(songData)
+        songData && updateSongDetails({nextSong: nextSong, ...songData})
     }, [songData])
     useEffect(() => {
         if (!Player) return

@@ -133,7 +133,7 @@ const SongBody = ({songData}) => {
                     <span>Open queue</span>
                 </div>
                 <div className={styles.queue_next}>
-                    <div style={songData && {backgroundImage: `url(${songData.queue.song_thumb})`}}>
+                    <div onClick={() => songData && songData.nextSong()} style={songData && {backgroundImage: `url(${songData.queue.song_thumb})`}}>
                         <div className={styles.queue_btn}></div>
                     </div>
                     <div>

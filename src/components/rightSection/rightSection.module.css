@@ -97,6 +97,25 @@
     border-radius: var(--radius);
     aspect-ratio: 1 / 1;
     cursor: pointer;
+    position: relative;
+}
+.song_thumb::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-135deg, #fff6, #fffb);
+    animation: animate 2s linear infinite;
+    filter: invert(85%);
+    border-radius: inherit;
+    z-index: -1;
+}
+@keyframes animate {
+    50% {
+        opacity: .5;
+    }
 }
 .song_info {
     /* border: 1px solid red; */

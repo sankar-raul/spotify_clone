@@ -38,12 +38,7 @@
     filter: invert(90%);
     z-index: -1;
     border-radius: var(--rad);
-    animation: animate 2s linear infinite;
-}
-@keyframes animate {
-    50% {
-        opacity: .4;
-    }
+    animation: animate 2s linear 20;
 }
 .songTag > .image > .play-btn-tag {
     height: 45%;

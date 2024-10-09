@@ -173,7 +173,7 @@
     -webkit-appearance: none;
     appearance: none;
     height: 3px;
-    --light-color: #b3b3b356;
+    --light-color: #ffffff22;
     --deep-color: #fff;
     background-color: var(--light-color);
     outline: none;

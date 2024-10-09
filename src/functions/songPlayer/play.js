@@ -109,22 +109,23 @@ class MusicPlayer {
         }
     }
     pause() {
+        console.log("ok")
         document.title = "Spotify - Web Player: Music for everyone"
         if (this.isPlaying) {
             this.currentSong.pause()
             this.isPlaying = false
             this.client.setIsPlaying(false)
+            console.log("okp")
         }
     }
     next(startPlaying = true) {
-        this.isPlaying && this.currentSong.pause()
         if (this.repeatState == 2) {
-            this.pause()
-            this.currentTime = 0
-            this.play()
-            this.currentSong.onended = () => this.onended()
+                this.currentTime = 0
+                this.play()
+                this.currentSong.onended = () => this.onended()
             return
         }
+        this.isPlaying && this.currentSong.pause()
         this.currentSongIndex = this.queueNext
         this.songStack.push(this.currentSongIndex)
         this.process()

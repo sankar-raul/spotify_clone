@@ -109,13 +109,11 @@ class MusicPlayer {
         }
     }
     pause() {
-        console.log("ok")
         document.title = "Spotify - Web Player: Music for everyone"
         if (this.isPlaying) {
             this.currentSong.pause()
             this.isPlaying = false
             this.client.setIsPlaying(false)
-            console.log("okp")
         }
     }
     next(startPlaying = true) {

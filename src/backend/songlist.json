@@ -28,6 +28,30 @@
         "song_thumb": "/song_thumbs/dancin_krono.png"
     },
     {
+        "title": "Blinding Lights",
+        "src": "/songs/Blinding Lights.mp3",
+        "isLiked": true,
+        "artists": [
+            "The Weeknd"
+        ],
+        "credits": [
+            {
+                "artist": "The Weeknd",
+                "credit": ["Main Artist", "Producer"],
+                "artistId": "artist129t"
+            },
+            {
+                "artist": "Max Martin",
+                "credit": ["Composer", "Producer"]
+            },
+            {
+                "artist": "Oscar Holter",
+                "credit": ["Composer", "Producer"]
+            }
+        ],
+        "song_thumb": "/song_thumbs/blinding_lights.png"
+    },
+    {
         "title": "On The Floor",
         "src": "/songs/On The Floor.mp3",
         "isLiked": false,

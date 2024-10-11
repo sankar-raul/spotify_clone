@@ -52,6 +52,34 @@
         "song_thumb": "/song_thumbs/blinding_lights.png"
     },
     {
+        "title": "1, 2, 3 (feat. Jason Derulo & De La Ghetto)",
+        "src": "/songs/1, 2, 3.mp3",
+        "isLiked": true,
+        "artists": [
+            "Sofía Reyes",
+            "Jason Derulo",
+            "De La Ghetto"
+        ],
+        "credits": [
+            {
+                "artist": "Sofía Reyes",
+                "credit": ["Main Artist", "Composer", "Writer"],
+                "artistId": "artist199t"
+            },
+            {
+                "artist": "Jason Derulo",
+                "credit": ["Main Artist", "Composer", "Writer"],
+                "artistId": "artist100t"
+            },
+            {
+                "artist": "De La Ghetto",
+                "credit": ["Main Artist", "Composer", "Writer"],
+                "artistId": "artist104r"
+            }
+        ],
+        "song_thumb": "/song_thumbs/1,2,3.png"
+    },
+    {
         "title": "On The Floor",
         "src": "/songs/On The Floor.mp3",
         "isLiked": false,

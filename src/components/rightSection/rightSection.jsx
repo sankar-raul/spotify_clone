@@ -32,7 +32,7 @@ const RightSection = ({ state, handleWidth, handleRightCollapse, songData }) => 
     return (
         <section style={{display: display}} ref={rightRef} className={styles.rightSection}>
             <div className={styles.heading}>
-                <div className={styles.song_heading}>{songData && songData.title}</div>
+                <div className={styles.song_heading}><p>{songData && songData.title}</p></div>
                 <div className={styles.navigator}>
                     <div className={styles.threeDots}>
                 </div>
@@ -111,7 +111,7 @@ const SongBody = ({songData}) => {
                     songData && songData.credits.map((artistInfo, idx) => (
                         <div key={idx}>
                             <div>
-                                <div>{artistInfo.artistId ? <span>{artistInfo.artist}</span> : artistInfo.artist}</div>
+                                <div>{<span name={artistInfo.artistId ? '': "nonArtist"}>{artistInfo.artist}</span>}</div>
                                 <div>
                                     {
                                         artistInfo.credit.join(',#$').split('#$').map((type, idx) => (

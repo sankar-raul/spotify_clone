@@ -15,16 +15,38 @@
     justify-content: space-between;
     /* box-shadow: 0px 4px 10px 0px #0f0f0f; */
     z-index: 1;
+    overflow: hidden;
 }
 .song_heading {
     /* border: 1px solid var(--bg); */
     display: flex;
     align-items: center;
     font-size: 1rem;
+    overflow: hidden;
     cursor: pointer;
     font-weight: 800;
     filter: invert(5%);
     text-decoration: underline 1.5px solid transparent;
+    flex-grow: 1;
+    position: relative;
+}
+.song_heading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: linear-gradient(to right, transparent, #040404);
+    height: 100%;
+    width: 15px;
+    pointer-events: none;
+}
+.song_heading > p {
+    display: -webkit-box;
+    line-clamp: 1;
+    white-space: nowrap;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 .song_heading:hover {
     text-decoration: underline 1.5px solid #fff;
@@ -136,10 +158,9 @@
     top: 0;
     right: 0;
     height: 100%;
-    width: 30px;
+    width: 15px;
     pointer-events: none;
     background: linear-gradient(90deg, transparent, #0f0f0f);
-    transform: translate(2px);
 }
 .song_title > * {
     white-space: nowrap;
@@ -302,18 +323,22 @@
     flex-direction: column;
     justify-content: center;
     gap: 2px;
+    flex-grow: 1;
 }
 .credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) {
     font-weight: 400;
 }
 .credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) {
-    cursor: text;
 }
 .credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) > span {
     cursor: pointer;
     text-decoration: underline 1.5px solid transparent;
 }
-.credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) > span:hover {
+.credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) > span[name="nonArtist"] {
+    cursor: text;
+    user-select: text;
+}
+.credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) > span:not([name="nonArtist"]):hover {
     text-decoration: underline 1.5px solid #fff;
 }
 .credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(2) {
@@ -321,10 +346,17 @@
     font-weight: 400;
     color: #c3c3c3;
     filter: invert(5%);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
 }
 .credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(2) > span {
     cursor: text;
     user-select: text;
+    /* background-color: green; */
+    display: block;
 }
 .circle_artist {
     display: flex;
@@ -447,11 +479,7 @@
     filter: invert(0);
 }
 .queue_next > div:nth-child(2) > span:is(:nth-child(1), :nth-child(2)) {
-    display: -webkit-box;
-    text-overflow: ellipsis;
-    flex-grow: 1;
-    line-clamp: 1;
     overflow: hidden;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }

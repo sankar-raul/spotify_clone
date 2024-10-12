@@ -424,6 +424,19 @@
     background-color: transparent;
     background-blend-mode: multiply;
 }
+.queue_next > div:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(-135deg, #fff6, #fffb);
+    animation: animate 2s linear infinite;
+    filter: invert(85%);
+    border-radius: inherit;
+    z-index: -1;
+}
 .queue_next:hover {
     background-color: var(--main-bg);
 }
@@ -431,7 +444,7 @@
     opacity: 1;
 }
 .queue_next:hover > div:nth-child(1) {
-    background-color: #0006;
+    background-color: #0005;
 }
 .queue_btn {
     height: 22px;

@@ -14,9 +14,7 @@ const BottomSection = ({ handleRightCollapse, deviceType, updateSongInfo }) => {
             deviceType && device == 'desktop' ? (
                 <DesktopBottom updateSongInfo={(data) => updateSongInfo(data)} handleRightCollapse={handleRightCollapse}/>
             ) : (
-                <section className={styles.bottomSection}>
-                    {device}
-                </section>
+                <DesktopBottom updateSongInfo={(data) => updateSongInfo(data)} handleRightCollapse={handleRightCollapse}/>
             )
         }
     </>

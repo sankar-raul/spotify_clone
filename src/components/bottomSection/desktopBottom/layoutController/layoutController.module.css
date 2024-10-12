@@ -1,58 +1,57 @@
 .navigators {
-    width: clamp(240px, 30%, 400px); /* Dont modify it */
+    width: clamp(240px, 30%, 380px); /* Dont modify it */
     display: flex;
     align-items: center;
     justify-content: right;
     overflow: hidden;
     flex-wrap: nowrap;
     overflow: hidden;
-    padding-top: 10px;
+    height: 32px;
+    /* border: 1px solid red; */
+    margin-top: 10px;
+}
+.navigators > * {
+    /* border: 1px solid #fff5; */
 }
 .navigators > div {
     overflow: hidden;
-    border: 1px solid red;
-}
-.sound {
-    /* border: 1px solid var(--brand-color); */
-    width: clamp(40px, 40%, 160px);
-    overflow: hidden;
-    height: 30px;
+    cursor: pointer;
 }
 .navigators > div:not(.sound) {
-    height: 30px;
+    height: 100%;
     aspect-ratio: 1 / 1;
     /* border: 1px solid red; */
 }
 .dot {
     position: relative;
+    --display-dot: block;
 }
 .dot::before {
     content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
+    display: var(--display-dot);
     width: 4px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-color: var(--brand-color);
     transform: translate(-50%);
 }
-.fullScreen, .dot > .icon  {
-    --mask-color: var(--brand-color);
+.fullScreen, .icon  {
     mask-size: 16px;
     mask-repeat: no-repeat;
     mask-position: center center;
-    background-color: var(--mask-color);
+    background-color: #fff;
     mask-image: url('/now-playing.svg');
     transform: translateY(-8%);
-
+    transition: 0s;
 }
-.navigators > div:nth-child(1) {
-
-}
-.dot > .icon {
-    width: 100%;
+.icon {
+    /* width: 100%; */
     height: 100%;
+    border: 1px solid red;
+    aspect-ratio: 1 / 1;
 }
 .dot:nth-child(2) > .icon {
     mask-image: url('/lyrics.svg');
@@ -63,7 +62,29 @@
 .dot:nth-child(4) > .icon {
     mask-image: url('/devices.svg');
 }
-
+.dot:nth-child(6) > .icon {
+    mask-image: url('/mini-player.svg');
+}
 .fullScreen {
     mask-image: url('/fullscreen.svg');
+}
+.sound {
+    border: 1px solid var(--brand-color);
+    width: clamp(40px, 30%, 140px);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    transform: none;
+    align-items: center;
+}
+.sound input[type='range'] {
+    width: 100%;
+}
+.NormalIcon {
+    height: 100%;
+    /* background-color: red; */
+    aspect-ratio: 1 / 1;
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: center center;
 }

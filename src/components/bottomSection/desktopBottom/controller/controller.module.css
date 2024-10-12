@@ -6,6 +6,7 @@
     height: 100%;
     overflow: hidden;
     max-width: 722px;
+    /* min-width: 280px; */
     align-items: center;
 }
 .controllers > * {

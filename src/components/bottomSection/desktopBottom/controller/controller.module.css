@@ -169,19 +169,43 @@
     place-items: center;
     height: 12px;
 }
-.slider > .slider_input > input {
+.slider > .slider_input > input[type='range'] {
     width: 95%;
     -webkit-appearance: none;
     appearance: none;
     height: 3px;
     --light-color: #ffffff22;
     --deep-color: #fff;
-    background-color: var(--light-color);
+    background: transparent;
     outline: none;
+    border-radius: 20px;
+    position: relative;
     /* padding: 10px; */
 }
 .slider > .slider_input > input:hover {
     --deep-color: var(--brand-color);
+}
+.slider > .slider_input > input[type='range']::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-color);
+    border-radius: 20px;
+    z-index: -1;
+}
+.slider > .slider_input > input[type='range']::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--played-percentage);
+    height: 100%;
+    background-color: var(--deep-color);
+    border-radius: 20px;
+    z-index: -1;
 }
 .slider > .slider_input > input::-webkit-slider-thumb {
     -webkit-appearance: none;

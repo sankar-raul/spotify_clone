@@ -44,13 +44,12 @@
     mask-position: center center;
     background-color: #fff;
     mask-image: url('/now-playing.svg');
-    transform: translateY(-8%);
+    transform: translate(-3%, -2%);
     transition: 0s;
 }
 .icon {
     /* width: 100%; */
     height: 100%;
-    border: 1px solid red;
     aspect-ratio: 1 / 1;
 }
 .dot:nth-child(2) > .icon {
@@ -76,10 +75,79 @@
     display: flex;
     transform: none;
     align-items: center;
+    margin-left: -5px;
+}
+.sound > * {
+    /* border: 1px solid red; */
+}
+.sound > div:nth-child(2) {
+    display: grid;
+    place-items: center;
+    margin-left: -2px;
 }
 .sound input[type='range'] {
     width: 100%;
+    appearance: none;
+    --slider-track-height: 12px;
+    --thumb-width: 0;
+    --light-color: #ffffff22;
+    --deep-color: #fff;
+    background: transparent;
+    height: 3px;
+    -webkit-appearance: none;
+    border-radius: 20px;
+    position: relative;
+    --song-played-bar-width: 0px;
 }
+.sound input[type='range']::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-color);
+    border-radius: 20px;
+    z-index: -1;
+}
+.sound input[type='range']::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--song-played-bar-width);
+    height: 100%;
+    background-color: var(--deep-color);
+    border-radius: 20px;
+    z-index: -1;
+}
+.sound input[type='range']:hover {
+    --thumb-width: var(--slider-track-height);
+    --deep-color: var(--brand-color)
+}
+.sound input[type='range']::-webkit-slider-runnable-track {
+    /* background-color: red; */
+    /* color: red; */
+    height: var(--slider-track-height);
+}
+.sound input[type='range']::-webkit-slider-thumb {
+    background-color: #fff;
+    width: var(--thumb-width);
+    aspect-ratio: 1 / 1;
+    appearance: none;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-appearance: none;
+}
+.sound input[type='range']::-moz-range-thumb {
+    width: var(--thumb-width);
+    aspect-ratio: 1 / 1;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    appearance: none;
+    -moz-appearance: none;
+  }
 .NormalIcon {
     height: 100%;
     /* background-color: red; */

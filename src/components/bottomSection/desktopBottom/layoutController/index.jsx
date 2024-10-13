@@ -20,12 +20,14 @@ LayoutController.propTypes = {
     handleRightCollapse: PropTypes.func.isRequired
 }
 const SoundController = () => {
+    const [soundLevel, setSoundLevel] = useState(100)
 
+    const handleSoundChange = (e) => setSoundLevel(e.target.value)
     return (
         <div className={styles.sound}>
             <NormalIcon src='/sound.svg'/>
             <div>
-                <input type="range" name="sound" />
+                <input style={{'--song-played-bar-width': `${soundLevel}%`}} value={soundLevel} max={100} onChange={handleSoundChange} type="range" name="sound" />
             </div>
         </div>
     )

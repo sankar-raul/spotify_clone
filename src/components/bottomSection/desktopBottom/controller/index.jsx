@@ -100,7 +100,7 @@ export default function Controller({updateSongDetails}) {
                     <div className={styles.currentTime}>{currentTimeStamp}</div>
                     <div className={styles.slider}>
                         <div className={styles.slider_input}>
-                        <input style={{backgroundImage: `linear-gradient(to right, var(--deep-color) ${playedPercentage}%, var(--light-color) ${playedPercentage}%)`}} type="range" value={currentTime} max={songDuration} onChange={function(ok) {onChange(ok)}}/>
+                        <input style={{'--played-percentage': `${playedPercentage}%`}} type="range" value={currentTime} max={songDuration} onChange={function(e) {onChange(e)}}/>
                         </div>
                     </div>
                     <div className={styles.songDuration}>{durationTimeStamp}</div>

@@ -1,12 +1,17 @@
 import styles from './layoutController.module.css'
 import PropTypes from 'prop-types'
-import {useState, useEffect} from 'react'
+import {useEffect, useState} from 'react'
 
-const LayoutController = ({handleRightCollapse}) => {
-
+const LayoutController = ({handleRightCollapse, rightState}) => {
+    const [isSelected, setIsSelected] = useState(true)
+    // console.log(rightState)
+    useEffect(() => {
+        // console.log(rightState)
+        setIsSelected(rightState !== 'collapse')
+    }, [rightState])
     return (
         <div className={styles.navigators}>
-                <SpotiButton onClick={handleRightCollapse} selected/>
+                <SpotiButton onClick={handleRightCollapse} selected={isSelected}/>
                 <SpotiButton />
                 <SpotiButton />
                 <SpotiButton />
@@ -17,7 +22,8 @@ const LayoutController = ({handleRightCollapse}) => {
     )
 }
 LayoutController.propTypes = {
-    handleRightCollapse: PropTypes.func.isRequired
+    handleRightCollapse: PropTypes.func.isRequired,
+    rightState: PropTypes.string
 }
 const SoundController = () => {
     const [soundLevel, setSoundLevel] = useState(100)
@@ -56,6 +62,9 @@ const SpotiButton = ({onClick = null, selected = false}) => {
     const handleActive = () => {
         setIsActive(prev => !prev)
     }
+    useEffect(() => {
+        setIsSelected(selected)
+    }, [selected])
     return (
         <div style={{'--display-dot': isSelected ? 'block' : 'none', opacity: !isActive ? !isHovered ? isSelected ? '1' : '.8' : '1' : '.8'}} onClick={handleClick} onMouseEnter={handleHover} onMouseLeave={handleHover} onMouseDown={handleActive} onMouseUp={handleActive} className={styles.dot}>
             <div style={{backgroundColor: isSelected ? 'var(--brand-color)' : '#fff'}} className={styles.icon}></div>

@@ -112,7 +112,7 @@ function App() {
       <LeftSection handleWidth={handleWidth} handleLeftCollapse={handleLeftCollapse} state={leftState}/>
       <MainSection monitorResize={layoutChanged} handleWidth={handleWidth} />
       <RightSection state={rightState} songData={songInfo} handleRightCollapse={handleRightCollapse} handleWidth={handleWidth} />
-      {deviceType != null && <BottomSection updateSongInfo={(data) => updateSongInfo(data)} handleRightCollapse={handleRightCollapse} deviceType={deviceType} /> }
+      {deviceType != null && <BottomSection rightState={rightState} updateSongInfo={(data) => updateSongInfo(data)} handleRightCollapse={handleRightCollapse} deviceType={deviceType} /> }
       </div>
     </>
   )

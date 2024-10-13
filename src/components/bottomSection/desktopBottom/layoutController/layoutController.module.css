@@ -83,7 +83,8 @@
 .sound > div:nth-child(2) {
     display: grid;
     place-items: center;
-    margin-left: -2px;
+    margin-left: 0;
+    margin-right: 5px;
 }
 .sound input[type='range'] {
     width: 100%;

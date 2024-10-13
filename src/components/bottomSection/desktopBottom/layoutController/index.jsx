@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {useEffect, useState} from 'react'
 
 const LayoutController = ({handleRightCollapse, rightState}) => {
-    const [isSelected, setIsSelected] = useState(true)
+    const [isSelected, setIsSelected] = useState(rightState !== 'collapse')
     // console.log(rightState)
     useEffect(() => {
         // console.log(rightState)

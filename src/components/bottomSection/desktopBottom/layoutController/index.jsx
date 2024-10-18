@@ -1,5 +1,6 @@
 import styles from './layoutController.module.css'
 import PropTypes from 'prop-types'
+import { Vibe } from '../../../../functions/songPlayer/AudioController'
 import {useEffect, useState} from 'react'
 
 const LayoutController = ({handleRightCollapse, rightState}) => {
@@ -26,14 +27,19 @@ LayoutController.propTypes = {
     rightState: PropTypes.string
 }
 const SoundController = () => {
-    const [soundLevel, setSoundLevel] = useState(100)
+    const [soundLevel, setSoundLevel] = useState(1)
 
-    const handleSoundChange = (e) => setSoundLevel(e.target.value)
+    const handleSoundChange = (e) => {
+        setSoundLevel(e.target.value)
+    }
+    useEffect(() => {
+        Vibe.volume = soundLevel
+    }, [soundLevel])
     return (
         <div className={styles.sound}>
             <NormalIcon src='/sound.svg'/>
             <div>
-                <input style={{'--song-played-bar-width': `${soundLevel}%`}} value={soundLevel} max={100} onChange={handleSoundChange} type="range" name="sound" />
+                <input style={{'--song-played-bar-width': `${soundLevel * 100}%`}} value={soundLevel} max={1} step={0.05} onChange={handleSoundChange} type="range" name="sound" />
             </div>
         </div>
     )

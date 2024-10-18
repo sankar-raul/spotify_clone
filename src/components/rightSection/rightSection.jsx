@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styles from './rightSection.module.css'
 import SecondaryButton from '../tiny_components/secondaryButton'
 import artist_details from '../../backend/artists.json'
+import { Vibe } from '../../functions/songPlayer/AudioController'
 const RightSection = ({ state, handleWidth, handleRightCollapse, songData }) => {
     const rightRef = useRef(null)
     const buttonRef = useRef(null)
@@ -133,7 +134,7 @@ const SongBody = ({songData}) => {
                     <span>Open queue</span>
                 </div>
                 <div className={styles.queue_next}>
-                    <div onClick={() => songData && songData.nextSong()} style={songData && {backgroundImage: `url(${songData.queue.song_thumb})`}}>
+                    <div onClick={() => Vibe.next()} style={songData && {backgroundImage: `url(${songData.queue.song_thumb})`}}>
                         <div className={styles.queue_btn}></div>
                     </div>
                     <div>

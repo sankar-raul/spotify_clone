@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import styles from './controller.module.css'
 import PropTypes from 'prop-types'
 import songList from '../../../../backend/songlist.json'
-import MusicPlayer from '../../../../functions/songPlayer/play'
+import {player as spotiPlayer} from '../../../../functions/songPlayer/AudioController'
 export default function Controller({updateSongDetails}) {
     const [ isPlaying, setIsPlaying ] = useState(false)
     const [ isSuffle, setIsSuffle ] = useState(false)
@@ -65,7 +65,7 @@ export default function Controller({updateSongDetails}) {
         // console.log(playedPercentage)
     }, [playedPercentage])
     useEffect(() => {
-        songData && updateSongDetails({nextSong: nextSong, ...songData})
+        songData && updateSongDetails(songData)
     }, [songData])
     useEffect(() => {
         if (!Player) return
@@ -81,7 +81,7 @@ export default function Controller({updateSongDetails}) {
         Player.repeatState = repeatState
     }, [repeatState])
     useEffect(() => {
-        !Player && setPlayer(new MusicPlayer(songList, update, {setIsPlaying, setCurrentTime, setSongDuration}))
+        !Player && setPlayer(spotiPlayer(songList, update, {setIsPlaying, setCurrentTime, setSongDuration}))
     }, [])
     return (
         <div className={styles.controllers}>

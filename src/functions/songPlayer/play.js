@@ -20,6 +20,12 @@ class MusicPlayer {
         this.update({...this.currentSongInfo, queue: songList[this.queueNext]})
         this.setUpAccessibility()
     }
+    get volume() {
+        return this.currentSong.volume
+    }
+    set volume(volume = this.volume) {
+        this.currentSong.volume = volume
+    }
     get played() {
         return 100 / (this.duration / this.currentSong.currentTime)
     }

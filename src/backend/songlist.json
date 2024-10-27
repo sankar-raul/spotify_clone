@@ -1,5 +1,59 @@
 [
     {
+        "title": "Blinding Lights",
+        "src": "/songs/Blinding Lights.mp3",
+        "canvas": "/canvas/Blinding Lights.mp4",
+        "isLiked": true,
+        "artists": [
+            "The Weeknd"
+        ],
+        "credits": [
+            {
+                "artist": "The Weeknd",
+                "credit": ["Main Artist", "Producer"],
+                "artistId": "artist129t"
+            },
+            {
+                "artist": "Max Martin",
+                "credit": ["Composer", "Producer"]
+            },
+            {
+                "artist": "Oscar Holter",
+                "credit": ["Composer", "Producer"]
+            }
+        ],
+        "song_thumb": "/song_thumbs/blinding_lights.png"
+    },
+    {
+        "title": "1, 2, 3 (feat. Jason Derulo & De La Ghetto)",
+        "src": "/songs/1, 2, 3.mp3",
+        "canvas": "/canvas/1, 2, 3 (feat. Jason Derulo & De La Ghetto).mp4",
+        "isLiked": true,
+        "artists": [
+            "Sofía Reyes",
+            "Jason Derulo",
+            "De La Ghetto"
+        ],
+        "credits": [
+            {
+                "artist": "Sofía Reyes",
+                "credit": ["Main Artist", "Composer", "Writer"],
+                "artistId": "artist199t"
+            },
+            {
+                "artist": "Jason Derulo",
+                "credit": ["Main Artist", "Composer", "Writer"],
+                "artistId": "artist100t"
+            },
+            {
+                "artist": "De La Ghetto",
+                "credit": ["Main Artist", "Composer", "Writer"],
+                "artistId": "artist104r"
+            }
+        ],
+        "song_thumb": "/song_thumbs/1,2,3.png"
+    },
+    {
         "title": "Dancin - Krono Remix",
         "src": "/songs/Dancin Krono.mp3",
         "isLiked": true,
@@ -26,58 +80,6 @@
             }
         ],
         "song_thumb": "/song_thumbs/dancin_krono.png"
-    },
-    {
-        "title": "Blinding Lights",
-        "src": "/songs/Blinding Lights.mp3",
-        "isLiked": true,
-        "artists": [
-            "The Weeknd"
-        ],
-        "credits": [
-            {
-                "artist": "The Weeknd",
-                "credit": ["Main Artist", "Producer"],
-                "artistId": "artist129t"
-            },
-            {
-                "artist": "Max Martin",
-                "credit": ["Composer", "Producer"]
-            },
-            {
-                "artist": "Oscar Holter",
-                "credit": ["Composer", "Producer"]
-            }
-        ],
-        "song_thumb": "/song_thumbs/blinding_lights.png"
-    },
-    {
-        "title": "1, 2, 3 (feat. Jason Derulo & De La Ghetto)",
-        "src": "/songs/1, 2, 3.mp3",
-        "isLiked": true,
-        "artists": [
-            "Sofía Reyes",
-            "Jason Derulo",
-            "De La Ghetto"
-        ],
-        "credits": [
-            {
-                "artist": "Sofía Reyes",
-                "credit": ["Main Artist", "Composer", "Writer"],
-                "artistId": "artist199t"
-            },
-            {
-                "artist": "Jason Derulo",
-                "credit": ["Main Artist", "Composer", "Writer"],
-                "artistId": "artist100t"
-            },
-            {
-                "artist": "De La Ghetto",
-                "credit": ["Main Artist", "Composer", "Writer"],
-                "artistId": "artist104r"
-            }
-        ],
-        "song_thumb": "/song_thumbs/1,2,3.png"
     },
     {
         "title": "On The Floor",
@@ -108,6 +110,7 @@
     {
         "title": "Bad Boy",
         "src": "/songs/Bad Boy.mp3",
+        "canvas": "/canvas/Bad Boy.mp4",
         "isLiked": false,
         "artists": [
             "Marwa Loud"

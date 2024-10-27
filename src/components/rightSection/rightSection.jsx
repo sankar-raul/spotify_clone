@@ -16,7 +16,7 @@ const RightSection = ({ state, handleWidth, handleRightCollapse, songData }) => 
     }
     useEffect(() => {
         if (state == 'expand') {
-            setDisplay("grid")
+            setDisplay("block")
         } else {
             setDisplay('none')
         }
@@ -40,9 +40,18 @@ const RightSection = ({ state, handleWidth, handleRightCollapse, songData }) => 
                 <div className={styles.closeBtn} ref={buttonRef}></div>
                 </div>
             </div>
+            <div className={styles['child-container']}>
+            
             <div className={styles.main}>
                 <SongBody songData={songData}/>
             </div>
+           </div>
+           { songData?.canvas && (<div className={styles.canvasContainer}>
+              <video className={styles.canvas} src={songData?.canvas} autoPlay loop muted>
+              </video>
+           </div>)
+}
+           
         </section>
     )
 }
@@ -65,7 +74,9 @@ const SongBody = ({songData}) => {
     return (
         <>
             <div className={styles.song_details}>
-                <div style={songData && {backgroundImage: `url(${songData.song_thumb})`}} className={styles.song_thumb}></div>
+                <div className={styles.song_thumb}>
+                    { songData && (<img style={{display: songData?.canvas ? "none" : "block"}} src={songData?.song_thumb} alt={songData?.title} /> )}
+                </div>
                 <div className={styles.song_info}>
                     <div className={styles.song_title}>
                         <div><span>{songData && songData.title}</span></div>
@@ -85,6 +96,7 @@ const SongBody = ({songData}) => {
                     </div>
                 </div>
             </div>
+          
             <div className={styles.about_artist}>
                 <div className={mainArtistInfo && mainArtistInfo.type == 'circle' ? styles.circle_artist : ""} style={mainArtistInfo && mainArtistInfo.type == 'circle' ? {background: "none"} : mainArtistInfo && {backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%), url(${mainArtistInfo.cover})`}}>
                     <p>About the artist</p>

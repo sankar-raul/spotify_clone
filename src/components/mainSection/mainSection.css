@@ -45,7 +45,7 @@
 }
 .mainSection > .main-nav {
     padding-top: 16px;
-    z-index: 2;
+    z-index: 6;
     padding-bottom: 6px;
     height: 64px;
     display: flex;

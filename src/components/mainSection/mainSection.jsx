@@ -4,6 +4,7 @@ import Footer from '../footer/foot'
 import recentsTiles from "../../backend/recents_tile.json"
 import songSections from '../../backend/songSection.json'
 import './mainSection.css'
+import StickyHeader from "../tiny_components/stickyHeader"
 const MainSection = ({handleWidth, monitorResize}) => {
     const [shadow, setShadow] = useState('#501df2')
     const mainRef = useRef(null)
@@ -25,6 +26,7 @@ const MainSection = ({handleWidth, monitorResize}) => {
         <>
         <div className="outer-main">
         <section ref={mainRef} className="mainSection" style={{'--shadow': shadow}}>
+            <StickyHeader>
             <header className="main-nav">
                 <div className="main-nav-btns">
                     <button name='active'>All</button>
@@ -32,6 +34,7 @@ const MainSection = ({handleWidth, monitorResize}) => {
                     <button>Podcasts</button>
                 </div>
             </header>
+            </StickyHeader>
             <main className="home">
                 <RecentsTiles fixLayout={monitorResize} handleThemeChange={handleColorTheme} />
                 <BodyPart updateLayout={monitorResize} />

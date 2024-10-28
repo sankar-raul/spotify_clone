@@ -4,9 +4,9 @@ import styles from './rightSection.module.css'
 import SecondaryButton from '../tiny_components/secondaryButton'
 import artist_details from '../../backend/artists.json'
 import { Vibe } from '../../functions/songPlayer/AudioController'
+import StickyHeader from '../tiny_components/stickyHeader'
 const RightSection = ({ state, handleWidth, handleRightCollapse, songData }) => {
     const rightRef = useRef(null)
-    const buttonRef = useRef(null)
     const [ display, setDisplay ] = useState('grid')
     const handleCollapse = () => {
         handleRightCollapse()
@@ -23,8 +23,6 @@ const RightSection = ({ state, handleWidth, handleRightCollapse, songData }) => 
     }, [state])
     useEffect(() => {
             handleEvent()
-            const buttonRefCopy = buttonRef.current
-            buttonRefCopy.addEventListener("click", handleCollapse)
             window.addEventListener("resize", handleEvent)
             return () => {
                 window.removeEventListener("resize", handleEvent)
@@ -32,14 +30,16 @@ const RightSection = ({ state, handleWidth, handleRightCollapse, songData }) => 
     }, [])
     return (
         <section style={{display: display}} ref={rightRef} className={styles.rightSection}>
+            <StickyHeader>
             <div className={styles.heading}>
                 <div className={styles.song_heading}><p>{songData && songData.title}</p></div>
                 <div className={styles.navigator}>
                     <div className={styles.threeDots}>
                 </div>
-                <div className={styles.closeBtn} ref={buttonRef}></div>
+                <div className={styles.closeBtn} onClick={handleCollapse}></div>
                 </div>
             </div>
+            </StickyHeader>
             <div className={styles['child-container']}>
             
             <div className={styles.main}>

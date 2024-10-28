@@ -1,0 +1,962 @@
+{
+    "albums": {
+      "href": "https://api.spotify.com/v1/search?query=HUSN&type=album&market=IN&offset=0&limit=20",
+      "items": [
+        {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4gdMJYnopf2nEUcanAwstx"
+              },
+              "href": "https://api.spotify.com/v1/artists/4gdMJYnopf2nEUcanAwstx",
+              "id": "4gdMJYnopf2nEUcanAwstx",
+              "name": "Anuv Jain",
+              "type": "artist",
+              "uri": "spotify:artist:4gdMJYnopf2nEUcanAwstx"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/2SarxpD48O1DOiDIccyZ0W"
+          },
+          "href": "https://api.spotify.com/v1/albums/2SarxpD48O1DOiDIccyZ0W",
+          "id": "2SarxpD48O1DOiDIccyZ0W",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2730d3449f333a83a25feb423f8",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e020d3449f333a83a25feb423f8",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048510d3449f333a83a25feb423f8",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Husn",
+          "release_date": "2023-12-01",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:2SarxpD48O1DOiDIccyZ0W"
+        },
+        {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3cKNppGLfcxdt9CtoHEZmQ"
+              },
+              "href": "https://api.spotify.com/v1/artists/3cKNppGLfcxdt9CtoHEZmQ",
+              "id": "3cKNppGLfcxdt9CtoHEZmQ",
+              "name": "Ali Zafar",
+              "type": "artist",
+              "uri": "spotify:artist:3cKNppGLfcxdt9CtoHEZmQ"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/0s04EqGpXZ5iafjqQKpe0y"
+          },
+          "href": "https://api.spotify.com/v1/albums/0s04EqGpXZ5iafjqQKpe0y",
+          "id": "0s04EqGpXZ5iafjqQKpe0y",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273d587bdf3ee8bbfc80e4b02d0",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02d587bdf3ee8bbfc80e4b02d0",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851d587bdf3ee8bbfc80e4b02d0",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "HUSN",
+          "release_date": "2023-06-28",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:0s04EqGpXZ5iafjqQKpe0y"
+        },
+        {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7C2uVXwFKLlwHteHGnMLhZ"
+              },
+              "href": "https://api.spotify.com/v1/artists/7C2uVXwFKLlwHteHGnMLhZ",
+              "id": "7C2uVXwFKLlwHteHGnMLhZ",
+              "name": "Lewis Hanton",
+              "type": "artist",
+              "uri": "spotify:artist:7C2uVXwFKLlwHteHGnMLhZ"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/1v8mGOJwWfuEtGEeZUV9ap"
+          },
+          "href": "https://api.spotify.com/v1/albums/1v8mGOJwWfuEtGEeZUV9ap",
+          "id": "1v8mGOJwWfuEtGEeZUV9ap",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273b40b8a6a1f2a04d5b0b887cb",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02b40b8a6a1f2a04d5b0b887cb",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851b40b8a6a1f2a04d5b0b887cb",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Let Her Go x Husn",
+          "release_date": "2024-01-10",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:1v8mGOJwWfuEtGEeZUV9ap"
+        },
+        {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1S2CBQ85tTdsa2hMrx7gMI"
+              },
+              "href": "https://api.spotify.com/v1/artists/1S2CBQ85tTdsa2hMrx7gMI",
+              "id": "1S2CBQ85tTdsa2hMrx7gMI",
+              "name": "KSPRSOLO",
+              "type": "artist",
+              "uri": "spotify:artist:1S2CBQ85tTdsa2hMrx7gMI"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/0pUj9Nd4c75soWAYiQhu7z"
+          },
+          "href": "https://api.spotify.com/v1/albums/0pUj9Nd4c75soWAYiQhu7z",
+          "id": "0pUj9Nd4c75soWAYiQhu7z",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27302397025de92cb24aae42030",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0202397025de92cb24aae42030",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485102397025de92cb24aae42030",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "HUSN (Guitar Version)",
+          "release_date": "2024-01-09",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:0pUj9Nd4c75soWAYiQhu7z"
+        },
+        {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3bIv9jxrKzxZ37ny7OH81M"
+              },
+              "href": "https://api.spotify.com/v1/artists/3bIv9jxrKzxZ37ny7OH81M",
+              "id": "3bIv9jxrKzxZ37ny7OH81M",
+              "name": "PANASH Music",
+              "type": "artist",
+              "uri": "spotify:artist:3bIv9jxrKzxZ37ny7OH81M"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/4PRsetJuXkYfuYXeiMzbrX"
+          },
+          "href": "https://api.spotify.com/v1/albums/4PRsetJuXkYfuYXeiMzbrX",
+          "id": "4PRsetJuXkYfuYXeiMzbrX",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273043adf2ced58900fb3c3625f",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02043adf2ced58900fb3c3625f",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851043adf2ced58900fb3c3625f",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "HUSN",
+          "release_date": "2024-05-17",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:4PRsetJuXkYfuYXeiMzbrX"
+        },
+        {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7LBBden7d6Db0Oe4XUVlwE"
+              },
+              "href": "https://api.spotify.com/v1/artists/7LBBden7d6Db0Oe4XUVlwE",
+              "id": "7LBBden7d6Db0Oe4XUVlwE",
+              "name": "Akdas Hayat",
+              "type": "artist",
+              "uri": "spotify:artist:7LBBden7d6Db0Oe4XUVlwE"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/7vxmQz3YLwBq2ROAwcNvpK"
+          },
+          "href": "https://api.spotify.com/v1/albums/7vxmQz3YLwBq2ROAwcNvpK",
+          "id": "7vxmQz3YLwBq2ROAwcNvpK",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273393635186ac61419a6f908d3",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02393635186ac61419a6f908d3",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851393635186ac61419a6f908d3",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Husn X Gul",
+          "release_date": "2023-12-31",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:7vxmQz3YLwBq2ROAwcNvpK"
+        },
+        {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2emjlDRuFQWoxk0BdvAmMf"
+              },
+              "href": "https://api.spotify.com/v1/artists/2emjlDRuFQWoxk0BdvAmMf",
+              "id": "2emjlDRuFQWoxk0BdvAmMf",
+              "name": "Harinder Sandhu",
+              "type": "artist",
+              "uri": "spotify:artist:2emjlDRuFQWoxk0BdvAmMf"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/4BQH71xhKI8fb8w3xl62ID"
+          },
+          "href": "https://api.spotify.com/v1/albums/4BQH71xhKI8fb8w3xl62ID",
+          "id": "4BQH71xhKI8fb8w3xl62ID",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273ce5aa0829ecb624ffde07755",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02ce5aa0829ecb624ffde07755",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851ce5aa0829ecb624ffde07755",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Husnan Di Sarkar",
+          "release_date": "2020-08-06",
+          "release_date_precision": "day",
+          "total_tracks": 10,
+          "type": "album",
+          "uri": "spotify:album:4BQH71xhKI8fb8w3xl62ID"
+        },
+        {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2NCZYytsjPe7RsYwCblxyl"
+              },
+              "href": "https://api.spotify.com/v1/artists/2NCZYytsjPe7RsYwCblxyl",
+              "id": "2NCZYytsjPe7RsYwCblxyl",
+              "name": "Surjit Khan",
+              "type": "artist",
+              "uri": "spotify:artist:2NCZYytsjPe7RsYwCblxyl"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/09IiXECA8SaNuchu0cpTbM"
+          },
+          "href": "https://api.spotify.com/v1/albums/09IiXECA8SaNuchu0cpTbM",
+          "id": "09IiXECA8SaNuchu0cpTbM",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2734d83f7250a9ad05616da7fca",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e024d83f7250a9ad05616da7fca",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048514d83f7250a9ad05616da7fca",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Husn",
+          "release_date": "2005-08-17",
+          "release_date_precision": "day",
+          "total_tracks": 8,
+          "type": "album",
+          "uri": "spotify:album:09IiXECA8SaNuchu0cpTbM"
+        },
+        {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/16IWQKGP5XiiKxalXZuIMZ"
+              },
+              "href": "https://api.spotify.com/v1/artists/16IWQKGP5XiiKxalXZuIMZ",
+              "id": "16IWQKGP5XiiKxalXZuIMZ",
+              "name": "Bhoomi Trivedi",
+              "type": "artist",
+              "uri": "spotify:artist:16IWQKGP5XiiKxalXZuIMZ"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5cBFMoMgcAt03YL2r0tS25"
+              },
+              "href": "https://api.spotify.com/v1/artists/5cBFMoMgcAt03YL2r0tS25",
+              "id": "5cBFMoMgcAt03YL2r0tS25",
+              "name": "Raja Kumari",
+              "type": "artist",
+              "uri": "spotify:artist:5cBFMoMgcAt03YL2r0tS25"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5fvTHKKzW44A9867nPDocM"
+              },
+              "href": "https://api.spotify.com/v1/artists/5fvTHKKzW44A9867nPDocM",
+              "id": "5fvTHKKzW44A9867nPDocM",
+              "name": "Ajay-Atul",
+              "type": "artist",
+              "uri": "spotify:artist:5fvTHKKzW44A9867nPDocM"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/0u0yV8ag4qmWS1NWXLcZ6A"
+          },
+          "href": "https://api.spotify.com/v1/albums/0u0yV8ag4qmWS1NWXLcZ6A",
+          "id": "0u0yV8ag4qmWS1NWXLcZ6A",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27343b2e009fd566e98d09f8012",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0243b2e009fd566e98d09f8012",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485143b2e009fd566e98d09f8012",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Husn Parcham (From \"Zero\")",
+          "release_date": "2018-12-12",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:0u0yV8ag4qmWS1NWXLcZ6A"
+        },
+        {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2ErVVbJ22ueTrgqqoKtOno"
+              },
+              "href": "https://api.spotify.com/v1/artists/2ErVVbJ22ueTrgqqoKtOno",
+              "id": "2ErVVbJ22ueTrgqqoKtOno",
+              "name": "mxhxksh bhardwaj",
+              "type": "artist",
+              "uri": "spotify:artist:2ErVVbJ22ueTrgqqoKtOno"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7CZuwHsaLNe7GdGEIsRxMl"
+              },
+              "href": "https://api.spotify.com/v1/artists/7CZuwHsaLNe7GdGEIsRxMl",
+              "id": "7CZuwHsaLNe7GdGEIsRxMl",
+              "name": "Mxhxksh",
+              "type": "artist",
+              "uri": "spotify:artist:7CZuwHsaLNe7GdGEIsRxMl"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/085Zo9rCYFMCLgAZGvaATt"
+          },
+          "href": "https://api.spotify.com/v1/albums/085Zo9rCYFMCLgAZGvaATt",
+          "id": "085Zo9rCYFMCLgAZGvaATt",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273b4734aacd14bfc7eeaf3f33f",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02b4734aacd14bfc7eeaf3f33f",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851b4734aacd14bfc7eeaf3f33f",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Husn X Choo Lo",
+          "release_date": "2021-07-15",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:085Zo9rCYFMCLgAZGvaATt"
+        },
+        {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1RZATJXuzNpM3hS4wglC6i"
+              },
+              "href": "https://api.spotify.com/v1/artists/1RZATJXuzNpM3hS4wglC6i",
+              "id": "1RZATJXuzNpM3hS4wglC6i",
+              "name": "Sardool Sikander",
+              "type": "artist",
+              "uri": "spotify:artist:1RZATJXuzNpM3hS4wglC6i"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/2n2hKGumQrpiDoIAXuG2tC"
+          },
+          "href": "https://api.spotify.com/v1/albums/2n2hKGumQrpiDoIAXuG2tC",
+          "id": "2n2hKGumQrpiDoIAXuG2tC",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2732649c7d9cbb8a703b8d7140c",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e022649c7d9cbb8a703b8d7140c",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048512649c7d9cbb8a703b8d7140c",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Husna De Malko",
+          "release_date": "2002-01-01",
+          "release_date_precision": "day",
+          "total_tracks": 7,
+          "type": "album",
+          "uri": "spotify:album:2n2hKGumQrpiDoIAXuG2tC"
+        },
+        {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/385fgCvpyt5k2tPHCw1yxb"
+              },
+              "href": "https://api.spotify.com/v1/artists/385fgCvpyt5k2tPHCw1yxb",
+              "id": "385fgCvpyt5k2tPHCw1yxb",
+              "name": "Vivek Official",
+              "type": "artist",
+              "uri": "spotify:artist:385fgCvpyt5k2tPHCw1yxb"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7LBBden7d6Db0Oe4XUVlwE"
+              },
+              "href": "https://api.spotify.com/v1/artists/7LBBden7d6Db0Oe4XUVlwE",
+              "id": "7LBBden7d6Db0Oe4XUVlwE",
+              "name": "Akdas Hayat",
+              "type": "artist",
+              "uri": "spotify:artist:7LBBden7d6Db0Oe4XUVlwE"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/7g6g2bh2x2Ow4jW4Bsnxym"
+          },
+          "href": "https://api.spotify.com/v1/albums/7g6g2bh2x2Ow4jW4Bsnxym",
+          "id": "7g6g2bh2x2Ow4jW4Bsnxym",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273c763cdd06c4a675c32aee99e",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02c763cdd06c4a675c32aee99e",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851c763cdd06c4a675c32aee99e",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Husn Mashup",
+          "release_date": "2024-01-07",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:7g6g2bh2x2Ow4jW4Bsnxym"
+        },
+        {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of"
+              },
+              "href": "https://api.spotify.com/v1/artists/0LyfQWJT6nXafLPZqxe9Of",
+              "id": "0LyfQWJT6nXafLPZqxe9Of",
+              "name": "Various Artists",
+              "type": "artist",
+              "uri": "spotify:artist:0LyfQWJT6nXafLPZqxe9Of"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/3FkE669VDUI9nh7g86QyAs"
+          },
+          "href": "https://api.spotify.com/v1/albums/3FkE669VDUI9nh7g86QyAs",
+          "id": "3FkE669VDUI9nh7g86QyAs",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27389ab67bc918cb8691cb6f18f",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0289ab67bc918cb8691cb6f18f",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485189ab67bc918cb8691cb6f18f",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Husnn Hai Suhaana New (from \"Coolie No. 1\")",
+          "release_date": "2020-12-08",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:3FkE669VDUI9nh7g86QyAs"
+        },
+        {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7LBBden7d6Db0Oe4XUVlwE"
+              },
+              "href": "https://api.spotify.com/v1/artists/7LBBden7d6Db0Oe4XUVlwE",
+              "id": "7LBBden7d6Db0Oe4XUVlwE",
+              "name": "Akdas Hayat",
+              "type": "artist",
+              "uri": "spotify:artist:7LBBden7d6Db0Oe4XUVlwE"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/0XyCEmSs0K6yY8JiB22sfD"
+          },
+          "href": "https://api.spotify.com/v1/albums/0XyCEmSs0K6yY8JiB22sfD",
+          "id": "0XyCEmSs0K6yY8JiB22sfD",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2738187ee2b1433666f4ae30670",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e028187ee2b1433666f4ae30670",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048518187ee2b1433666f4ae30670",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Husn X Choo Lo",
+          "release_date": "2024-03-22",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:0XyCEmSs0K6yY8JiB22sfD"
+        },
+        {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7ccWUSS2KCZOGMFkV7Qrll"
+              },
+              "href": "https://api.spotify.com/v1/artists/7ccWUSS2KCZOGMFkV7Qrll",
+              "id": "7ccWUSS2KCZOGMFkV7Qrll",
+              "name": "kaayo lk",
+              "type": "artist",
+              "uri": "spotify:artist:7ccWUSS2KCZOGMFkV7Qrll"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/0gHNAuBUuz8GV1CfCBzvtG"
+          },
+          "href": "https://api.spotify.com/v1/albums/0gHNAuBUuz8GV1CfCBzvtG",
+          "id": "0gHNAuBUuz8GV1CfCBzvtG",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273160d6a0be39ab661fd3a97f0",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02160d6a0be39ab661fd3a97f0",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851160d6a0be39ab661fd3a97f0",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "HUSN PARI",
+          "release_date": "2024-03-21",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:0gHNAuBUuz8GV1CfCBzvtG"
+        },
+        {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5rQoBDKFnd1n6BkdbgVaRL"
+              },
+              "href": "https://api.spotify.com/v1/artists/5rQoBDKFnd1n6BkdbgVaRL",
+              "id": "5rQoBDKFnd1n6BkdbgVaRL",
+              "name": "Guru Randhawa",
+              "type": "artist",
+              "uri": "spotify:artist:5rQoBDKFnd1n6BkdbgVaRL"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1YjsXzLXBx89tdTE22Bech"
+              },
+              "href": "https://api.spotify.com/v1/artists/1YjsXzLXBx89tdTE22Bech",
+              "id": "1YjsXzLXBx89tdTE22Bech",
+              "name": "Happy Bains",
+              "type": "artist",
+              "uri": "spotify:artist:1YjsXzLXBx89tdTE22Bech"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/0Kfr6Ds5SreBfbLVhBl85h"
+          },
+          "href": "https://api.spotify.com/v1/albums/0Kfr6Ds5SreBfbLVhBl85h",
+          "id": "0Kfr6Ds5SreBfbLVhBl85h",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2735f23110c093900db9e1fa82d",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e025f23110c093900db9e1fa82d",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048515f23110c093900db9e1fa82d",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Husn Irani (From \"Wild Wild Punjab\")",
+          "release_date": "2024-06-27",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:0Kfr6Ds5SreBfbLVhBl85h"
+        },
+        {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3q48iYNC4nyqiUlx24Eu1Y"
+              },
+              "href": "https://api.spotify.com/v1/artists/3q48iYNC4nyqiUlx24Eu1Y",
+              "id": "3q48iYNC4nyqiUlx24Eu1Y",
+              "name": "Arpit G",
+              "type": "artist",
+              "uri": "spotify:artist:3q48iYNC4nyqiUlx24Eu1Y"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/6EyTB1QYCvyC195MkHSIwZ"
+          },
+          "href": "https://api.spotify.com/v1/albums/6EyTB1QYCvyC195MkHSIwZ",
+          "id": "6EyTB1QYCvyC195MkHSIwZ",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27309db6576d7c972873259d587",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0209db6576d7c972873259d587",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485109db6576d7c972873259d587",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Husn Nawabi",
+          "release_date": "2018-10-12",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:6EyTB1QYCvyC195MkHSIwZ"
+        },
+        {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6SZPwiwcxq9dg1uyQ2fl9l"
+              },
+              "href": "https://api.spotify.com/v1/artists/6SZPwiwcxq9dg1uyQ2fl9l",
+              "id": "6SZPwiwcxq9dg1uyQ2fl9l",
+              "name": "raaghavan",
+              "type": "artist",
+              "uri": "spotify:artist:6SZPwiwcxq9dg1uyQ2fl9l"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/0pYLSDCaAapnuwMK5HKWZf"
+              },
+              "href": "https://api.spotify.com/v1/artists/0pYLSDCaAapnuwMK5HKWZf",
+              "id": "0pYLSDCaAapnuwMK5HKWZf",
+              "name": "russhhhi",
+              "type": "artist",
+              "uri": "spotify:artist:0pYLSDCaAapnuwMK5HKWZf"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/5Z7CTKoc7vGudn1PvQsiI3"
+          },
+          "href": "https://api.spotify.com/v1/albums/5Z7CTKoc7vGudn1PvQsiI3",
+          "id": "5Z7CTKoc7vGudn1PvQsiI3",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273017dc299ad9430e6e7afca0c",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02017dc299ad9430e6e7afca0c",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851017dc299ad9430e6e7afca0c",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Husn (Lofi)",
+          "release_date": "2024-07-26",
+          "release_date_precision": "day",
+          "total_tracks": 3,
+          "type": "album",
+          "uri": "spotify:album:5Z7CTKoc7vGudn1PvQsiI3"
+        },
+        {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5vDFlGw3JlHeDjTnuLecdW"
+              },
+              "href": "https://api.spotify.com/v1/artists/5vDFlGw3JlHeDjTnuLecdW",
+              "id": "5vDFlGw3JlHeDjTnuLecdW",
+              "name": "Lovely Nirman",
+              "type": "artist",
+              "uri": "spotify:artist:5vDFlGw3JlHeDjTnuLecdW"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5yylsPPF6SkdLLvHjOyaDY"
+              },
+              "href": "https://api.spotify.com/v1/artists/5yylsPPF6SkdLLvHjOyaDY",
+              "id": "5yylsPPF6SkdLLvHjOyaDY",
+              "name": "Parveen Bharta",
+              "type": "artist",
+              "uri": "spotify:artist:5yylsPPF6SkdLLvHjOyaDY"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/0VEUfwqVtB3QaLbWw3vvgZ"
+          },
+          "href": "https://api.spotify.com/v1/albums/0VEUfwqVtB3QaLbWw3vvgZ",
+          "id": "0VEUfwqVtB3QaLbWw3vvgZ",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273eacb1e7269650bd541acd7a0",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02eacb1e7269650bd541acd7a0",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851eacb1e7269650bd541acd7a0",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Husna Da Phull",
+          "release_date": "2007-05-01",
+          "release_date_precision": "day",
+          "total_tracks": 8,
+          "type": "album",
+          "uri": "spotify:album:0VEUfwqVtB3QaLbWw3vvgZ"
+        },
+        {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/0DhoozKChWygwuEQKGagwl"
+              },
+              "href": "https://api.spotify.com/v1/artists/0DhoozKChWygwuEQKGagwl",
+              "id": "0DhoozKChWygwuEQKGagwl",
+              "name": "Sangtar",
+              "type": "artist",
+              "uri": "spotify:artist:0DhoozKChWygwuEQKGagwl"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/7MHdWivy9T5CeZVzmyAJFl"
+          },
+          "href": "https://api.spotify.com/v1/albums/7MHdWivy9T5CeZVzmyAJFl",
+          "id": "7MHdWivy9T5CeZVzmyAJFl",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2737e173caf6263035ebf72c1b9",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e027e173caf6263035ebf72c1b9",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048517e173caf6263035ebf72c1b9",
+              "width": 64
+            }
+          ],
+          "is_playable": true,
+          "name": "Husn Da Jadu",
+          "release_date": "2005-03-23",
+          "release_date_precision": "day",
+          "total_tracks": 10,
+          "type": "album",
+          "uri": "spotify:album:7MHdWivy9T5CeZVzmyAJFl"
+        }
+      ],
+      "limit": 20,
+      "next": "https://api.spotify.com/v1/search?query=HUSN&type=album&market=IN&offset=20&limit=20",
+      "offset": 0,
+      "previous": null,
+      "total": 103
+    }
+  }

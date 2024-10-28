@@ -7,6 +7,7 @@ import RightSection from './components/rightSection/rightSection'
 import MainSection from './components/mainSection/mainSection'
 import BottomSection from './components/bottomSection/bottomSection'
 import userAgent from './functions/userAgent'
+import RootProvider from './context/RootProvider'
 import './App.css'
 // let lstate, rstate, mw, rw
 let layoutRefreshDelay = null, layoutRefreshInterval
@@ -107,6 +108,7 @@ function App() {
 
   return (
     <>
+    <RootProvider>
       <div className="main">
       <NavBar />
       <LeftSection handleWidth={handleWidth} handleLeftCollapse={handleLeftCollapse} state={leftState}/>
@@ -114,6 +116,7 @@ function App() {
       <RightSection state={rightState} songData={songInfo} handleRightCollapse={handleRightCollapse} handleWidth={handleWidth} />
       {deviceType != null && <BottomSection rightState={rightState} updateSongInfo={(data) => updateSongInfo(data)} handleRightCollapse={handleRightCollapse} deviceType={deviceType} /> }
       </div>
+      </RootProvider>
     </>
   )
 }

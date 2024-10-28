@@ -1,14 +1,19 @@
-import PropTypes from 'prop-types'
-import style from './stickyHeader.module.css'
+import PropTypes, { checkPropTypes } from 'prop-types'
+import styles from './stickyHeader.module.css'
 import React, { cloneElement, useEffect, useRef, useState } from 'react'
 
-export const StickyHeader = ({children, background}) => {
+export const StickyHeader = ({children, background, style}) => {
     const [isSticky, setIsSticky] = useState(false)
     const [customBgcolor, setCustomBgcolor] = useState(null)
     const stickyDetectorRef = useRef(null)
     const modifiedChildren = React.isValidElement(children) ? cloneElement(children, {
-        className: `${children.props.className || ''} ${isSticky ? style.stickyHeader : ''} ${style.header}`,
-        style: customBgcolor ? {'--customBg': customBgcolor, ...children.props.style || ''} : children.props.style || {}
+        className: `${children.props.className || ''} ${isSticky ? styles.stickyHeader : ''} ${styles.header}`,
+        style: {
+            ...(children.props.style || {}),
+            ...(isSticky ? style : {}),
+            ...(customBgcolor ? { '--customBg': customBgcolor } : {})
+        }
+        
     }) : children
     useEffect(() => {
         background ? setCustomBgcolor(background) : setCustomBgcolor('#111111')
@@ -35,6 +40,7 @@ export const StickyHeader = ({children, background}) => {
 }
 StickyHeader.propTypes = {
     children: PropTypes.node,
-    background: PropTypes.string
+    background: PropTypes.string,
+    style: PropTypes.object
 }
 export default StickyHeader

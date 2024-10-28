@@ -5,12 +5,10 @@ import recentsTiles from "../../backend/recents_tile.json"
 import songSections from '../../backend/songSection.json'
 import './mainSection.css'
 import StickyHeader from "../tiny_components/stickyHeader"
+import { useMainHeaderTheme } from "../../context/MainHeaderThemeProvider"
 const MainSection = ({handleWidth, monitorResize}) => {
-    const [shadow, setShadow] = useState('#501df2')
     const mainRef = useRef(null)
-    const handleColorTheme = (color) => {
-        setShadow(color)
-    }
+    const { mainHeaderTheme } = useMainHeaderTheme()
     const handleEvent = () => {
         handleWidth('main', mainRef.current.offsetWidth)
     }
@@ -25,8 +23,9 @@ const MainSection = ({handleWidth, monitorResize}) => {
     return (
         <>
         <div className="outer-main">
-        <section ref={mainRef} className="mainSection" style={{'--shadow': shadow}}>
-            <StickyHeader>
+        <section ref={mainRef} className="mainSection" style={{'--shadow': mainHeaderTheme}}>
+           
+            <StickyHeader style={{backdropFilter: 'brightness(4%)'}} background={mainHeaderTheme}>
             <header className="main-nav">
                 <div className="main-nav-btns">
                     <button name='active'>All</button>
@@ -36,7 +35,7 @@ const MainSection = ({handleWidth, monitorResize}) => {
             </header>
             </StickyHeader>
             <main className="home">
-                <RecentsTiles fixLayout={monitorResize} handleThemeChange={handleColorTheme} />
+                <RecentsTiles fixLayout={monitorResize} />
                 <BodyPart updateLayout={monitorResize} />
             </main>
             <footer className="footer">
@@ -146,7 +145,7 @@ Songcard.propTypes = {
     songInfo: PropTypes.object.isRequired
 }
 
-const RecentsTiles = ({ handleThemeChange, fixLayout }) => {
+const RecentsTiles = ({ fixLayout }) => {
     const [columns, setColumns] = useState(0)
     const recentTileRef = useRef(null)
     const updateLayout = () => {
@@ -166,29 +165,28 @@ const RecentsTiles = ({ handleThemeChange, fixLayout }) => {
     }, [])
     return (
         <div ref={recentTileRef} style={{gridTemplateColumns: `repeat(${columns}, 1fr)`}} className="recent-tiles">
-            <RecentTiles handleColorTheme={handleThemeChange}/>
+            <RecentTiles />
         </div>
     )
 }
 RecentsTiles.propTypes = {
-    handleThemeChange: PropTypes.func.isRequired,
     fixLayout: PropTypes.bool.isRequired
 }
 
-const RecentTiles = ({ handleColorTheme }) => {
-    // let o = null
+const RecentTiles = () => {
+    const { setMainHeaderTheme } = useMainHeaderTheme()
     let timeout = null
     const changeTheme = (color_theme) => {
         timeout && clearTimeout(timeout)
-            handleColorTheme(color_theme)
+            setMainHeaderTheme(color_theme)
     }
     const handleMouseOut = () => {
         timeout = setTimeout(() => {
-            handleColorTheme(recentsTiles[0].color_theme)
+            setMainHeaderTheme(recentsTiles[0].color_theme)
         }, 100)
     }
     useEffect(() => {
-        
+        setMainHeaderTheme(recentsTiles[0]?.color_theme)
     }, [])
     return (
         <>
@@ -205,9 +203,6 @@ const RecentTiles = ({ handleColorTheme }) => {
         }
         </>
     )
-}
-RecentTiles.propTypes = {
-    handleColorTheme: PropTypes.func.isRequired
 }
 
 export default MainSection

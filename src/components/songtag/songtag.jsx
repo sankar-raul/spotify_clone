@@ -1,14 +1,16 @@
 import { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import './songtag.css'
+import useAppLayoutSettings from '../../context/AppLayoutSettings'
 
-const Songtag = ({song, state}) => {
+const Songtag = ({song}) => {
+    const { leftState } = useAppLayoutSettings()
     const style = {
         backgroundImage: `url(${song.image})`,
         '--rad': song.captions[0] === "Artist" ? "50%" : "6px"
     }
     return (
-        <div className="songTag" name={state} key={song.keY}>
+        <div className="songTag" name={leftState} key={song.keY}>
             <div className="image" style={style}>
                 <div className="play-btn-tag"></div>
             </div>
@@ -29,8 +31,7 @@ const Songtag = ({song, state}) => {
     )
 }
 Songtag.propTypes = {
-    song: PropTypes.object.isRequired,
-    state: PropTypes.string.isRequired
+    song: PropTypes.object.isRequired
 }
 
 export default Songtag

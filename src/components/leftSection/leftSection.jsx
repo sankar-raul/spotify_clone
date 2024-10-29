@@ -1,28 +1,22 @@
 import Songtag from '../songtag/songtag'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import './leftSection.css'
 import playList from '../../backend/playlist_items.json'
-const LeftSection = ({handleWidth, state, handleLeftCollapse}) => {
+import useAppLayoutSettings from '../../context/AppLayoutSettings'
+const LeftSection = ({handleWidth}) => {
     const leftRef = useRef(null)
+    const {leftState, setLeftState} = useAppLayoutSettings()
     const buttonRef = useRef(null)
-    const [ currentState, setCState ] = useState("collapse")
     const handleCollapse = () => {
-       setCState(prev => prev == 'collapse' ? 'expand' : 'collapse')
+        setLeftState(prevState => {
+            const newState = prevState === "collapse" ? "expand" : "collapse"
+            return newState
+          })
     }
     const handleEvent = () => {
         handleWidth('left', leftRef.current.offsetWidth)
     }
-    useEffect(() => {
-        if (currentState != state) {
-            handleLeftCollapse(currentState)
-        }
-    }, [currentState])
-    useEffect(() => {
-        if (currentState != state) {
-            setCState(state)
-        }
-    }, [state])
     useEffect(() => {
             // alert()
             handleEvent()
@@ -35,14 +29,14 @@ const LeftSection = ({handleWidth, state, handleLeftCollapse}) => {
             }
     }, [])
     return (
-        <section ref={leftRef} name={state} className="leftSection">
+        <section ref={leftRef} name={leftState} className="leftSection">
             <div className="top-portion">
                 <header>
                 <div className="top-portion-nav">
                     <div ref={buttonRef} className='library'>
                     <div className="expand-btn"></div>
                         {
-                            state != "collapse" ? (
+                            leftState != "collapse" ? (
                                 <p className="lib">Your Library</p>
                             ) : (
                                 <></>
@@ -60,7 +54,7 @@ const LeftSection = ({handleWidth, state, handleLeftCollapse}) => {
                         <button className="portion-btn">Artists</button>
                 </div>
             </div>
-            <div name={state} className="playlists">
+            <div name={leftState} className="playlists">
                 <div className="playlist-nav">
                     <div className="playlist-search"></div>
                     <div className="recents">
@@ -69,31 +63,26 @@ const LeftSection = ({handleWidth, state, handleLeftCollapse}) => {
                         </div>
                 </div>
                 <div className="playlist-items">
-                    <PlayLists state={state} />
+                    <PlayLists />
                 </div>
             </div>
         </section>
     )
 }
 LeftSection.propTypes = {
-    handleWidth: PropTypes.func.isRequired,
-    state: PropTypes.string.isRequired,
-    handleLeftCollapse: PropTypes.func.isRequired
+    handleWidth: PropTypes.func.isRequired
 }
 
-const PlayLists = ({state}) => {
+const PlayLists = () => {
     return (
     <>
     {
     playList.map((songObject, idx) => (
-        <Songtag state={state} song={songObject} key={idx}/>
+        <Songtag song={songObject} key={idx}/>
     ))
     }
     </>
     )
-}
-PlayLists.propTypes = {
-    state: PropTypes.string.isRequired
 }
 
 export default LeftSection

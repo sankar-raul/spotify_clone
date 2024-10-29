@@ -1,12 +1,10 @@
 .deskBottom {
-    grid-area: bottomSection;
     display: flex;
     justify-content: space-between;
     /* padding: 14px; */
     align-items: center;
 }
 .deskBottom > * {
-    /* border: 1px solid var(--bg); */
     height: 100%;
 }
 

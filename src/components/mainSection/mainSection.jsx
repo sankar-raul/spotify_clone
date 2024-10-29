@@ -5,8 +5,9 @@ import recentsTiles from "../../backend/recents_tile.json"
 import songSections from '../../backend/songSection.json'
 import './mainSection.css'
 import StickyHeader from "../tiny_components/stickyHeader"
-import { useMainHeaderTheme } from "../../context/MainHeaderThemeProvider"
-const MainSection = ({handleWidth, monitorResize}) => {
+import { useMainHeaderTheme } from "../../context/MainHeaderTheme"
+import useAppLayoutSettings from "../../context/AppLayoutSettings"
+const MainSection = ({ handleWidth }) => {
     const mainRef = useRef(null)
     const { mainHeaderTheme } = useMainHeaderTheme()
     const handleEvent = () => {
@@ -25,7 +26,7 @@ const MainSection = ({handleWidth, monitorResize}) => {
         <div className="outer-main">
         <section ref={mainRef} className="mainSection" style={{'--shadow': mainHeaderTheme}}>
            
-            <StickyHeader style={{backdropFilter: 'brightness(4%)'}} background={mainHeaderTheme}>
+            <StickyHeader className='mainNavbarSticky' background={mainHeaderTheme}>
             <header className="main-nav">
                 <div className="main-nav-btns">
                     <button name='active'>All</button>
@@ -35,8 +36,8 @@ const MainSection = ({handleWidth, monitorResize}) => {
             </header>
             </StickyHeader>
             <main className="home">
-                <RecentsTiles fixLayout={monitorResize} />
-                <BodyPart updateLayout={monitorResize} />
+                <RecentsTiles />
+                <BodyPart />
             </main>
             <footer className="footer">
                 <Footer />
@@ -47,11 +48,10 @@ const MainSection = ({handleWidth, monitorResize}) => {
     )
 }
 MainSection.propTypes = {
-    handleWidth: PropTypes.func.isRequired,
-    monitorResize: PropTypes.bool.isRequired
+    handleWidth: PropTypes.func.isRequired
 }
 
-const BodyPart = ({updateLayout}) => {
+const BodyPart = () => {
     useEffect(() => {
         // console.log(songSections)
     }, [])
@@ -59,19 +59,17 @@ const BodyPart = ({updateLayout}) => {
         <>
         {
         songSections.map((section, idx) => (
-            <ListSection updateLayout={updateLayout} songSection={section} key={idx}/>
+            <ListSection songSection={section} key={idx}/>
         ))
         }
         </>
     )
 }
-BodyPart.propTypes = {
-    updateLayout: PropTypes.bool.isRequired
-}
 
-const ListSection = ({songSection, updateLayout}) => {
+const ListSection = ({songSection}) => {
     const [items, setItems] = useState(1)
     const mainSectionRef = useRef(null)
+    const { layoutChangedTrigger } = useAppLayoutSettings()
     const handleItemsCount = (width) => {
         if (width > 239) {
             setItems(prev => prev + 1)
@@ -87,7 +85,7 @@ const ListSection = ({songSection, updateLayout}) => {
     }
     useEffect(() => {
         intialSize()
-    }, [updateLayout])
+    }, [layoutChangedTrigger])
     useEffect(() => {
         intialSize()
     }, [])
@@ -108,8 +106,7 @@ const ListSection = ({songSection, updateLayout}) => {
     )
 }
 ListSection.propTypes = {
-    songSection: PropTypes.object.isRequired,
-    updateLayout: PropTypes.bool.isRequired
+    songSection: PropTypes.object.isRequired
 }
 
 const Songcard = ({handleItemsCount, intialSize, songInfo}) => {
@@ -145,8 +142,9 @@ Songcard.propTypes = {
     songInfo: PropTypes.object.isRequired
 }
 
-const RecentsTiles = ({ fixLayout }) => {
+const RecentsTiles = () => {
     const [columns, setColumns] = useState(0)
+    const { layoutChangedTrigger } = useAppLayoutSettings()
     const recentTileRef = useRef(null)
     const updateLayout = () => {
         if (recentTileRef.current) {
@@ -155,7 +153,7 @@ const RecentsTiles = ({ fixLayout }) => {
     }
     useEffect(() => {
         updateLayout()
-    }, [fixLayout])
+    }, [layoutChangedTrigger])
     useEffect(() => {
         updateLayout()
         window.addEventListener('resize', updateLayout)
@@ -168,9 +166,6 @@ const RecentsTiles = ({ fixLayout }) => {
             <RecentTiles />
         </div>
     )
-}
-RecentsTiles.propTypes = {
-    fixLayout: PropTypes.bool.isRequired
 }
 
 const RecentTiles = () => {

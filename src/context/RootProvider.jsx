@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types'
-import MainHeaderThemeProvider from '../MainHeaderThemeProvider'
+import MainHeaderThemeProvider from './MainHeaderTheme/provider'
+import AppLayoutSettingsProvider from './AppLayoutSettings/provider'
 export const RootProvider = ({ children }) => {
 
     return (
         <>
+        <AppLayoutSettingsProvider>
             <MainHeaderThemeProvider>
                 {children}
             </MainHeaderThemeProvider>
+        </AppLayoutSettingsProvider>
         </>
     )
 }

@@ -2,13 +2,13 @@ import { useState, useEffect } from "react"
 import PropTypes from 'prop-types'
 import styles from './spotiButton.module.css'
 
-export const SpotiButton = ({src='/now-playing.svg', onClick = null, selected = false}) => {
+export const SpotiButton = ({src='/now-playing.svg', onClick = null, selected = false, type}) => {
     const [isHovered, setIsHovered] = useState(false)
     const [isActive, setIsActive] = useState(false)
     const [isSelected, setIsSelected] = useState(selected)
     const handleClick = () => {
         setIsSelected(prev => !prev)
-        onClick && onClick()
+        onClick && onClick(type)
     }
     const handleHover = () => {
         setIsHovered(prev => !prev)
@@ -28,6 +28,7 @@ export const SpotiButton = ({src='/now-playing.svg', onClick = null, selected = 
 SpotiButton.propTypes = {
     onClick: PropTypes.func,
     selected: PropTypes.bool,
-    src: PropTypes.string
+    src: PropTypes.string,
+    type: PropTypes.string
 }
 export default SpotiButton

@@ -3,9 +3,8 @@ import { useEffect, useState } from 'react'
 import DesktopBottom from './desktopBottom'
 import styles from './bottomSection.module.css'
 
-const BottomSection = ({ handleRightCollapse, deviceType, updateSongInfo, rightState }) => {
+const BottomSection = ({ deviceType, updateSongInfo }) => {
     const [ device, setDevice ] = useState(null)
-    // console.log(rightState)
     useEffect(() => {
         setDevice(deviceType)
     }, [])
@@ -13,19 +12,17 @@ const BottomSection = ({ handleRightCollapse, deviceType, updateSongInfo, rightS
     <>
         {
             deviceType && device == 'desktop' ? (
-                <DesktopBottom rightState={rightState} updateSongInfo={(data) => updateSongInfo(data)} handleRightCollapse={handleRightCollapse}/>
+                <DesktopBottom className={styles.bottomSection} updateSongInfo={(data) => updateSongInfo(data)} />
             ) : (
-                <DesktopBottom rightState={rightState} updateSongInfo={(data) => updateSongInfo(data)} handleRightCollapse={handleRightCollapse}/>
+                <DesktopBottom className={styles.bottomSection} updateSongInfo={(data) => updateSongInfo(data)} />
             )
         }
     </>
     )
 }
 BottomSection.propTypes = {
-    handleRightCollapse: PropTypes.func.isRequired,
     deviceType: PropTypes.string.isRequired,
-    updateSongInfo: PropTypes.func.isRequired,
-    rightState: PropTypes.string
+    updateSongInfo: PropTypes.func.isRequired
 }
 
 export default BottomSection

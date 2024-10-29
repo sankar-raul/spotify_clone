@@ -4,9 +4,8 @@ import styles from './deskBottom.module.css'
 import Controller from './controller'
 import Songplate from './songPlate'
 import LayoutController from "./layoutController"
-export default function DesktopBottom({handleRightCollapse, rightState, updateSongInfo}) {
+export default function DesktopBottom({ updateSongInfo, className }) {
     const [ songInfo, setSongInfo ] = useState(null)
-    const [ rState, setRState ] = useState('collapse')
     const updateSongDetails = (songData) => {
         songData && setSongInfo(songData)
     }
@@ -16,22 +15,15 @@ export default function DesktopBottom({handleRightCollapse, rightState, updateSo
             updateSongInfo(songInfo)
         }
     }, [songInfo])
-    useEffect(() => {
-        setRState(rightState)
-    }, [rightState])
-    useEffect(() => {
-        
-    }, [rState])
     return (
-        <section className={styles.deskBottom}>
+        <section className={`${styles.deskBottom} ${className || ''}`}>
             <Songplate songData={songInfo}/>
             <Controller updateSongDetails={(data) => updateSongDetails(data)} />
-            <LayoutController rightState={rState} handleRightCollapse={handleRightCollapse} />
+            <LayoutController />
         </section>
     )
 }
 DesktopBottom.propTypes = {
-    handleRightCollapse: PropTypes.func.isRequired,
     updateSongInfo: PropTypes.func.isRequired,
-    rightState: PropTypes.string
+    className: PropTypes.string
 }

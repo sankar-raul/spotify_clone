@@ -1,17 +1,14 @@
 import { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
-// import appIcon from './assets/react.svg'
 import NavBar from './components/navBar/navBar'
 import LeftSection from './components/leftSection/leftSection'
 import RightSection from './components/rightSection/rightSection'
 import MainSection from './components/mainSection/mainSection'
 import BottomSection from './components/bottomSection/bottomSection'
 import userAgent from './functions/userAgent'
-import RootProvider from './context/RootProvider'
 import './App.css'
-// let lstate, rstate, mw, rw
-let layoutRefreshDelay = null, layoutRefreshInterval
+
 function App() {
+
   const [ isExpanded, setisExpanded ] = useState(true)
   const [mainWidth, setmainwidth] = useState(0)
   const [leftWidth, setleftWidth] = useState(0)
@@ -23,37 +20,11 @@ function App() {
   const [ maxWidthLeft, setmaxWidthLeft ] = useState(350)
   const [ minWidthLeft, setminWidthLeft ] = useState(leftMin)
 
-  const [ leftState, setLeftState ] = useState("collapse")
-  const [ rightState, setRightState ] = useState("expand")
-
   // const [ canAutoExpandLeft, setCanAutoExpandLeft ] = useState(false)
   // const [ canAutoExpandRight, setCanAutoExpandRight ] = useState(true)
 
-  const [ layoutChanged, setLayoutChanged ] = useState(false)
   const [deviceType, setDeviceType] = useState(null)
   const [songInfo, setSongInfo] = useState(null)
-  const handleLayout = () => {
-      // rearrangeUI()
-      // console.log("ok")
-  }
-
-  const handleLeftCollapse = () => {
-    setLeftState(prevState => {
-      const newState = prevState === "collapse" ? "expand" : "collapse"
-      // setCanAutoExpandLeft(newState == "expand")
-      return newState
-    })
-    // console.log("clicked")
-    // rearrangeUI()
-  }
-
-  const handleRightCollapse = () => {
-    setRightState(prevState => {
-      const newState = prevState === "collapse" ? "expand" : "collapse"
-      return newState
-    })
-    // rearrangeUI()
-  }
   
   const handleWidth = (type, width) => {
       if (type == 'main') {
@@ -77,46 +48,22 @@ function App() {
     deviceType && console.log(deviceType)
   }, [deviceType])
   useEffect(() => {
-    setLayoutChanged(prev => prev === false)
-  }, [leftState])
-  useEffect(() => {
-    setLayoutChanged(prev => prev === false)
-    // setCanAutoExpandRight(rightState == "expand")
-  }, [rightState])
-  useEffect(() => {
     handleRootWidth()
     window.addEventListener("resize", handleRootWidth)
     return () => {
       window.removeEventListener('resize', handleRootWidth)
     }
   }, [])
-  useEffect(() => {
-    // console.log(mainWidth, leftWidth, rightWidth)
-    // console.log(rightWidth, "dfdkfk")
-  }, [rightWidth])
-  useEffect(() => {
-    // console.log(rootWidth , "dfdfj")
-    handleLayout()
-  }, [rootWidth])
-  useEffect(() => {
-    // console.log(mainWidth, leftWidth, rightWidth)
-    // console.log(mainWidth)
-  }, [mainWidth])
-  useEffect(() => {
-    // console.log(mainWidth, leftWidth, rightWidth)
-  }, [leftWidth])
 
   return (
     <>
-    <RootProvider>
       <div className="main">
       <NavBar />
-      <LeftSection handleWidth={handleWidth} handleLeftCollapse={handleLeftCollapse} state={leftState}/>
-      <MainSection monitorResize={layoutChanged} handleWidth={handleWidth} />
-      <RightSection state={rightState} songData={songInfo} handleRightCollapse={handleRightCollapse} handleWidth={handleWidth} />
-      {deviceType != null && <BottomSection rightState={rightState} updateSongInfo={(data) => updateSongInfo(data)} handleRightCollapse={handleRightCollapse} deviceType={deviceType} /> }
+      <LeftSection handleWidth={handleWidth} />
+      <MainSection handleWidth={handleWidth} />
+      <RightSection songData={songInfo} handleWidth={handleWidth} />
+      {deviceType != null && <BottomSection updateSongInfo={(data) => updateSongInfo(data)} deviceType={deviceType} /> }
       </div>
-      </RootProvider>
     </>
   )
 }

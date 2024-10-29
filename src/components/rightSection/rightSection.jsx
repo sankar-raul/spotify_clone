@@ -5,22 +5,21 @@ import SecondaryButton from '../tiny_components/secondaryButton'
 import artist_details from '../../backend/artists.json'
 import { Vibe } from '../../functions/songPlayer/AudioController'
 import StickyHeader from '../tiny_components/stickyHeader'
-const RightSection = ({ state, handleWidth, handleRightCollapse, songData }) => {
+import { useAppLayoutSettings } from '../../context/AppLayoutSettings'
+
+const RightSection = ({ handleWidth, songData }) => {
     const rightRef = useRef(null)
-    const [ display, setDisplay ] = useState('grid')
+    const {rightState, setRightState} = useAppLayoutSettings()
+    const [ display, setDisplay ] = useState('block')
     const handleCollapse = () => {
-        handleRightCollapse()
+        setRightState(prevState => prevState === "collapse" ? "expand" : "collapse")
     }
     const handleEvent = () => {
         handleWidth('right', rightRef.current.offsetWidth)
     }
     useEffect(() => {
-        if (state == 'expand') {
-            setDisplay("block")
-        } else {
-            setDisplay('none')
-        }
-    }, [state])
+        setDisplay(rightState == 'expand' ? "block" : "none")
+    }, [rightState])
     useEffect(() => {
             handleEvent()
             window.addEventListener("resize", handleEvent)
@@ -57,8 +56,6 @@ const RightSection = ({ state, handleWidth, handleRightCollapse, songData }) => 
 }
 RightSection.propTypes = {
     handleWidth: PropTypes.func.isRequired,
-    handleRightCollapse: PropTypes.func.isRequired,
-    state: PropTypes.string.isRequired,
     songData: PropTypes.object
 }
 

@@ -3,28 +3,33 @@ import PropTypes from 'prop-types'
 import { Vibe } from '../../../../functions/songPlayer/AudioController'
 import {useEffect, useState} from 'react'
 import SpotiButton from '../../../tiny_components/SpotiButton'
+import { useAppLayoutSettings } from '../../../../context/AppLayoutSettings'
 
-const LayoutController = ({handleRightCollapse, rightState}) => {
-    const [isSelected, setIsSelected] = useState(rightState !== 'collapse')
-    // console.log(rightState)
-    useEffect(() => {
-        // console.log(rightState)
-        setIsSelected(rightState !== 'collapse')
-    }, [rightState])
+const LayoutController = () => {
+    const { rightState, setRightState } = useAppLayoutSettings()
+    const isSelected = rightState !== 'collapse'
+    const handleAppSettings = (type) => {
+        switch (type) {
+            case 'nowPlaying':
+                setRightState(prevState => prevState === "collapse" ? "expand" : "collapse")
+                  break;
+            default:
+                // console.log(type)
+        }
+    }
     return (
         <div className={styles.navigators}>
-                <SpotiButton src='/now-playing.svg' onClick={handleRightCollapse} selected={isSelected}/>
-                <SpotiButton src='/lyrics.svg'/>
-                <SpotiButton src='/queue.svg'/>
-                <SpotiButton src='/devices.svg'/>
+                <SpotiButton type='nowPlaying' src='/now-playing.svg' onClick={handleAppSettings} selected={isSelected}/>
+                <SpotiButton type='lyrics' src='/lyrics.svg' onClick={handleAppSettings}/>
+                <SpotiButton type='queue' src='/queue.svg' onClick={handleAppSettings}/>
+                <SpotiButton type='devices' src='/devices.svg' onClick={handleAppSettings}/>
                 <SoundController />
-                <SpotiButton src='/mini-player.svg'/>
+                <SpotiButton type='miniPlayer' src='/mini-player.svg' onClick={handleAppSettings}/>
                 <NormalIcon src='/fullscreen.svg'/>
         </div>
     )
 }
 LayoutController.propTypes = {
-    handleRightCollapse: PropTypes.func.isRequired,
     rightState: PropTypes.string
 }
 const SoundController = () => {
@@ -74,7 +79,8 @@ const NormalIcon = ({src = '', style = {}, onClick = null}) => {
 }
 NormalIcon.propTypes = {
     src: PropTypes.string,
-    style: PropTypes.object
+    style: PropTypes.object,
+    onClick: PropTypes.func
 }
 
 export default LayoutController

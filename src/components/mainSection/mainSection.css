@@ -314,4 +314,16 @@
     padding: 8px 32px;
     padding-bottom: 40px;
     padding-top: 32px;
+
+}
+.mainNavbarSticky::before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: var(--customBg, transparent);
+    filter: brightness(70%);
+    box-shadow: 0px 2px 30px 0px var(--customBg, #0004);
+    left: 0;
+    top: 0;
 }

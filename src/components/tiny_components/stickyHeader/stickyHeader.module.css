@@ -1,5 +1,5 @@
 .stickyHeader {
-    background: var(--customBg, #111111);
+    background: var(--customBg);
     box-shadow: 0px 3px 10px 0px #0009;
 }
 .header {

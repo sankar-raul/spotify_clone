@@ -7,8 +7,8 @@ export const SpotiButton = ({src='/now-playing.svg', onClick = null, selected = 
     const [isActive, setIsActive] = useState(false)
     const [isSelected, setIsSelected] = useState(selected)
     const handleClick = () => {
+        onClick && onClick(type, !isSelected)
         setIsSelected(prev => !prev)
-        onClick && onClick(type)
     }
     const handleHover = () => {
         setIsHovered(prev => !prev)

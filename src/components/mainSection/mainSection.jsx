@@ -7,19 +7,22 @@ import './mainSection.css'
 import StickyHeader from "../tiny_components/stickyHeader"
 import { useMainHeaderTheme } from "../../context/MainHeaderTheme"
 import useAppLayoutSettings from "../../context/AppLayoutSettings"
-const MainSection = ({ handleWidth }) => {
+const MainSection = () => {
     const mainRef = useRef(null)
+    const [ mainWidth, setMainWidth ] = useState(null)
     const { mainHeaderTheme } = useMainHeaderTheme()
-    const handleEvent = () => {
-        handleWidth('main', mainRef.current.offsetWidth)
-    }
+    const { setWidth } = useAppLayoutSettings()
+    const resizeObserver = new ResizeObserver((entries) => {
+        for (let entry of entries) {
+            setMainWidth(entry.contentRect.width)
+        }
+    })
     useEffect(() => {
-            // alert()
-            handleEvent()
-            window.addEventListener("resize", handleEvent)
-            return () => {
-                window.removeEventListener("resize", handleEvent)
-            }
+        setWidth('main', mainWidth)
+    }, [mainWidth])
+    useEffect(() => {
+        resizeObserver.observe(mainRef.current)
+        return () => resizeObserver.disconnect()
     }, [])
     return (
         <>
@@ -46,9 +49,6 @@ const MainSection = ({ handleWidth }) => {
         </div>
         </>
     )
-}
-MainSection.propTypes = {
-    handleWidth: PropTypes.func.isRequired
 }
 
 const BodyPart = () => {

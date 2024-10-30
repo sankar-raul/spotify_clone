@@ -1,14 +1,13 @@
-import { createContext, useState } from "react"
+import { useState } from "react"
 import PropTypes from 'prop-types'
-
-export const HeaderContext = createContext()
+import { headerContext } from '.'
 export const MainHeaderThemeProvider = ({children}) => {
     const [mainHeaderTheme, setMainHeaderTheme] = useState(null)
 
     return (
-        <HeaderContext.Provider value={{mainHeaderTheme, setMainHeaderTheme}}>
+        <headerContext.Provider value={{mainHeaderTheme, setMainHeaderTheme}}>
             {children}
-        </HeaderContext.Provider>
+        </headerContext.Provider>
     )
 }
 MainHeaderThemeProvider.propTypes = {

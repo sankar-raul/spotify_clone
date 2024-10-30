@@ -1,28 +1,20 @@
-import PropTypes from 'prop-types'
-import { useEffect, useState } from 'react'
 import DesktopBottom from './desktopBottom'
 import styles from './bottomSection.module.css'
+import useGlobal from '../../context/Global'
 
-const BottomSection = ({ deviceType, updateSongInfo }) => {
-    const [ device, setDevice ] = useState(null)
-    useEffect(() => {
-        setDevice(deviceType)
-    }, [])
+const BottomSection = () => {
+    const { deviceType } = useGlobal()
     return (
     <>
         {
-            deviceType && device == 'desktop' ? (
-                <DesktopBottom className={styles.bottomSection} updateSongInfo={(data) => updateSongInfo(data)} />
+            deviceType == 'desktop' ? (
+                <DesktopBottom className={styles.bottomSection} />
             ) : (
-                <DesktopBottom className={styles.bottomSection} updateSongInfo={(data) => updateSongInfo(data)} />
+                <DesktopBottom className={styles.bottomSection} />
             )
         }
     </>
     )
-}
-BottomSection.propTypes = {
-    deviceType: PropTypes.string.isRequired,
-    updateSongInfo: PropTypes.func.isRequired
 }
 
 export default BottomSection

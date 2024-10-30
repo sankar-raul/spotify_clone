@@ -6,32 +6,38 @@ import artist_details from '../../backend/artists.json'
 import { Vibe } from '../../functions/songPlayer/AudioController'
 import StickyHeader from '../tiny_components/stickyHeader'
 import { useAppLayoutSettings } from '../../context/AppLayoutSettings'
+import useVibes from '../../context/Vibes'
 
-const RightSection = ({ handleWidth, songData }) => {
+const RightSection = () => {
     const rightRef = useRef(null)
-    const {rightState, setRightState} = useAppLayoutSettings()
+    const { songData } = useVibes()
+    const [ rightWidth, setRightWidth ] = useState(null)
+    const { rightState, setRightState } = useAppLayoutSettings()
     const [ display, setDisplay ] = useState('block')
+    const { setWidth } = useAppLayoutSettings()
     const handleCollapse = () => {
         setRightState(prevState => prevState === "collapse" ? "expand" : "collapse")
     }
-    const handleEvent = () => {
-        handleWidth('right', rightRef.current.offsetWidth)
-    }
+    const resizeObserver = new ResizeObserver((entries) => {
+        for (let entry of entries) {
+            setRightWidth(entry.contentRect.width)
+        }
+    })
+    useEffect(() => {
+        setWidth('right', rightWidth)
+    }, [rightWidth])
     useEffect(() => {
         setDisplay(rightState == 'expand' ? "block" : "none")
     }, [rightState])
     useEffect(() => {
-            handleEvent()
-            window.addEventListener("resize", handleEvent)
-            return () => {
-                window.removeEventListener("resize", handleEvent)
-            }
+        resizeObserver.observe(rightRef.current)
+        return () => resizeObserver.disconnect()
     }, [])
     return (
         <section style={{display: display}} ref={rightRef} className={styles.rightSection}>
             <StickyHeader>
             <div className={styles.heading}>
-                <div className={styles.song_heading}><p>{songData && songData.title}</p></div>
+                <div className={styles.song_heading}><p>{songData?.title}</p></div>
                 <div className={styles.navigator}>
                     <div className={styles.threeDots}>
                 </div>
@@ -54,10 +60,6 @@ const RightSection = ({ handleWidth, songData }) => {
         </section>
     )
 }
-RightSection.propTypes = {
-    handleWidth: PropTypes.func.isRequired,
-    songData: PropTypes.object
-}
 
 const SongBody = ({songData}) => {
     // console.log(songData)
@@ -76,10 +78,10 @@ const SongBody = ({songData}) => {
                 </div>
                 <div className={styles.song_info}>
                     <div className={styles.song_title}>
-                        <div><span>{songData && songData.title}</span></div>
+                        <div><span>{songData?.title}</span></div>
                         <div className={styles.artists}>
                             {
-                                songData && songData.artists.join(',#$').split('#$').map((artist, idx) => (
+                                songData?.artists.join(',#$').split('#$').map((artist, idx) => (
                                     <Fragment key={idx}>
                                         <span>{artist}</span>&nbsp;
                                     </Fragment>
@@ -100,7 +102,7 @@ const SongBody = ({songData}) => {
                     {mainArtistInfo && mainArtistInfo.type == 'circle' && (<img className={styles.circle_artist_cover} src={mainArtistInfo.cover}/>)}
                 </div>
                 <div className={styles.artist_info}>
-                    <div className={styles.artist_name}><p>{songData && songData.artists[0]}</p></div>
+                    <div className={styles.artist_name}><p>{songData?.artists[0]}</p></div>
                     <div className={styles.follow_section}>
                         <div>
                         {mainArtistInfo && mainArtistInfo.listeners} monthly listeners
@@ -118,7 +120,7 @@ const SongBody = ({songData}) => {
                     <div>Show all</div>
                 </div>
                 {
-                    songData && songData.credits.map((artistInfo, idx) => (
+                    songData?.credits.map((artistInfo, idx) => (
                         <div key={idx}>
                             <div>
                                 <div>{<span name={artistInfo.artistId ? '': "nonArtist"}>{artistInfo.artist}</span>}</div>
@@ -147,10 +149,10 @@ const SongBody = ({songData}) => {
                         <div className={styles.queue_btn}></div>
                     </div>
                     <div>
-                        <span>{songData && songData.queue.title}</span>
+                        <span>{songData?.queue.title}</span>
                         <span>
                         {
-                            songData && songData.queue.artists.join(',#$').split('#$').map((type, idx) => (
+                            songData?.queue.artists.join(',#$').split('#$').map((type, idx) => (
                                 <Fragment key={idx}>
                                     <span>{type}</span>&nbsp;
                                 </Fragment>

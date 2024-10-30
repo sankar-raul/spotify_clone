@@ -3,7 +3,8 @@ import styles from './controller.module.css'
 import PropTypes from 'prop-types'
 import songList from '../../../../backend/songlist.json'
 import {player as spotiPlayer} from '../../../../functions/songPlayer/AudioController'
-export default function Controller({updateSongDetails}) {
+import useVibes from '../../../../context/Vibes'
+export default function Controller() {
     const [ isPlaying, setIsPlaying ] = useState(false)
     const [ isSuffle, setIsSuffle ] = useState(false)
     const [isHovered, setIsHovered] = useState(false)
@@ -12,12 +13,12 @@ export default function Controller({updateSongDetails}) {
     const [isActiveR, setIsActiveR] = useState(false)
     const [ Player, setPlayer ] = useState(null)
     const [ repeatState, setRepeatState ] = useState(0)
-    const [songData, setSongData] = useState(null)
     const [currentTime, setCurrentTime] = useState(0)
     const [songDuration, setSongDuration] = useState(0)
     const [playedPercentage, setPlayedPercentage] = useState(0)
     const [currentTimeStamp, setCurrentTimeStamp] = useState('0:00')
     const [durationTimeStamp, setDurationTimeStamp] = useState('0:00')
+    const { setSongData } = useVibes()
     const handlePlay = () => {
         setIsPlaying(prev => !prev)
     }
@@ -65,9 +66,6 @@ export default function Controller({updateSongDetails}) {
         // console.log(playedPercentage)
     }, [playedPercentage])
     useEffect(() => {
-        songData && updateSongDetails(songData)
-    }, [songData])
-    useEffect(() => {
         if (!Player) return
         Player.isSuffle = isSuffle
     }, [isSuffle])
@@ -107,7 +105,4 @@ export default function Controller({updateSongDetails}) {
                 </div>
             </div>
     )
-}
-Controller.propTypes = {
-    updateSongDetails: PropTypes.func.isRequired
 }

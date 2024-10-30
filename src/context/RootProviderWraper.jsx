@@ -1,19 +1,23 @@
 import PropTypes from 'prop-types'
 import MainHeaderThemeProvider from './MainHeaderTheme/provider'
 import AppLayoutSettingsProvider from './AppLayoutSettings/provider'
-export const RootProvider = ({ children }) => {
+import VibesProvider from './Vibes/provider'
+import GlobalProvider from './Global/provider'
+export const RootProviderWrapper = ({ children }) => {
 
     return (
-        <>
+        <GlobalProvider>
+        <VibesProvider>
         <AppLayoutSettingsProvider>
             <MainHeaderThemeProvider>
                 {children}
             </MainHeaderThemeProvider>
         </AppLayoutSettingsProvider>
-        </>
+        </VibesProvider>
+        </GlobalProvider>
     )
 }
-RootProvider.propTypes = {
+RootProviderWrapper.propTypes = {
     children: PropTypes.node
 }
-export default RootProvider
+export default RootProviderWrapper

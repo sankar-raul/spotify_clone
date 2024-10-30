@@ -1,13 +1,13 @@
 import Songtag from '../songtag/songtag'
-import { useEffect, useRef } from 'react'
-import PropTypes from 'prop-types'
+import { useEffect, useRef, useState } from 'react'
 import './leftSection.css'
 import playList from '../../backend/playlist_items.json'
 import useAppLayoutSettings from '../../context/AppLayoutSettings'
-const LeftSection = ({handleWidth}) => {
+const LeftSection = () => {
+    const {setWidth} = useAppLayoutSettings()
     const leftRef = useRef(null)
+    const [leftWidth, setLeftWidth] = useState(null)
     const {leftState, setLeftState} = useAppLayoutSettings()
-    const buttonRef = useRef(null)
     const handleCollapse = () => {
         setLeftState(prevState => {
             const newState = prevState === "collapse" ? "expand" : "collapse"
@@ -15,17 +15,21 @@ const LeftSection = ({handleWidth}) => {
           })
     }
     const handleEvent = () => {
-        handleWidth('left', leftRef.current.offsetWidth)
+        setLeftWidth(leftRef.current.offsetWidth)
     }
+    const resizeObserver = new ResizeObserver((entries) => {
+        for (let entry of entries) {
+            setLeftWidth(entry.contentRect.width)
+        }
+    })
     useEffect(() => {
-            // alert()
+        setWidth('left', leftRef.current.offsetWidth)
+    }, [leftWidth])
+    useEffect(() => {
             handleEvent()
-            const buttonRefCopy = buttonRef.current
-            buttonRefCopy.addEventListener("click", handleCollapse)
-            window.addEventListener("resize", handleEvent)
+            resizeObserver.observe(leftRef.current)
             return () => {
-                buttonRefCopy.removeEventListener("click", handleCollapse)
-                window.removeEventListener("resize", handleEvent)
+                resizeObserver.disconnect()
             }
     }, [])
     return (
@@ -33,7 +37,7 @@ const LeftSection = ({handleWidth}) => {
             <div className="top-portion">
                 <header>
                 <div className="top-portion-nav">
-                    <div ref={buttonRef} className='library'>
+                    <div onClick={handleCollapse} className='library'>
                     <div className="expand-btn"></div>
                         {
                             leftState != "collapse" ? (
@@ -68,9 +72,6 @@ const LeftSection = ({handleWidth}) => {
             </div>
         </section>
     )
-}
-LeftSection.propTypes = {
-    handleWidth: PropTypes.func.isRequired
 }
 
 const PlayLists = () => {

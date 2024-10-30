@@ -1,18 +1,18 @@
-import { useState, useEffect, Fragment } from 'react'
-import PropTypes from 'prop-types'
+import { Fragment } from 'react'
 import styles from './songPlate.module.css'
+import useVibes from '../../../../context/Vibes'
 
-const Songplate = ({songData}) => {
-
+const Songplate = () => {
+    const { songData } = useVibes()
     return (
         <div className={styles.songplate}>
                 <div style={songData && {backgroundImage: `url(${songData.song_thumb})`}}></div>
                 <div className={styles.songplate_details}>
                     <div>
-                        <div><span>{songData && songData.title}</span></div>
+                        <div><span>{songData?.title}</span></div>
                         <div>
                             {
-                                songData && songData.artists.join(',#$').split('#$').map((artist, idx) => (
+                                songData?.artists.join(',#$').split('#$').map((artist, idx) => (
                                     <Fragment key={idx}>
                                         <span>{artist}</span>&nbsp;
                                     </Fragment>
@@ -26,7 +26,4 @@ const Songplate = ({songData}) => {
     )
 }
 
-Songplate.propTypes = {
-    songData: PropTypes.object
-}
 export default Songplate

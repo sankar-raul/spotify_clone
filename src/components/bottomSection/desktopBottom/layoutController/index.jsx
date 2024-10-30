@@ -6,15 +6,16 @@ import SpotiButton from '../../../tiny_components/SpotiButton'
 import { useAppLayoutSettings } from '../../../../context/AppLayoutSettings'
 
 const LayoutController = () => {
-    const { rightState, setRightState } = useAppLayoutSettings()
+    const { rightState, setRightState, applySettings } = useAppLayoutSettings()
     const isSelected = rightState !== 'collapse'
-    const handleAppSettings = (type) => {
+    const handleAppSettings = (type, isSelected) => {
+        if (!type) return
         switch (type) {
             case 'nowPlaying':
                 setRightState(prevState => prevState === "collapse" ? "expand" : "collapse")
                   break;
             default:
-                // console.log(type)
+                applySettings(type, isSelected)
         }
     }
     return (

@@ -16,7 +16,7 @@
 .songplate > div:nth-child(1) {
     height: 90%;
     aspect-ratio: 1 / 1;
-    background-image: url('/song_thumbs/default.png');
+    background-image: url('/song_thumbs/defaultCover.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

@@ -69,7 +69,8 @@ const BodyPart = () => {
 const ListSection = ({songSection}) => {
     const [items, setItems] = useState(1)
     const mainSectionRef = useRef(null)
-    const { layoutChangedTrigger } = useAppLayoutSettings()
+    const { layoutWidth } = useAppLayoutSettings()
+    const [mainWidth, setMainWidth] = useState()
     const handleItemsCount = (width) => {
         if (width > 239) {
             setItems(prev => prev + 1)
@@ -84,8 +85,11 @@ const ListSection = ({songSection}) => {
         setItems(avg <= 1 ? 2 : avg)
     }
     useEffect(() => {
+        setMainWidth(layoutWidth?.main)
+    }, [layoutWidth])
+    useEffect(() => {
         intialSize()
-    }, [layoutChangedTrigger])
+    }, [mainWidth])
     useEffect(() => {
         intialSize()
     }, [])

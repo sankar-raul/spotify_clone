@@ -1,5 +1,59 @@
 [
     {
+        "title": "All Around the World (La La La)",
+        "src": "/songs/All Around the World (La La La).mp3",
+        "canvas": "/canvas/All Around the World (La La La).mp4",
+        "isLiked": true,
+        "artists": [
+            "R3HAB",
+            "A Touch Of Class"
+        ],
+        "credits": [
+            {
+                "artist": "R3HAB",
+                "credit": ["Main Artist", "Producer"],
+                "artistId": "artist129t"
+            },
+            {
+                "artist": "A Touch Of Class",
+                "credit": ["Main Artist"],
+                "artistId": "artist100t"
+            },
+            {
+                "artist": "Alex Christensen",
+                "credit": ["Composer"]
+            }
+        ],
+        "song_thumb": "/song_thumbs/R3HAB.png"
+    },
+    {
+        "title": "Let Me Love You",
+        "src": "/songs/Let Me Love You.mp3",
+        "canvas": "/canvas/Let Me Love You.mp4",
+        "isLiked": true,
+        "artists": [
+            "DJ Snake",
+            "Justin Bieber"
+        ],
+        "credits": [
+            {
+                "artist": "DJ Snake",
+                "credit": ["Main Artist", "Producer"],
+                "artistId": "artist129t"
+            },
+            {
+                "artist": "Justin Bieber",
+                "credit": ["Featured Artist", "Composer"],
+                "artistId": "artist100t"
+            },
+            {
+                "artist": "WATT",
+                "credit": ["Composer", "Producer"]
+            }
+        ],
+        "song_thumb": "/song_thumbs/Let_Me_Love_You.png"
+    },
+    {
         "title": "Blinding Lights",
         "src": "/songs/Blinding Lights.mp3",
         "canvas": "/canvas/Blinding Lights.mp4",

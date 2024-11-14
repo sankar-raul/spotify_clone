@@ -109,9 +109,7 @@ const SongBody = ({songData}) => {
                         </div>
                         <SecondaryButton />
                     </div>
-                    <div className={styles.artist_description}>
-                        {mainArtistInfo && mainArtistInfo.description}
-                    </div>
+                    <div dangerouslySetInnerHTML={{ __html: mainArtistInfo?.description }} className={styles.artist_description}></div>
                 </div>
             </div>
             <div className={styles.credits}>

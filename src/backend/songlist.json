@@ -1,5 +1,29 @@
 [
     {
+        "title": "Bye Bye Bye - From Deadpool and Wolverine Soundtrack",
+        "src": "/songs/Bye Bye Bye - From Deadpool and Wolverine Soundtrack.mp3",
+        "isLiked": true,
+        "artists": [
+            "*NSYNC"
+        ],
+        "credits": [
+            {
+                "artist": "*NSYNC",
+                "credit": ["Main Artist"],
+                "artistId": "artist128u"
+            },
+            {
+                "artist": "Kristian Lundin",
+                "credit": ["Composer", "Lyricist", "Producer"]
+            },
+            {
+                "artist": "Jacob Schulze",
+                "credit": ["Composer", "Lyricist"]
+            }
+        ],
+        "song_thumb": "/song_thumbs/Bye_Bye_Bye_-_From_Deadpool_and_Wolverine_Soundtrack.png"
+    },
+    {
         "title": "All Around the World (La La La)",
         "src": "/songs/All Around the World (La La La).mp3",
         "canvas": "/canvas/All Around the World (La La La).mp4",

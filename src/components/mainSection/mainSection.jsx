@@ -7,10 +7,11 @@ import './mainSection.css'
 import StickyHeader from "../tiny_components/stickyHeader"
 import { useMainHeaderTheme } from "../../context/MainHeaderTheme"
 import useAppLayoutSettings from "../../context/AppLayoutSettings"
+import { Route, Routes } from "react-router-dom"
+import Lyrics from "../Lyrics/index"
 const MainSection = () => {
     const mainRef = useRef(null)
     const [ mainWidth, setMainWidth ] = useState(null)
-    const { mainHeaderTheme } = useMainHeaderTheme()
     const { setWidth } = useAppLayoutSettings()
     const resizeObserver = new ResizeObserver((entries) => {
         for (let entry of entries) {
@@ -26,31 +27,41 @@ const MainSection = () => {
     }, [])
     return (
         <>
-        <div className="outer-main">
-        <section ref={mainRef} className="mainSection" style={{'--shadow': mainHeaderTheme}}>
-           
-            <StickyHeader className='mainNavbarSticky' background={mainHeaderTheme}>
-            <header className="main-nav">
-                <div className="main-nav-btns">
-                    <button name='active'>All</button>
-                    <button>Music</button>
-                    <button>Podcasts</button>
-                </div>
-            </header>
-            </StickyHeader>
-            <main className="home">
-                <RecentsTiles />
-                <BodyPart />
-            </main>
-            <footer className="footer">
-                <Footer />
-            </footer>
-        </section>
+        <div ref={mainRef} className="outer-main">
+            <Routes>
+                <Route path="/" element={<Main />}/>
+                <Route path="/lyrics" element={<Lyrics />}/>
+            </Routes>
         </div>
         </>
     )
 }
 
+const Main = () => {
+    const { mainHeaderTheme } = useMainHeaderTheme()
+
+    return (
+        <section className="mainSection" style={{'--shadow': mainHeaderTheme}}>
+           
+        <StickyHeader className='mainNavbarSticky' background={mainHeaderTheme}>
+        <header className="main-nav">
+            <div className="main-nav-btns">
+                <button name='active'>All</button>
+                <button>Music</button>
+                <button>Podcasts</button>
+            </div>
+        </header>
+        </StickyHeader>
+        <main className="home">
+            <RecentsTiles />
+            <BodyPart />
+        </main>
+        <footer className="footer">
+            <Footer />
+        </footer>
+    </section>
+    )
+}
 const BodyPart = () => {
     useEffect(() => {
         // console.log(songSections)

@@ -4,9 +4,10 @@ import { Vibe } from '../../../../functions/songPlayer/AudioController'
 import {useEffect, useState} from 'react'
 import SpotiButton from '../../../tiny_components/SpotiButton'
 import { useAppLayoutSettings } from '../../../../context/AppLayoutSettings'
-
+import { useLocation } from 'react-router-dom'
 const LayoutController = () => {
     const { rightState, setRightState, applySettings } = useAppLayoutSettings()
+    const location = useLocation()
     const isSelected = rightState !== 'collapse'
     const handleAppSettings = (type, isSelected) => {
         if (!type) return
@@ -21,7 +22,7 @@ const LayoutController = () => {
     return (
         <div className={styles.navigators}>
                 <SpotiButton type='nowPlaying' src='/now-playing.svg' onClick={handleAppSettings} selected={isSelected}/>
-                <SpotiButton type='lyrics' src='/lyrics.svg' onClick={handleAppSettings}/>
+                <SpotiButton type='lyrics' src='/lyrics.svg' onClick={handleAppSettings} selected={location.pathname == '/lyrics'}/>
                 <SpotiButton type='queue' src='/queue.svg' onClick={handleAppSettings}/>
                 <SpotiButton type='devices' src='/devices.svg' onClick={handleAppSettings}/>
                 <SoundController />

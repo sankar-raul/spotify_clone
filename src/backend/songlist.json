@@ -51,6 +51,30 @@
         "song_thumb": "/song_thumbs/R3HAB.png"
     },
     {
+        "title": "Skyfall",
+        "src": "/songs/Skyfall.mp3",
+        "isLiked": true,
+        "artists": [
+            "Adele"
+        ],
+        "credits": [
+            {
+                "artist": "Adele",
+                "credit": ["Main Artist"],
+                "artistId": "artist1aat"
+            },
+            {
+                "artist": "Adele Adkins",
+                "credit": ["Composer", "Lyricist"]
+            },
+            {
+                "artist": "Paul Epworth",
+                "credit": ["Composer", "Lyricist", "Producer"]
+            }
+        ],
+        "song_thumb": "/song_thumbs/Skyfall.png"
+    },
+    {
         "title": "Let Me Love You",
         "src": "/songs/Let Me Love You.mp3",
         "canvas": "/canvas/Let Me Love You.mp4",

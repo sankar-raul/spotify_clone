@@ -61,7 +61,8 @@ const SoundController = () => {
         }
     }
     useEffect(() => {
-        Vibe.volume = soundLevel
+        if (Vibe)
+            Vibe.volume = soundLevel
         handleIcon(soundLevel)
     }, [soundLevel])
     return (

@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     position: relative;
+    --current-time: 0;
 }
 .lyrics-wraper {
     width: max-content;
@@ -19,14 +20,25 @@
 }
 .lyrics-wraper > p {
     line-height: 40px;
-    color: #000;
+    color: #fff9;
     /* background-color: red; */
     font-weight: 600;
-    transition: ease;
+    transition: ease .2s;
     &:hover {
         text-decoration: underline 2px solid #fff;
         color: #fff;
+        text-shadow: 0px 0px 2px #fff;
     }
+}
+.lyrics-line {
+    
+}
+p.current {
+    color: #fff;
+}
+p.past {
+    color: #fff;
+    text-shadow: 0px 0px 2px #fff;
 }
 @media screen and (min-width: 1000px) {
     .lyrics-wraper > p {

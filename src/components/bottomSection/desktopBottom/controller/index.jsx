@@ -1,86 +1,25 @@
 import { useState, useEffect } from 'react'
 import styles from './controller.module.css'
-import PropTypes from 'prop-types'
-import songList from '../../../../backend/songlist.json'
-import {player as spotiPlayer} from '../../../../functions/songPlayer/AudioController'
+// import PropTypes from 'prop-types'
 import useVibes from '../../../../context/Vibes'
 export default function Controller() {
-    const [ isPlaying, setIsPlaying ] = useState(false)
-    const [ isSuffle, setIsSuffle ] = useState(false)
-    const [isHovered, setIsHovered] = useState(false)
-    const [isActive, setIsActive] = useState(false)
-    const [isHoveredR, setIsHoveredR] = useState(false)
-    const [isActiveR, setIsActiveR] = useState(false)
-    const [ Player, setPlayer ] = useState(null)
-    const [ repeatState, setRepeatState ] = useState(0)
-    const [currentTime, setCurrentTime] = useState(0)
-    const [songDuration, setSongDuration] = useState(0)
-    const [playedPercentage, setPlayedPercentage] = useState(0)
+    const { nextSong, prevSong, onChange, handleRepeatMode, repeatState, songDuration, handlePlay, isPlaying, isSuffle, currentTime, playedPercentage, handleSuffleMode } = useVibes()
+
+    // const [songDuration, setSongDuration] = useState(0)
     const [currentTimeStamp, setCurrentTimeStamp] = useState('0:00')
     const [durationTimeStamp, setDurationTimeStamp] = useState('0:00')
-    const { setSongData } = useVibes()
-    const handlePlay = () => {
-        setIsPlaying(prev => !prev)
-    }
-    const update = (data) => {
-        setSongData(data)
-    }
-    const handleSuffleMode = () => {
-        setIsSuffle(prev => !prev)
-    }
-    const handleRepeatMode = () => {
-        setRepeatState(prev => {
-            return prev < 2 ? prev + 1 : 0
-        })
-    }
-    const nextSong = () => {
-        if (!Player) return
-        Player.next()
-        setIsPlaying(true)
-    }
-    const prevSong = () => {
-        if (!Player) return
-        Player.prev()
-        setIsPlaying(true)
-    }
-    const onChange = (element) => {
-        setCurrentTime(element.target.value)
-        if (Player) Player.currentTime = element.target.value
-    }
-    const played = () => {
-        let playedPercentage = (currentTime / songDuration) * 100
-        setPlayedPercentage(playedPercentage)
-    }
-
+    const [isActive, setIsActive] = useState(false)
+    const [isActiveR, setIsActiveR] = useState(false)
+    const [isHovered, setIsHovered] = useState(false)
+    const  [isHoveredR, setIsHoveredR] = useState(false)
     useEffect(() => {
         // console.log(songDuration)
+        console.log(songDuration)
         setDurationTimeStamp(`${Math.floor(songDuration / 60)}:${Math.floor(songDuration % 60)}`)
-        played()
     }, [songDuration])
     useEffect(() => {
-        // console.log(currentTime)
-        played()
         setCurrentTimeStamp(`${Math.floor(currentTime / 60)}:${Math.floor(currentTime % 60)}`)
     }, [currentTime])
-    useEffect(() => {
-        // console.log(playedPercentage)
-    }, [playedPercentage])
-    useEffect(() => {
-        if (!Player) return
-        Player.isSuffle = isSuffle
-    }, [isSuffle])
-    useEffect(() => {
-        if (!Player) return
-        isPlaying ? Player.play() : Player.pause()
-        // Player.currentTime = 175
-    }, [isPlaying])
-    useEffect(() => {
-        if (!Player) return
-        Player.repeatState = repeatState
-    }, [repeatState])
-    useEffect(() => {
-        !Player && setPlayer(spotiPlayer(songList, update, {setIsPlaying, setCurrentTime, setSongDuration}))
-    }, [])
     return (
         <div className={styles.controllers}>
                 <div className={styles.controll_buttons}>

@@ -26,7 +26,7 @@ useEffect(() => {
     })()
 }, [songData])
 useEffect(() => {
-    console.log(lyrics)
+    // console.log(lyrics)
 }, [lyrics])
 useEffect(() => {
     setHistory(prev => [...prev, location.pathname])

@@ -1,10 +1,9 @@
-import { useEffect, useReducer, useState } from "react"
+import { useEffect, useState } from "react"
 import PropTypes from 'prop-types'
 import { vibesContext } from '.'
 import {player as spotiPlayer} from '../../functions/songPlayer/AudioController'
 import songList from '../../backend/songlist.json'
 
-import { Vibe } from "../../functions/songPlayer/AudioController"
 export const VibesProvider = ({children}) => {
     const [ songData, setSongData ] = useState(null)
     const [ currentTime, setCurrentTime ] = useState(0)

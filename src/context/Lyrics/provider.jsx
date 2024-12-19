@@ -3,7 +3,7 @@ import { LyricsContext } from ".";
 import PropTypes from 'prop-types'
 import { useNavigate, useLocation } from "react-router-dom";
 import useVibes from "../Vibes";
-import getLyrics from "../../api/getLyrics";
+import getLyrics from "../../apis/getLyrics";
 export const LyricsProvider = ({children}) => {
 const [isLyricsRoute, setIsLyricsRoute] = useState(null)
 const [lyrics, setLyrics] = useState(null)

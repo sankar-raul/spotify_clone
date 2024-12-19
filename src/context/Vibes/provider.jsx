@@ -79,7 +79,7 @@ export const VibesProvider = ({children}) => {
     //mmmm
 
     useEffect(() => {
-        console.log(currentTime)
+        // console.log(currentTime)
     }, [currentTime])
     useEffect(() => {
         // console.log(songData)

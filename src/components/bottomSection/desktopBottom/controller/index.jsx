@@ -14,7 +14,6 @@ export default function Controller() {
     const  [isHoveredR, setIsHoveredR] = useState(false)
     useEffect(() => {
         // console.log(songDuration)
-        console.log(songDuration)
         setDurationTimeStamp(`${Math.floor(songDuration / 60)}:${Math.floor(songDuration % 60)}`)
     }, [songDuration])
     useEffect(() => {

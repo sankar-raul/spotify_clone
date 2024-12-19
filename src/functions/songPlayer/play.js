@@ -179,19 +179,26 @@ class MusicPlayer {
     
       // key controllers
       document.onkeydown = (e) => {
+        if (e.target.tagName != "INPUT") {
+            e.preventDefault()
         if (e.code === 'Space') {
+            // console.log(e)
+            e.preventDefault()
             this.isPlaying ? this.pause() : this.play()
         } else if (e.code === 'ArrowRight') {
+            e.preventDefault()
             if (this.currentTime + 5 >= this.duration) {
                 this.next()
             } else {
                 this.currentTime += 5
             }
         } else if (e.code === 'ArrowLeft') {
+            e.preventDefault()
             this.currentTime -= 5
         } else {
             // console.log(e.code)
         }
+    }
     }
 
     this.setMediaSessionMetadata()

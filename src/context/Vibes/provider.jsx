@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import PropTypes from 'prop-types'
 import { vibesContext } from '.'
+import { Vibe } from '../../functions/songPlayer/AudioController'
 import {player as spotiPlayer} from '../../functions/songPlayer/AudioController'
 import songList from '../../backend/songlist.json'
 
@@ -8,6 +9,7 @@ export const VibesProvider = ({children}) => {
     const [ songData, setSongData ] = useState(null)
     const [ currentTime, setCurrentTime ] = useState(0)
     // mmm
+    const [ volume, setVolume ] = useState(1)
     const [ isPlaying, setIsPlaying ] = useState(false)
     const [ isSuffle, setIsSuffle ] = useState(false)
     const [ Player, setPlayer ] = useState(null)
@@ -47,7 +49,16 @@ export const VibesProvider = ({children}) => {
         let playedPercentage = (currentTime / songDuration) * 100
         setPlayedPercentage(playedPercentage)
     }
-
+    useEffect(() => {
+        if (volume < 0)
+            setVolume(0)
+        else if (volume > 1)
+            setVolume(1)
+        else {
+            if (Vibe)
+                Vibe.volume = volume
+        }
+    }, [volume])
     useEffect(() => {
         // console.log(songDuration)
         played()
@@ -73,7 +84,7 @@ export const VibesProvider = ({children}) => {
         Player.repeatState = repeatState
     }, [repeatState])
     useEffect(() => {
-        !Player && setPlayer(spotiPlayer(songList, update, {setIsPlaying, setCurrentTime, setSongDuration}))
+        !Player && setPlayer(spotiPlayer(songList, update, {setIsPlaying, setCurrentTime, setSongDuration, setVolume}))
     }, [])
     //mmmm
 
@@ -101,7 +112,9 @@ export const VibesProvider = ({children}) => {
             update,
             playedPercentage,
             isPlaying,
-            songDuration
+            songDuration,
+            volume,
+            setVolume
             }}>
             {children}
         </vibesContext.Provider>

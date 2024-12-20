@@ -24,7 +24,8 @@ class MusicPlayer {
         return this.currentSong.volume
     }
     set volume(volume = this.volume) {
-        this.currentSong.volume = volume
+        if (volume >= 0 && volume <= 1)
+            this.currentSong.volume = volume
     }
     get played() {
         return 100 / (this.duration / this.currentSong.currentTime)
@@ -179,8 +180,7 @@ class MusicPlayer {
     
       // key controllers
       document.onkeydown = (e) => {
-        if (e.target.tagName != "INPUT") {
-            e.preventDefault()
+        if (e.target.tagName != "INPUT" || e.target.type != 'text') {
         if (e.code === 'Space') {
             // console.log(e)
             e.preventDefault()
@@ -195,6 +195,15 @@ class MusicPlayer {
         } else if (e.code === 'ArrowLeft') {
             e.preventDefault()
             this.currentTime -= 5
+        } else if (e.code == 'ArrowDown') {
+            e.preventDefault()
+            this.client.setVolume(prev => prev - .1)
+            // console.log("ok")
+        } else if (e.code == 'ArrowUp') {
+            e.preventDefault()
+            this.client.setVolume(prev => prev + .1)
+            this.volume += .1
+            // console.log("ok")
         } else {
             // console.log(e.code)
         }

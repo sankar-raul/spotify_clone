@@ -1,5 +1,4 @@
 import MusicPlayer from "./play"
-import useVibes from "../../context/Vibes"
 export let Vibe = null
 export const player = (songList, update, client) => {
     if (songList && update && client) {

@@ -5,6 +5,7 @@ import {useEffect, useState} from 'react'
 import SpotiButton from '../../../tiny_components/SpotiButton'
 import { useAppLayoutSettings } from '../../../../context/AppLayoutSettings'
 import { useLocation } from 'react-router-dom'
+import useVibes from '../../../../context/Vibes'
 const LayoutController = () => {
     const { rightState, setRightState, applySettings } = useAppLayoutSettings()
     const location = useLocation()
@@ -35,18 +36,18 @@ LayoutController.propTypes = {
     rightState: PropTypes.string
 }
 const SoundController = () => {
-    const [soundLevel, setSoundLevel] = useState(1)
     const [icon, setIcon] = useState('/sound.svg')
     const [prevLevel, setPrevLevel] = useState(1)
+    const { volume, setVolume } = useVibes()
     const handleSoundChange = (e) => {
-        setSoundLevel(e.target.value)
+        setVolume(e.target.value)
     }
     const handleMute = () => {
-        if (soundLevel != 0) {
-            setPrevLevel(soundLevel)
-            setSoundLevel(0)
+        if (volume != 0) {
+            setPrevLevel(volume)
+            setVolume(0)
         } else {
-            setSoundLevel(prevLevel)
+            setVolume(prevLevel)
         }
     }
     const handleIcon = (level) => {
@@ -62,14 +63,14 @@ const SoundController = () => {
     }
     useEffect(() => {
         if (Vibe)
-            Vibe.volume = soundLevel
-        handleIcon(soundLevel)
-    }, [soundLevel])
+            Vibe.volume = volume
+        handleIcon(volume)
+    }, [volume])
     return (
         <div className={styles.sound}>
             <NormalIcon onClick={handleMute} src={icon}/>
             <div>
-                <input style={{'--song-played-bar-width': `${soundLevel * 100}%`}} value={soundLevel} max={1} step={0.05} onChange={handleSoundChange} type="range" name="sound" />
+                <input style={{'--song-played-bar-width': `${volume * 100}%`}} value={volume} max={1} step={0.05} onChange={handleSoundChange} type="range" name="sound" />
             </div>
         </div>
     )

@@ -1,3 +1,7 @@
 .pip-miniplayer {
     display: none;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }

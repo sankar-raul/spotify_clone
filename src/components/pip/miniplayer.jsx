@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import useAppLayoutSettings from "../../context/AppLayoutSettings"
 import './miniplayer.css'
 import Songplate from "../bottomSection/desktopBottom/songPlate"
+import Controller from "../bottomSection/desktopBottom/controller"
 export const Miniplayer = () => {
     const [ isMiniplayer, setIsMiniplayer ] = useState(false)
     const { settings, applySettings } = useAppLayoutSettings()
@@ -20,6 +21,30 @@ export const Miniplayer = () => {
         try {
             const pipWindow = await documentPictureInPicture.requestWindow({ width: 400, height: 100 })
             setPipWin(pipWindow)
+
+             // Clone and append stylesheets
+        Array.from(document.styleSheets).forEach((styleSheet) => {
+            try {
+                // Inline styles
+                if (styleSheet.cssRules) {
+                    const style = document.createElement("style");
+                    Array.from(styleSheet.cssRules).forEach((rule) => {
+                        style.appendChild(document.createTextNode(rule.cssText));
+                    });
+                    pipWindow.document.head.appendChild(style);
+                }
+                // External styles
+                else if (styleSheet.href) {
+                    const link = document.createElement("link");
+                    link.rel = "stylesheet";
+                    link.href = styleSheet.href;
+                    pipWindow.document.head.appendChild(link);
+                }
+            } catch (err) {
+                console.error("Failed to copy styles:", err);
+            }
+        })
+
             pipWindow.document.body.appendChild(miniPlayerRef.current);
 
         } catch (error) {
@@ -50,9 +75,9 @@ export const Miniplayer = () => {
     }
     }, [pipWin])
     return (
-        <div ref={miniPlayerRef} className="pip-miniplayer">
-            Mini Player
+        <div ref={miniPlayerRef} style={{display: isMiniplayer ? "block" : "none"}} className="pip-miniplayer">
             <Songplate />
+            <Controller />
         </div>
     )
 }

@@ -32,7 +32,7 @@ export function AppLayoutSettingsProvider({ children }) {
 
       } else {
         // none
-        console.log(location.pathname)
+        // console.log(location.pathname)
       }
     }, [location.pathname])
 
@@ -43,13 +43,13 @@ export function AppLayoutSettingsProvider({ children }) {
           // console.log(settings.lyrics)
           break
         case 'queue':
-          console.log(settings[settings.updateFor])
+          // console.log(settings[settings.updateFor])
           break
         case 'devices':
-          console.log(settings[settings.updateFor])
+          // console.log(settings[settings.updateFor])
           break
         case 'miniPlayer':
-          console.log(settings[settings.updateFor])
+          // console.log(settings[settings.updateFor])
           break
         default:
           console.log("Opps developer fault!", settings.updateFor)

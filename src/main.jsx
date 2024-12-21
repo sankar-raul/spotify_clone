@@ -5,11 +5,13 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import './index.css'
 import './animations.css'
 import RootProviderWrapper from './context/RootProviderWraper.jsx'
+import Miniplayer from './components/pip/miniplayer.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Router>
     <RootProviderWrapper>
       <App />
+      <Miniplayer/>
     </RootProviderWrapper>
     </Router>
   </StrictMode>,

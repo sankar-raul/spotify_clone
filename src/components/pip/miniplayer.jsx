@@ -19,7 +19,7 @@ export const Miniplayer = () => {
 
     const handlePicInPic = async () => {
         try {
-            const pipWindow = await documentPictureInPicture.requestWindow({ width: 400, height: 100 })
+            const pipWindow = await documentPictureInPicture.requestWindow({ width: 250, height: 200 })
             setPipWin(pipWindow)
 
              // Clone and append stylesheets

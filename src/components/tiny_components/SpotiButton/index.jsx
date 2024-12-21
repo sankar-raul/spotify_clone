@@ -1,14 +1,26 @@
 import { useState, useEffect } from "react"
 import PropTypes from 'prop-types'
 import styles from './spotiButton.module.css'
+import useAppLayoutSettings from "../../../context/AppLayoutSettings"
 
-export const SpotiButton = ({src='/now-playing.svg', onClick = null, selected = false, type}) => {
+export const SpotiButton = ({src='/now-playing.svg', selected = false, btnType}) => {
+    const { settings, applySettings, setRightState } = useAppLayoutSettings()
     const [isHovered, setIsHovered] = useState(false)
     const [isActive, setIsActive] = useState(false)
     const [isSelected, setIsSelected] = useState(selected)
+    const handleAppSettings = (type, isSelected) => {
+        if (!type) return
+        switch (type) {
+            case 'nowPlaying':
+                setRightState(prevState => prevState === "collapse" ? "expand" : "collapse")
+                break;
+            default:
+                applySettings(type, isSelected)
+        }
+    }
+
     const handleClick = () => {
-        onClick && onClick(type, !isSelected)
-        setIsSelected(prev => !prev)
+        handleAppSettings(btnType, !isSelected)
     }
     const handleHover = () => {
         setIsHovered(prev => !prev)
@@ -16,6 +28,14 @@ export const SpotiButton = ({src='/now-playing.svg', onClick = null, selected = 
     const handleActive = () => {
         setIsActive(prev => !prev)
     }
+    useEffect(() => {
+        if (settings.updateFor == btnType) { 
+            setIsSelected(settings[btnType])
+        }
+    }, [settings])
+    useEffect(() => {
+        // console.log(isSelected)
+    }, [isSelected])
     useEffect(() => {
         setIsSelected(selected)
     }, [selected])
@@ -26,9 +46,8 @@ export const SpotiButton = ({src='/now-playing.svg', onClick = null, selected = 
     )
 }
 SpotiButton.propTypes = {
-    onClick: PropTypes.func,
     selected: PropTypes.bool,
     src: PropTypes.string,
-    type: PropTypes.string
+    btnType: PropTypes.string
 }
 export default SpotiButton

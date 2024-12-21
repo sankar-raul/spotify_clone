@@ -52,8 +52,9 @@ export function AppLayoutSettingsProvider({ children }) {
           // console.log(settings[settings.updateFor])
           break
         default:
-          console.log("Opps developer fault!", settings.updateFor)
+          // console.log("Opps developer fault!", settings.updateFor)
       }
+
       // console.log(settings)
     }, [settings])
     useEffect(() => {

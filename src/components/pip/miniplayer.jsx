@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState, createElement } from "react"
+import { useEffect, useRef, useState } from "react"
 import useAppLayoutSettings from "../../context/AppLayoutSettings"
 import './miniplayer.css'
+import Songplate from "../bottomSection/desktopBottom/songPlate"
 export const Miniplayer = () => {
     const [ isMiniplayer, setIsMiniplayer ] = useState(false)
     const { settings, applySettings } = useAppLayoutSettings()
@@ -17,32 +18,20 @@ export const Miniplayer = () => {
 
     const handlePicInPic = async () => {
         try {
-            // if (!isMiniplayer) {
-            //     await document.exitPictureInPicture()
-            //     return
-            // }
             const pipWindow = await documentPictureInPicture.requestWindow({ width: 400, height: 100 })
             setPipWin(pipWindow)
             pipWindow.document.body.appendChild(miniPlayerRef.current);
-            // setTimeout(async () => {
-            //     pipWindow.close()
-            // }, 3000)
-            // console.log(document.pictureInPictureElement)
 
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
     }
 
     useEffect(() => {
-        console.log(isMiniplayer)
         if (!isPipSupported) return // return from this function if picture in picture feature is not supported in the browser
         if (isMiniplayer && miniPlayerRef) {
             (async () => {
                 await handlePicInPic()
-                console.log("ok")
-            // console.log(pipWin)
-
             })()
         } else {
             pipWin && pipWin.close()
@@ -51,22 +40,19 @@ export const Miniplayer = () => {
 
     useEffect(() => {
         if (pipWin) {
-            console.log("sdd")
             const handleClose = () => {
-                console.log("dwdnknd")
                 applySettings('miniPlayer', false)
-                console.log("Close")
             }
-            pipWin.addEventListener('close', handleClose)
+            pipWin.addEventListener('pagehide', handleClose)
         return () => {
-            pipWin.removeEventListener('close', handleClose)
+            pipWin.removeEventListener('pagehide', handleClose)
         }
     }
-    console.log(pipWin)
     }, [pipWin])
     return (
         <div ref={miniPlayerRef} className="pip-miniplayer">
             Mini Player
+            <Songplate />
         </div>
     )
 }

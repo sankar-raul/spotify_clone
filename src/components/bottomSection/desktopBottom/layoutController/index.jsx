@@ -7,27 +7,17 @@ import { useAppLayoutSettings } from '../../../../context/AppLayoutSettings'
 import { useLocation } from 'react-router-dom'
 import useVibes from '../../../../context/Vibes'
 const LayoutController = () => {
-    const { rightState, setRightState, applySettings } = useAppLayoutSettings()
+    const { rightState } = useAppLayoutSettings()
     const location = useLocation()
     const isSelected = rightState !== 'collapse'
-    const handleAppSettings = (type, isSelected) => {
-        if (!type) return
-        switch (type) {
-            case 'nowPlaying':
-                setRightState(prevState => prevState === "collapse" ? "expand" : "collapse")
-                  break;
-            default:
-                applySettings(type, isSelected)
-        }
-    }
     return (
         <div className={styles.navigators}>
-                <SpotiButton type='nowPlaying' src='/now-playing.svg' onClick={handleAppSettings} selected={isSelected}/>
-                <SpotiButton type='lyrics' src='/lyrics.svg' onClick={handleAppSettings} selected={location.pathname == '/lyrics'}/>
-                <SpotiButton type='queue' src='/queue.svg' onClick={handleAppSettings}/>
-                <SpotiButton type='devices' src='/devices.svg' onClick={handleAppSettings}/>
+                <SpotiButton btnType='nowPlaying' src='/now-playing.svg' selected={isSelected}/>
+                <SpotiButton btnType='lyrics' src='/lyrics.svg' selected={location.pathname == '/lyrics'}/>
+                <SpotiButton btnType='queue' src='/queue.svg' />
+                <SpotiButton btnType='devices' src='/devices.svg' />
                 <SoundController />
-                <SpotiButton type='miniPlayer' src='/mini-player.svg' onClick={handleAppSettings}/>
+                <SpotiButton btnType='miniPlayer' src='/mini-player.svg' />
                 <NormalIcon src='/fullscreen.svg'/>
         </div>
     )

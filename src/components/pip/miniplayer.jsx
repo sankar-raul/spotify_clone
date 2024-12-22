@@ -19,7 +19,7 @@ export const Miniplayer = () => {
 
     const handlePicInPic = async () => {
         try {
-            const pipWindow = await documentPictureInPicture.requestWindow({ width: 250, height: 200 })
+            const pipWindow = await documentPictureInPicture.requestWindow({ width: 230, height: 140 })
             setPipWin(pipWindow)
 
              // Clone and append stylesheets
@@ -44,7 +44,10 @@ export const Miniplayer = () => {
                 console.error("Failed to copy styles:", err);
             }
         })
-
+            const linkElement = document.createElement('link')
+            linkElement.rel = 'stylesheet'
+            linkElement.href = './miniplayer.css'
+            pipWindow.document.head.appendChild(linkElement)
             pipWindow.document.body.appendChild(miniPlayerRef.current);
 
         } catch (error) {
@@ -75,7 +78,7 @@ export const Miniplayer = () => {
     }
     }, [pipWin])
     return (
-        <div ref={miniPlayerRef} style={{display: isMiniplayer ? "block" : "none"}} className="pip-miniplayer">
+        <div ref={miniPlayerRef} style={{'--display': isMiniplayer ? "grid" : "none"}} className="pip-miniplayer">
             <Songplate />
             <Controller />
         </div>

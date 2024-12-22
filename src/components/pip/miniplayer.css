@@ -14,6 +14,16 @@
     overflow: hidden;
     width: clamp(230px, 90%, 600px);
 }
+.pip-miniplayer > div:nth-child(1) > div:nth-child(2) {
+    width: 90%;
+}
+.pip-miniplayer > div:nth-child(1) > div:nth-child(1) {
+    max-width: 80px;
+    max-height: 80px;
+}
+.pip-miniplayer > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
+    width: 30px;
+}
 .pip-miniplayer > div:nth-child(2) {
     /* border: 1px solid red; */
     /* width: 100%; */
@@ -21,6 +31,10 @@
     overflow: unset;
     padding: 0 10px 20px 10px;
     /* max-width: 100dvw; */
+}
+.pip-miniplayer > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
+    -webkit-mask-image: linear-gradient(to right, #000 80%, transparent 96% 100%);
+    mask-image: linear-gradient(to right, #000 80%, transparent 96% 100%);
 }
 @media screen and (max-height: 160px) {
     .pip-miniplayer {
@@ -74,8 +88,37 @@
     .pip-miniplayer > div:nth-child(2) > div:nth-child(1) > div:nth-child(1), .pip-miniplayer > div:nth-child(2) > div:nth-child(1) > div:nth-child(2), .pip-miniplayer > div:nth-child(2) > div:nth-child(1) > div:nth-child(5) {
         display: none;
     }
-    @media screen and (min-width: 380px) {
+    .pip-miniplayer > div:nth-child(1) > div:nth-child(1) {
+        max-width: 60px;
+        max-height: 60px;
+    }
+    .pip-miniplayer > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
+        display: none;
+    }
+    .pip-miniplayer > div:nth-child(1) {
+        padding-right: 0px;
+    }
+    .pip-miniplayer > div:nth-child(2) > div:nth-child(1) {
+        justify-content: flex-end;
+        justify-items: end;
+    }
+    @media screen and (min-width: 330px) {
         .pip-miniplayer > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+            display: unset;
+        }
+    }
+    @media screen and (min-width: 360px) {
+        .pip-miniplayer > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
+            display: block;
+        }
+    }
+    @media screen and (min-width: 430px) {
+        .pip-miniplayer > div:nth-child(2) > div:nth-child(1) > div:nth-child(5) {
+            display: unset;
+        }
+    }
+    @media screen and (min-width: 460px) {
+        .pip-miniplayer > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
             display: unset;
         }
     }

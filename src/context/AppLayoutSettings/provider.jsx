@@ -26,9 +26,11 @@ export function AppLayoutSettingsProvider({ children }) {
     useEffect(() => {
       if (location.pathname == '/lyrics') {
         applySettings('lyrics', true)
+        // console.log("lol")
         // setIsLyricsRoute(true)
       } else if (location.pathname == '/' && settings.lyrics) {
         applySettings('lyrics', false)
+        console.log("first")
 
       } else {
         // none
@@ -40,7 +42,7 @@ export function AppLayoutSettingsProvider({ children }) {
       switch (settings?.updateFor) {
         case 'lyrics':
           setIsLyricsRoute(settings.lyrics)
-          // console.log(settings.lyrics)
+          console.log(settings.lyrics, "update")
           break
         case 'queue':
           // console.log(settings[settings.updateFor])

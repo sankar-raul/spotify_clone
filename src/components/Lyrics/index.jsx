@@ -15,7 +15,7 @@ export const Lyrics = () => {
         </div>
     )
 }
-// className={styles["lyrics-line"] + ' ' + styles["current"] + ' ' + styles["past"]} key={idx} name={data?.seconds}>{data?.lyrics}
+
 const LyricsLine = ({timestamp, lyrics}) => {
     const {currentTime, setCurrentTime, Player} = useVibes()
     // console.log(timestamp)

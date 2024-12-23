@@ -1,6 +1,6 @@
 .lyrics-bar {
     border-radius: inherit;
-    background-color: rgb(80, 198, 125);
+    background-color: #50c67d58;
     overflow: hidden;
     width: 100%;
     display: flex;
@@ -14,6 +14,8 @@
     font-size: 1.6rem;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    -webkit-mask-image: linear-gradient(transparent .01%, #000 10% 85%, transparent 99.09% 100%);
+    mask-image: linear-gradient(transparent .01%, #000 10% 85%, transparent 99.09% 100%);
 }
 .lyrics-wraper::-webkit-scrollbar {
     width: 0;

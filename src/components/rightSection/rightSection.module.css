@@ -110,9 +110,9 @@
 .main::-webkit-scrollbar {
     width: 0;
 }
-.main > * {
-    /* border: 1px solid var(--bg); */
-}
+/* .main > * {
+    border: 1px solid var(--bg);
+} */
 .song_details {
     padding-bottom: 8px;
     display: flex;
@@ -174,8 +174,9 @@
     z-index: -1;
     left: 0;
     padding: 0;
-    height: 400%;
-    background: linear-gradient(transparent 1px, #0f0f0faa 50px, #0f0f0f 60% 100%);
+    height: 700%;
+    background: linear-gradient(transparent 1px, #0f0f0f99 70px, #0f0f0f 60% 100%);
+    /* background: red; */
 }
 .song_title {
     flex-grow: 1;
@@ -364,8 +365,8 @@
 .credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) {
     font-weight: 400;
 }
-.credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) {
-}
+/* .credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) {
+} */
 .credits > div:not(:nth-child(1)) > div:nth-child(1) > div:nth-child(1) > span {
     cursor: pointer;
     text-decoration: underline 1.5px solid transparent;
@@ -573,6 +574,6 @@
     /* z-index: 1; */
     background: linear-gradient(var(--c1) 30px, var(--c2) 50px 65%, var(--c3) 75% 100%);
 }
-.song_thumb {
+/* .song_thumb {
     
-}
+} */

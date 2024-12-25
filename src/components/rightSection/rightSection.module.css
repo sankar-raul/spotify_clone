@@ -179,7 +179,7 @@
     left: 0;
     top: -40px; /* mod */
     padding: 0;
-    height: 700%;
+    height: 750%;
     background: var(--bg-before);
     pointer-events: none;
     /* background: red; */

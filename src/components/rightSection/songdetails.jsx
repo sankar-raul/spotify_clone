@@ -14,7 +14,7 @@ const SongDetails = () => {
             <div className={styles.song_thumb}>
                 { songData && (<img style={{display: songData?.canvas ? "none" : "block"}} src={songData?.song_thumb} alt={songData?.title} /> )}
             </div>
-            <div style={isFullCanvas ? {marginTop: "50%"} : {}} className={styles.song_info}>
+            <div style={isFullCanvas ? {marginTop: "40%"} : {}} className={styles.song_info}>
                 <div className={styles.song_title}>
                     <div><span>{songData?.title}</span></div>
                     <div className={styles.artists}>

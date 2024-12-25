@@ -166,6 +166,10 @@
     grid-template-columns: 1fr max-content;
     z-index: 1;
     position: relative;
+    transition: 1s ease margin-top;
+    --bg-before: linear-gradient(transparent 1px, #0f0f0faa 70px, #0f0f0f 150px 100%);
+    /* --bg-before: linear-gradient(transparent 4px, #0f0f0faa 25px, #0f0f0f 40px 100%); */
+    /* backdrop-filter: blur(10px); */
 }
 .song_info::before {
     content: '';
@@ -173,9 +177,11 @@
     width: 100%;
     z-index: -1;
     left: 0;
+    top: -40px; /* mod */
     padding: 0;
     height: 700%;
-    background: linear-gradient(transparent 1px, #0f0f0f99 70px, #0f0f0f 60% 100%);
+    background: var(--bg-before);
+    pointer-events: none;
     /* background: red; */
 }
 .song_title {

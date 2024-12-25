@@ -5,6 +5,7 @@ import MainSection from './components/mainSection/mainSection'
 import BottomSection from './components/bottomSection/bottomSection'
 
 import './App.css'
+import CanvasProvider from './context/canvas/canvasProvider'
 
 function App() {
   // const mainMin = 417, leftMin = 280, rightMin= 280 
@@ -15,7 +16,9 @@ function App() {
       <NavBar />
       <LeftSection />
       <MainSection />
-      <RightSection />
+      <CanvasProvider>
+        <RightSection />
+      </CanvasProvider>
       <BottomSection />
       </div>
     </>

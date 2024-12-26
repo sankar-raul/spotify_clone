@@ -540,6 +540,8 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+/* song canvas style */
 .canvasContainer {
     position: absolute;
     display: block;
@@ -547,26 +549,29 @@
     width: 100%;
     /* opacity: .8; */
     top: 0;
-    --c1: #0f0f0f88;
-    --c2: #0f0f0f66;
+    --c1: #0f0f0f77;
+    --c2: #0f0f0f55;
     --c3: #0f0f0f88;
     /* border-radius: var(--radius) var(--radius) 0px 0px; */
     /* display: none; */
 }
 .canvas {
     width: 100%;
+    cursor: pointer;
+
+    /* pointer-events: none; */
 }
 .canvasContainer:hover {
-    --c1: #0f0f0f22;
-    --c2: #0f0f0f33;
+    --c1: #0f0f0f66;
+    --c2: #0f0f0f05;
     --c3: #0f0f0f33;
 }
 .canvasContainer::after {
     position: absolute;
     content: '';
-    height: 60px;
+    height: 80px;
     width: 100%;
-    background: linear-gradient(#0f0f0fee, transparent 70%);
+    background: linear-gradient(#0f0f0f55, transparent 70%);
     top: 0;
     left: 0;
 }
@@ -578,7 +583,7 @@
     /* background: linear-gradient(#0007 30px, #0003 100px 65%, #0006 75% 100%); */
     transition: 3s ease;
     /* z-index: 1; */
-    background: linear-gradient(var(--c1) 30px, var(--c2) 50px 65%, var(--c3) 75% 100%);
+    background: linear-gradient(var(--c1) 1px, var(--c2) 45px 75%, var(--c3) 95% 100%);
 }
 /* .song_thumb {
     

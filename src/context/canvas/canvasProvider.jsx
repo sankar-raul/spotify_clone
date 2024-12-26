@@ -1,11 +1,26 @@
 import { CanvasContext } from "."
 import { useEffect, useState } from "react"
 import PropTypes from 'prop-types'
+import useVibes from "../Vibes"
 export const CanvasProvider = ({children}) => {
     const [isFullCanvas, setIsFullCanvas] = useState(false)
+    const [ canvasStatus, setCanvasStatus ] = useState(false)
+    const { songData } = useVibes()
+
     const handleCanvasClick = () => {
-        setIsFullCanvas(prev => !prev)
+        setIsFullCanvas(prev => {
+            setCanvasStatus(!prev)
+            return !prev
+        })
     }
+    useEffect(() => {
+        if (songData?.canvas) {
+            canvasStatus && setIsFullCanvas(true)
+        } else {
+            isFullCanvas && setCanvasStatus(true)
+            setIsFullCanvas(false)
+        }
+    }, [songData])
     useEffect(() => {
         // console.log(isFullCanvas)
     }, [isFullCanvas])

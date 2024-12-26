@@ -6,7 +6,7 @@ const Canvas = ({ src }) => {
     const { handleCanvasClick } = useCanvas()
     return (
         <div className={styles.canvasContainer}>
-            <video onClick={handleCanvasClick} className={styles.canvas} src={src} autoPlay loop muted></video>
+            <video onContextMenu={(e) => {e.preventDefault()}} onClick={handleCanvasClick} className={styles.canvas} src={src} autoPlay loop muted></video>
         </div>
     )
 }

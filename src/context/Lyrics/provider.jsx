@@ -21,8 +21,15 @@ useEffect(() => {
 }, [isLyricsRoute])
 useEffect(() => {
     if (!songData) return
+    setLyrics("loading")
     ;(async () => {
-        setLyrics(await getLyrics(songData?.title))
+        try {
+            const songLines = await getLyrics(songData?.title);
+            setLyrics(songLines);
+        } catch(error) {
+            console.log(error)
+            setLyrics("error")
+        }
     })()
 }, [songData])
 useEffect(() => {

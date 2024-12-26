@@ -12,7 +12,7 @@
     width: max-content;
     padding: 50px 40px;
     font-size: 1.6rem;
-    overflow-y: scroll;
+    overflow-y: auto;
     scroll-behavior: smooth;
     -webkit-mask-image: linear-gradient(transparent .01%, #000 10% 85%, transparent 99.09% 100%);
     mask-image: linear-gradient(transparent .01%, #000 10% 85%, transparent 99.09% 100%);
@@ -58,5 +58,58 @@ p.past {
     }
     .lyrics-wraper {
         font-size: 1.8rem;
+    }
+}
+
+/* Lyrics loading skeleton */
+.lyrics-bar:has(.loading) {
+    background-color: transparent;
+}
+.loading {
+    padding: 50px 40px;
+    font-size: 1.6rem;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+.loading > div {
+    --loading-acent-color: #f3f3f305;
+    background: var(--loading-acent-color);
+    width: clamp(200px, 95%, 500px);
+    aspect-ratio: 2 / 1;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: calc(20px + 1%);
+    margin: 0 auto;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.loading > div > div {
+    width: 90%;
+    height: 25px;
+    border-radius: 16px;
+    background-color: inherit;
+    --animation-delay: 0s;
+    animation: loadingAnime 1.5s ease-in infinite;
+    animation-delay: var(--animation-delay);
+}
+.loading > div > div:nth-of-type(1) {
+    width: 70%;
+}
+.loading > div > div:nth-of-type(3) {
+    width: 75%;
+}
+.loading > div > div:nth-of-type(4) {
+    width: 85%;
+}
+@keyframes loadingAnime {
+    0%, 100% {
+        opacity: .6;
+    } 50% {
+        opacity: 1;
     }
 }

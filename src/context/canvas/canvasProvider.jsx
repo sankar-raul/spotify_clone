@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import PropTypes from 'prop-types'
 import useVibes from "../Vibes"
 export const CanvasProvider = ({children}) => {
-    const [isFullCanvas, setIsFullCanvas] = useState(false)
+    const [ isFullCanvas, setIsFullCanvas ] = useState(false)
     const [ canvasStatus, setCanvasStatus ] = useState(false)
     const { songData } = useVibes()
 

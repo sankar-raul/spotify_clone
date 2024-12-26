@@ -7,7 +7,7 @@ const SongDetails = () => {
     const {songData} = useVibes()
     const { isFullCanvas } = useCanvas()
     useEffect(() => {
-        console.log(isFullCanvas)
+        // console.log(isFullCanvas)
     }, [isFullCanvas])
     return (
         <div className={styles.song_details}>

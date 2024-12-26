@@ -17,7 +17,6 @@ const RightSection = () => {
     const { rightState, setRightState } = useAppLayoutSettings()
     const [ display, setDisplay ] = useState('block')
     const { setWidth } = useAppLayoutSettings()
-    const {handleCanvasClick} = useCanvas()
     const handleCollapse = () => {
         setRightState(prevState => prevState === "collapse" ? "expand" : "collapse")
     }

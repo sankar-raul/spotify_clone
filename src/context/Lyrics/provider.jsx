@@ -31,6 +31,9 @@ useEffect(() => {
             setLyrics("error")
         }
     })()
+    return () => {
+        // controller.abort()
+    }
 }, [songData])
 useEffect(() => {
     // console.log(lyrics)

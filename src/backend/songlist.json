@@ -1,5 +1,32 @@
 [
     {
+        "title": "Die With A Smile",
+        "src": "/songs/Die With A Smile.mp3",
+        "canvas": "/canvas/Die With A Smile.mp4",
+        "isLiked": true,
+        "artists": [
+            "Lady Gaga",
+            "Bruno Mars"
+        ],
+        "credits": [
+            {
+                "artist": "Lady Gaga",
+                "credit": ["Main Artist", "Composer", "Producer"],
+                "artistId": "artistladygaga"
+            },
+            {
+                "artist": "Bruno Mars",
+                "credit": ["Main Artist", "Composer", "Producer"],
+                "artistId": "artistbruno7"
+            },
+            {
+                "artist": "Dernst \"D'Mile\" Emile II",
+                "credit": ["Composer", "Producer"]
+            }
+        ],
+        "song_thumb": "/song_thumbs/Die_With_A_Smile.png"
+    },
+    {
         "title": "Bye Bye Bye - From Deadpool and Wolverine Soundtrack",
         "src": "/songs/Bye Bye Bye - From Deadpool and Wolverine Soundtrack.mp3",
         "isLiked": true,

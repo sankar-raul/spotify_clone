@@ -17,8 +17,6 @@ export const getLyrics = async (song) => {
         } else if (error.message == "canceled") {
             return "loading"
         }
-        // console.log(error)
     }
-    // console.log(data.data)
 }
 export default getLyrics

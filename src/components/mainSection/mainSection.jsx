@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import PropTypes from 'prop-types'
 import Footer from '../footer/foot'
 import recentsTiles from "../../backend/recents_tile.json"
@@ -10,21 +10,22 @@ import useAppLayoutSettings from "../../context/AppLayoutSettings"
 import { Route, Routes } from "react-router-dom"
 import Lyrics from "../Lyrics/index"
 const MainSection = () => {
+    // console.log("Main")
     const mainRef = useRef(null)
     const [ mainWidth, setMainWidth ] = useState(null)
     const { setWidth } = useAppLayoutSettings()
-    const resizeObserver = new ResizeObserver((entries) => {
+    const resizeObserver = useMemo(() => new ResizeObserver((entries) => {
         for (let entry of entries) {
             setMainWidth(entry.contentRect.width)
         }
-    })
+    }), [])
     useEffect(() => {
         setWidth('main', mainWidth)
-    }, [mainWidth])
+    }, [mainWidth, setWidth])
     useEffect(() => {
         resizeObserver.observe(mainRef.current)
         return () => resizeObserver.disconnect()
-    }, [])
+    }, [resizeObserver])
     return (
         <>
         <div ref={mainRef} className="outer-main">
@@ -82,28 +83,28 @@ const ListSection = ({songSection}) => {
     const mainSectionRef = useRef(null)
     const { layoutWidth } = useAppLayoutSettings()
     const [mainWidth, setMainWidth] = useState()
-    const handleItemsCount = (width) => {
+    const handleItemsCount = useCallback((width) => {
         if (width > 239) {
             setItems(prev => prev + 1)
         } else if (width < 160) {
              setItems(prev => (prev - 2) == 0 ? 2 : prev - 1)
         }
-    }
-    const intialSize = () => {
+    }, [])
+    const intialSize = useCallback(() => {
         const min = mainSectionRef.current.offsetWidth / 160
         const max = mainSectionRef.current.offsetWidth / 200
         const avg = Math.round((min + max) / 2)
         setItems(avg <= 1 ? 2 : avg)
-    }
+    }, [])
     useEffect(() => {
         setMainWidth(layoutWidth?.main)
     }, [layoutWidth])
     useEffect(() => {
         intialSize()
-    }, [mainWidth])
+    }, [mainWidth, intialSize])
     useEffect(() => {
         intialSize()
-    }, [])
+    }, [intialSize])
     return (
         <div className="main-section" ref={mainSectionRef}>
             <div className="card-section-title">
@@ -125,6 +126,7 @@ ListSection.propTypes = {
 }
 
 const Songcard = ({handleItemsCount, intialSize, songInfo}) => {
+    // console.log("s card")
     const songCardRef = useRef(null)
     const handleResizeSection = () => {
         handleItemsCount(songCardRef.current.offsetWidth)

@@ -14,6 +14,7 @@ export const GlobalProvider = ({children}) => {
     useEffect(() => {
         deviceType && console.log(deviceType)
     }, [deviceType])
+    // console.log("first")
     const value = useMemo(() => ({ resizeTrigger, rootWidth, deviceType }), [resizeTrigger, rootWidth, deviceType])
     useEffect(() => {
         setDeviceType(userAgent())

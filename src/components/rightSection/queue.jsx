@@ -1,9 +1,10 @@
-import { Fragment } from 'react'
+import { Fragment, memo } from 'react'
 import styles from './rightSection.module.css'
 import useVibes from '../../context/Vibes'
 
 const Queue = () => {
     const { songData, nextSong } = useVibes()
+    // console.log("queue")
     return (
         <div className={styles.next_queue}>
             <div className={styles.queue_title}>
@@ -31,4 +32,4 @@ const Queue = () => {
         </div>
     )
 }
-export default Queue
+export default memo(Queue)

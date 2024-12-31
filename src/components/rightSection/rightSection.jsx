@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import styles from './rightSection.module.css'
 import StickyHeader from '../tiny_components/stickyHeader'
 import { useAppLayoutSettings } from '../../context/AppLayoutSettings'
@@ -16,25 +16,35 @@ const RightSection = () => {
     const { rightState, setRightState } = useAppLayoutSettings()
     const [ display, setDisplay ] = useState('block')
     const { setWidth } = useAppLayoutSettings()
-    const handleCollapse = () => {
+    const handleCollapse = useCallback(() => {
         setRightState(prevState => prevState === "collapse" ? "expand" : "collapse")
-    }
-    const resizeObserver = new ResizeObserver((entries) => {
+    }, [setRightState])
+    const resizeObserver = useMemo(() => new ResizeObserver((entries) => {
         for (let entry of entries) {
             setRightWidth(entry.contentRect.width)
         }
-    })
+    }), [])
   
     useEffect(() => {
+        // console.log("ok")
         setWidth('right', rightWidth)
-    }, [rightWidth])
+    }, [rightWidth, setWidth])
+
     useEffect(() => {
+        // console.log("dfdf")
+    }, [setWidth, songData, rightWidth, setDisplay, setRightWidth])
+
+    useEffect(() => {
+        // console.log("ok")
         setDisplay(rightState == 'expand' ? "block" : "none")
     }, [rightState])
+
     useEffect(() => {
+        // console.log("op")
         resizeObserver.observe(rightRef.current)
         return () => resizeObserver.disconnect()
-    }, [])
+    }, [resizeObserver])
+    // console.log("song pp")
     return (
         <section style={{display: display}} ref={rightRef} className={styles.rightSection}>
             <StickyHeader>
@@ -57,7 +67,7 @@ const RightSection = () => {
 }
 
 const SongBody = () => {
-
+    // console.log("song")
     return (
         <div>
             <div className={styles.main}>

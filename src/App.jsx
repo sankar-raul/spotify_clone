@@ -8,8 +8,7 @@ import './App.css'
 import CanvasProvider from './context/canvas/canvasProvider'
 
 function App() {
-  // const mainMin = 417, leftMin = 280, rightMin= 280 
-
+  
   return (
     <>
       <div className="main">

@@ -2,23 +2,35 @@ import { useState, useEffect } from "react"
 import PropTypes from 'prop-types'
 import styles from './spotiButton.module.css'
 import useAppLayoutSettings from "../../../context/AppLayoutSettings"
+import { useLoaderData, useLocation, useNavigate } from "react-router-dom"
 
 export const SpotiButton = ({src='/now-playing.svg', selected = false, btnType}) => {
     const { settings, applySettings, setRightState } = useAppLayoutSettings()
     const [isHovered, setIsHovered] = useState(false)
     const [isActive, setIsActive] = useState(false)
+    const navigate = useNavigate()
+    const location = useLocation()
     const [isSelected, setIsSelected] = useState(selected)
+    const [ history, setHistory ] = useState(0)
     const handleAppSettings = (type, isSelected) => {
         if (!type) return
         switch (type) {
             case 'nowPlaying':
                 setRightState(prevState => prevState === "collapse" ? "expand" : "collapse")
                 break;
+            case 'lyrics':
+                if (isSelected) 
+                    navigate('/lyrics')
+                else
+                    history >= 3 ? navigate(-1) : navigate('/', {replace: true})
+                break
             default:
                 applySettings(type, isSelected)
         }
     }
-
+    useEffect(() => {
+        setHistory(prev => prev + 1)
+    }, [location])
     const handleClick = () => {
         handleAppSettings(btnType, !isSelected)
     }

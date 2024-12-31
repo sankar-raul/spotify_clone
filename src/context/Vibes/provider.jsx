@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import PropTypes from 'prop-types'
 import { vibesContext } from '.'
 import { Vibe } from '../../functions/songPlayer/AudioController'
@@ -6,6 +6,7 @@ import {player as spotiPlayer} from '../../functions/songPlayer/AudioController'
 import songList from '../../backend/songlist.json'
 
 export const VibesProvider = ({children}) => {
+    // console.log("Vibes")
     const [ songData, setSongData ] = useState(null)
     const [ currentTime, setCurrentTime ] = useState(0)
     // mmm
@@ -16,39 +17,38 @@ export const VibesProvider = ({children}) => {
     const [ repeatState, setRepeatState ] = useState(0)
     const [songDuration, setSongDuration] = useState(0)
     const [playedPercentage, setPlayedPercentage] = useState(0)
-  
-    const handlePlay = () => {
+    const handlePlay = useCallback(() => {
         setIsPlaying(prev => !prev)
-    }
-    const update = (data) => {
+    }, [])
+    const update = useCallback((data) => {
         setSongData(data)
-    }
-    const handleSuffleMode = () => {
+    }, [])
+    const handleSuffleMode = useCallback(() => {
         setIsSuffle(prev => !prev)
-    }
-    const handleRepeatMode = () => {
+    }, [])
+    const handleRepeatMode = useCallback(() => {
         setRepeatState(prev => {
             return prev < 2 ? prev + 1 : 0
         })
-    }
-    const nextSong = () => {
+    }, [])
+    const nextSong = useCallback(() => {
         if (!Player) return
         Player.next()
         setIsPlaying(true)
-    }
-    const prevSong = () => {
+    }, [Player])
+    const prevSong = useCallback(() => {
         if (!Player) return
         Player.prev()
         setIsPlaying(true)
-    }
-    const onChange = (element) => {
+    }, [Player])
+    const onChange = useCallback((element) => {
         setCurrentTime(element.target.value)
         if (Player) Player.currentTime = element.target.value
-    }
-    const played = () => {
+    }, [Player])
+    const played = useCallback(() => {
         let playedPercentage = (currentTime / songDuration) * 100
         setPlayedPercentage(playedPercentage)
-    }
+    }, [currentTime, songDuration])
     useEffect(() => {
         if (volume < 0)
             setVolume(0)
@@ -62,30 +62,30 @@ export const VibesProvider = ({children}) => {
     useEffect(() => {
         // console.log(songDuration)
         played()
-    }, [songDuration])
+    }, [songDuration, played])
     useEffect(() => {
         // console.log(currentTime)
         played()
-    }, [currentTime])
+    }, [currentTime, played])
     useEffect(() => {
         // console.log(playedPercentage)
     }, [playedPercentage])
     useEffect(() => {
         if (!Player) return
         Player.isSuffle = isSuffle
-    }, [isSuffle])
+    }, [isSuffle, Player])
     useEffect(() => {
         if (!Player) return
         isPlaying ? Player.play() : Player.pause()
         // Player.currentTime = 175
-    }, [isPlaying])
+    }, [isPlaying, Player])
     useEffect(() => {
         if (!Player) return
         Player.repeatState = repeatState
-    }, [repeatState])
+    }, [repeatState, Player])
     useEffect(() => {
         !Player && setPlayer(spotiPlayer(songList, update, {setIsPlaying, setCurrentTime, setSongDuration, setVolume}))
-    }, [])
+    }, [Player, update])
     //mmmm
 
     useEffect(() => {

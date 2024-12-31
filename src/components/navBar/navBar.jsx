@@ -1,13 +1,17 @@
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import './navBar.css'
 
 const NavBar = () => {
     const navigate = useNavigate()
+    const { pathname } = useLocation()
+    const handleHomeNavigate = () => {
+        pathname != '/' && navigate('/')
+    }
     return (
         <section className="navBar">
             <div className="navPart spotify-button"></div>
             <div className="navPart search-nav">
-                <div onClick={() => navigate('/')} className='home-btn'></div>
+                <div onClick={handleHomeNavigate} className='home-btn'></div>
                 <form className="search-section">
                     <div className="search-part">
                         <div className="sbtn"></div>

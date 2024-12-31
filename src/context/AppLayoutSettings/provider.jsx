@@ -1,20 +1,20 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { AppLayoutSettingsContext } from '.'
-import useLyrics from '../Lyrics'
+
 export function AppLayoutSettingsProvider({ children }) {
     const [ leftState, setLeftState ] = useState("collapse")
     const [ rightState, setRightState ] = useState("expand")
     const [ layoutChangedTrigger, setLayoutChangedTrigger ] = useState(false)
     const [ layoutWidth, setLayoutWidth ] = useState({})
     const [ settings, setSettings ] = useState({})
-    const { setIsLyricsRoute } = useLyrics()
-
-    const setWidth = (type, width) => {
+    // const { setIsLyricsRoute } = useLyrics()
+    // console.log("first")
+    const setWidth = useCallback((type, width) => {
       setLayoutWidth(prev => ({
         ...prev, [type]: width
       }))
-  }
+  }, [])
     const applySettings = (settingFor, settingValue) => {
       if (!settingFor || isNaN(settingValue)) {
         return
@@ -26,24 +26,19 @@ export function AppLayoutSettingsProvider({ children }) {
     useEffect(() => {
       if (location.pathname == '/lyrics') {
         applySettings('lyrics', true)
-        // console.log("lol")
         // setIsLyricsRoute(true)
-      } else if (location.pathname == '/' && settings.lyrics) {
+      } else if (location.pathname == '/' && !settings.lyrics) {
         applySettings('lyrics', false)
-        console.log("first")
+        // console.log("first")
 
       } else {
         // none
         // console.log(location.pathname)
       }
-    }, [location.pathname])
+    }, [settings.lyrics])
 
     useEffect(() => {
       switch (settings?.updateFor) {
-        case 'lyrics':
-          setIsLyricsRoute(settings.lyrics)
-          console.log(settings.lyrics, "update")
-          break
         case 'queue':
           // console.log(settings[settings.updateFor])
           break

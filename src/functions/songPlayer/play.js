@@ -50,11 +50,15 @@ class MusicPlayer extends Audio {
     get duration() {
         return super.duration
     }
-    // key handlers
-    // prepare song to play
+
+    // suffle mode
     suffle() {
-        const idx = Math.floor(Math.random() * this.songListLength)
-        return idx != this.currentSongIndex ? idx : this.suffle()
+        let idx, flag = true
+        do {
+            idx = Math.floor(Math.random() * this.songListLength)
+            flag = this.songStack.find((item) => item == idx)
+        } while (flag != undefined)
+        return idx
     }
     onended() {
             if (this.repeatState == 0) {
@@ -130,10 +134,10 @@ class MusicPlayer extends Audio {
         }
         this.isPlaying && this.pause()
         this.currentSongIndex = this.queueNext
-        this.songStack.push(this.currentSongIndex)
+
+        this.queueNext = this.getQueueSong()
         this.load()
         startPlaying && this.play()
-        this.queueNext = this.getQueueSong()
         this.setMediaSessionMetadata()
     }
 
@@ -141,7 +145,7 @@ class MusicPlayer extends Audio {
     prev() {
         this.isPlaying && this.pause()
         this.queueNext = this.currentSongIndex
-        this.songStack.pop()
+        // this.songStack.pop()
         const prev_idx = this.songStack.pop()
         if (!prev_idx) {
             this.currentSongIndex = this.currentSongIndex == 0 ? this.songListLength - 1 : this.currentSongIndex - 1
@@ -155,11 +159,15 @@ class MusicPlayer extends Audio {
 
     // get next queue song index
     getQueueSong() {
+        if (this.songStack.length >= this.songListLength - 2)
+            this.songStack.shift()
+        this.songStack.push(this.currentSongIndex)
         if (this.isSuffle) {
             return this.suffle()
         } else {
             return this.currentSongIndex < this.songListLength - 1 ? this.currentSongIndex + 1 : 0
         }
+        
     }
 
     // accessibility

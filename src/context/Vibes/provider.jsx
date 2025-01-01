@@ -106,7 +106,8 @@ export const VibesProvider = ({children}) => {
             isPlaying,
             songDuration,
             volume,
-            setVolume
+            setVolume,
+            isSuffle
             }}>
             {children}
         </vibesContext.Provider>

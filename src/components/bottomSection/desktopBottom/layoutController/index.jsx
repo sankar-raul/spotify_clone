@@ -1,7 +1,7 @@
 import styles from './layoutController.module.css'
 import PropTypes from 'prop-types'
 import { Vibe } from '../../../../functions/songPlayer/AudioController'
-import {useEffect, useState} from 'react'
+import {useCallback, useEffect, useState} from 'react'
 import SpotiButton from '../../../tiny_components/SpotiButton'
 import { useAppLayoutSettings } from '../../../../context/AppLayoutSettings'
 import { useLocation } from 'react-router-dom'
@@ -29,9 +29,9 @@ const SoundController = () => {
     const [icon, setIcon] = useState('/sound.svg')
     const [prevLevel, setPrevLevel] = useState(1)
     const { volume, setVolume } = useVibes()
-    const handleSoundChange = (e) => {
-        setVolume(e.target.value)
-    }
+    const handleSoundChange = useCallback((e) => {
+        setVolume(parseFloat(e.target.value))
+    }, [setVolume])
     const handleMute = () => {
         if (volume != 0) {
             setPrevLevel(volume)
@@ -60,7 +60,7 @@ const SoundController = () => {
         <div className={styles.sound}>
             <NormalIcon onClick={handleMute} src={icon}/>
             <div>
-                <input style={{'--song-played-bar-width': `${volume * 100}%`}} value={volume} max={1} step={0.05} onChange={handleSoundChange} type="range" name="sound" />
+                <input style={{'--song-played-bar-width': `${volume * 100}%`}} value={volume} max={1} step={0.1} onChange={handleSoundChange} type="range" name="sound" />
             </div>
         </div>
     )

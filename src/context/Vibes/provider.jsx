@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react"
 import PropTypes from 'prop-types'
 import { vibesContext } from '.'
-import { Vibe } from '../../functions/songPlayer/AudioController'
 import {player as spotiPlayer} from '../../functions/songPlayer/AudioController'
 import songList from '../../backend/songlist.json'
 
@@ -49,24 +48,17 @@ export const VibesProvider = ({children}) => {
         let playedPercentage = (currentTime / songDuration) * 100
         setPlayedPercentage(playedPercentage)
     }, [currentTime, songDuration])
+
     useEffect(() => {
-        if (volume < 0)
-            setVolume(0)
-        else if (volume > 1)
-            setVolume(1)
-        else {
-            if (Vibe)
-                Vibe.volume = volume
-        }
+        // if (volume < 0 || volume > 1) return;
+        // if (Vibe) Vibe.volume = volume;
+        // console.log(volume)
     }, [volume])
+
     useEffect(() => {
-        // console.log(songDuration)
         played()
-    }, [songDuration, played])
-    useEffect(() => {
-        // console.log(currentTime)
-        played()
-    }, [currentTime, played])
+    }, [currentTime, songDuration, played])
+
     useEffect(() => {
         // console.log(playedPercentage)
     }, [playedPercentage])
@@ -92,8 +84,8 @@ export const VibesProvider = ({children}) => {
         // console.log(currentTime)
     }, [currentTime])
     useEffect(() => {
-        // console.log(songData)
-    }, [songData])
+        // console.log(songDuration)
+    }, [songDuration])
 
     return (
         <vibesContext.Provider value={{

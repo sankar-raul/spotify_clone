@@ -1,11 +1,11 @@
 
-class MusicPlayer {
+class MusicPlayer extends Audio {
     constructor(songList, update, client) {
+        super(songList[0].src)
         this.songList = songList
         this.songListLength = songList.length
         this.currentSongIndex = 0
         this.currentSongInfo = songList[this.currentSongIndex]
-        this.currentSong = new Audio(this.currentSongInfo.src)
         this.isSuffle = false
         this.repeatState = 0
         this.queueNext = 1
@@ -16,35 +16,35 @@ class MusicPlayer {
         // controller
         this.update = update
         this.isPlaying = false
-        this._duration = this.currentSong.duration
         this.update({...this.currentSongInfo, queue: songList[this.queueNext]})
         this.setUpAccessibility()
+        this.load()
     }
+
+    // volume getter
     get volume() {
-        return this.currentSong.volume
+        return super.volume
     }
+    // volume setter
     set volume(volume = this.volume) {
         if (volume >= 0 && volume <= 1)
-            this.currentSong.volume = volume
+            super.volume = volume
     }
+
     get played() {
-        return 100 / (this.duration / this.currentSong.currentTime)
+        return 100 / (this.duration / super.currentTime)
     }
     set currentTime(time) {
         if (time != 0 && !time) {
             return
         }
-        this.currentSong.currentTime = parseInt(time)
+        super.currentTime = parseInt(time)
     }
     get currentTime() {
-        return this.currentSong.currentTime
+        return super.currentTime
     }
     get duration() {
-        return this.currentSong.duration
-    }
-
-    set duration(time) {
-        this._duration = time
+        return super.duration
     }
     // key handlers
     // prepare song to play
@@ -71,77 +71,69 @@ class MusicPlayer {
                 this.pause()
                 this.currentTime = 0
                 this.play()
-                this.currentSong.onended = () => this.onended()
+                super.onended = () => this.onended()
                 
             }
         }
-    process() {
+    load() {
         this.currentSongInfo = this.songList[this.currentSongIndex]
-        this.currentSong.src = this.currentSongInfo.src
-        this.currentSong.load()
+        this.src = this.currentSongInfo.src
+        super.load()
         // console.log("op")
-        this.currentSong.onended = () => this.onended()
-        this.currentSong.onpause = () => {
-            this.pause()
-            // console.log("ok")
-        }
-        this.currentSong.onplay = () => {
+        super.onended = () => this.onended()
+        super.onplay = () => {
             this.play()
             // console.log("ok")
         }
+        this.update({...this.currentSongInfo, queue: this.songList[this.queueNext]})
     }
+
     // song controller
     play() {
         document.title = `${this.currentSongInfo.title} • ${this.currentSongInfo.artists.join(',$#').split('$#').join(' ')}`
-        if (!this.isPlaying) {
-            this.currentSong.play()
-            this.isPlaying = true
-        }
-        this.client.setIsPlaying(true)
         if (this.first) {
-            // this.process()
-            this.currentSong.onended = () => this.onended()
-            this.currentSong.onpause = () => {
-                this.pause()
-                // console.log("ok")
-            }
-            this.currentSong.onplay = () => {
-                this.play()
-                // console.log("ok")
-            }
             this.queueNext = this.getQueueSong()
-            // this.update({...this.currentSongInfo, queue: this.songList[this.queueNext]})
             this.first = false
+            super.play()
             this.songStack.push(this.currentSongIndex)
+            this.client.setIsPlaying(true)
+        } else if (!this.isPlaying) {
+            super.play()
+            this.isPlaying = true
+            this.client.setIsPlaying(true)
         }
     }
+
+    // pause the song
     pause() {
         document.title = "Spotify - Web Player: Music for everyone"
         if (this.isPlaying) {
-            this.currentSong.pause()
+            super.pause()
             this.isPlaying = false
             this.client.setIsPlaying(false)
         }
     }
+
+    // goto next track
     next(startPlaying = true) {
         if (this.repeatState == 2) {
                 this.currentTime = 0
                 this.play()
-                this.currentSong.onended = () => this.onended()
+                super.onended = () => this.onended()
             return
         }
-        this.isPlaying && this.currentSong.pause()
+        this.isPlaying && this.pause()
         this.currentSongIndex = this.queueNext
         this.songStack.push(this.currentSongIndex)
-        this.process()
-        startPlaying && this.currentSong.play()
-        this.isPlaying = true
+        this.load()
+        startPlaying && this.play()
         this.queueNext = this.getQueueSong()
-        this.update({...this.currentSongInfo, queue: this.songList[this.queueNext]})
         this.setMediaSessionMetadata()
     }
+
+    // goto previous track
     prev() {
-        this.isPlaying && this.currentSong.pause()
+        this.isPlaying && this.pause()
         this.queueNext = this.currentSongIndex
         this.songStack.pop()
         const prev_idx = this.songStack.pop()
@@ -150,13 +142,11 @@ class MusicPlayer {
         } else {
             this.currentSongIndex = prev_idx
         }
-        this.process()
-        this.update({...this.currentSongInfo, queue: this.songList[this.queueNext]})
-        
-        this.currentSong.play()
-        this.isPlaying = true
+        this.load()        
+        this.play()
         this.setMediaSessionMetadata()
     }
+
     getQueueSong() {
         if (this.isSuffle) {
             return this.suffle()
@@ -164,7 +154,6 @@ class MusicPlayer {
             return this.currentSongIndex < this.songListLength - 1 ? this.currentSongIndex + 1 : 0
         }
     }
-
 
     // accessibility
     setMediaSessionMetadata() {
@@ -197,12 +186,12 @@ class MusicPlayer {
             this.currentTime -= 5
         } else if (e.code == 'ArrowDown') {
             e.preventDefault()
-            this.client.setVolume(prev => prev - .1)
+            this.client.setVolume(prev => prev > 0 ? parseFloat((prev - .1).toFixed(1)) : prev)
             // console.log("ok")
         } else if (e.code == 'ArrowUp') {
-            e.preventDefault()
-            this.client.setVolume(prev => prev + .1)
-            this.volume += .1
+            e.preventDefault() 
+            this.client.setVolume(prev => prev < 1 ? parseFloat((prev + .1).toFixed(1)) : prev)
+            // this.volume += .1
             // console.log("ok")
         } else {
             // console.log(e.code)
@@ -214,11 +203,16 @@ class MusicPlayer {
       navigator.mediaSession.setActionHandler('previoustrack', () => this.prev())
     
       navigator.mediaSession.setActionHandler('nexttrack', () => this.next())
-      this.currentSong.onloadedmetadata = () => {
-            this.client.setSongDuration(this.currentSong.duration)
+
+      navigator.mediaSession.setActionHandler('pause', () => {
+        this.pause()
+      })
+
+      super.onloadedmetadata = () => {
+            this.client.setSongDuration(this.duration)
             this.currentTime = 0
         }
-        this.currentSong.ontimeupdate = () => {
+        super.ontimeupdate = () => {
             this.client.setCurrentTime(this.currentTime)
         }
     }

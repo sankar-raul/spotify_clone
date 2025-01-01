@@ -34,15 +34,19 @@ class MusicPlayer extends Audio {
     get played() {
         return 100 / (this.duration / super.currentTime)
     }
+
+    // song current time setter
     set currentTime(time) {
         if (time != 0 && !time) {
             return
         }
         super.currentTime = parseInt(time)
     }
+    // song current time getter
     get currentTime() {
         return super.currentTime
     }
+    // song duration getter
     get duration() {
         return super.duration
     }
@@ -75,6 +79,8 @@ class MusicPlayer extends Audio {
                 
             }
         }
+
+    // load the song data
     load() {
         this.currentSongInfo = this.songList[this.currentSongIndex]
         this.src = this.currentSongInfo.src
@@ -147,6 +153,7 @@ class MusicPlayer extends Audio {
         this.setMediaSessionMetadata()
     }
 
+    // get next queue song index
     getQueueSong() {
         if (this.isSuffle) {
             return this.suffle()
@@ -171,7 +178,6 @@ class MusicPlayer extends Audio {
       document.onkeydown = (e) => {
         if (e.target.tagName != "INPUT" || e.target.type != 'text') {
         if (e.code === 'Space') {
-            // console.log(e)
             e.preventDefault()
             this.isPlaying ? this.pause() : this.play()
         } else if (e.code === 'ArrowRight') {
@@ -191,8 +197,6 @@ class MusicPlayer extends Audio {
         } else if (e.code == 'ArrowUp') {
             e.preventDefault() 
             this.client.setVolume(prev => prev < 1 ? parseFloat((prev + .1).toFixed(1)) : prev)
-            // this.volume += .1
-            // console.log("ok")
         } else {
             // console.log(e.code)
         }

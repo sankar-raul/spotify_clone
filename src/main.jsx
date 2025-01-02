@@ -6,6 +6,8 @@ import './index.css'
 import './animations.css'
 import RootProviderWrapper from './context/RootProviderWraper.jsx'
 import Miniplayer from './components/pip/miniplayer.jsx'
+import { Analytics } from "@vercel/analytics/react"
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Router>
@@ -14,5 +16,6 @@ createRoot(document.getElementById('root')).render(
       <Miniplayer/>
     </RootProviderWrapper>
     </Router>
+    <Analytics />
   </StrictMode>,
 )

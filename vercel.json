@@ -3,7 +3,10 @@
       {
         "source": "/api/lyrics",
         "destination": "/api/lyrics.js"
+      },
+      {
+        "source": "/(.*)",
+        "destination": "/"
       }
     ]
   }
-  

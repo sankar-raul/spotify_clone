@@ -78,6 +78,30 @@
         "song_thumb": "/song_thumbs/Alone,_Pt._II.png"
     },
     {
+        "title": "Hope",
+        "src": "/songs/Hope.mp3",
+        "isLiked": true,
+        "artists": [
+            "XXXTENTACION"
+        ],
+        "credits": [
+            {
+                "artist": "XXXTENTACION",
+                "credit": ["Main Artist"],
+                "artistId": "artist343843xx"
+            },
+            {
+                "artist": "John Cunningham",
+                "credit": ["Composer", "Producer"]
+            },
+            {
+                "artist": "Jahseh Onfroy",
+                "credit": ["Composer"]
+            }
+        ],
+        "song_thumb": "/song_thumbs/Hope.png"
+    },
+    {
         "title": "All Around the World (La La La)",
         "src": "/songs/All Around the World (La La La).mp3",
         "canvas": "/canvas/All Around the World (La La La).mp4",

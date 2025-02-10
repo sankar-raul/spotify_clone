@@ -1,5 +1,31 @@
 [
     {
+        "title": "Abracadabra",
+        "src": "/songs/Abracadabra.mp3",
+        "canvas": "/canvas/Abracadabra.mp4",
+        "isLiked": true,
+        "artists": [
+            "Lady Gaga"
+        ],
+        "credits": [
+            {
+                "artist": "Lady Gaga",
+                "credit": ["Main Artist", "Composer", "Producer"],
+                "artistId": "artistladygaga"
+            },
+            {
+                "artist": "Andrew Watt",
+                "credit": ["Composer", "Producer"],
+                "artistId": "artistbruno3"
+            },
+            {
+                "artist": "Henry Walter",
+                "credit": ["Composer"]
+            }
+        ],
+        "song_thumb": "/song_thumbs/Abracadabra.png"
+    },
+    {
         "title": "Die With A Smile",
         "src": "/songs/Die With A Smile.mp3",
         "canvas": "/canvas/Die With A Smile.mp4",

@@ -27,6 +27,36 @@
     "song_thumb": "/song_thumbs/Alone,_Pt._II.png"
     },
     {
+        "title": "Tu Hain Toh Main Hoon (From \"Sky Force\")",
+        "src": "/songs/Tu Hain Toh Main Hoon.mp3",
+        "canvas": "/canvas/Tu Hain Toh Main Hoon.mp4",
+        "isLiked": true,
+        "artists": [
+            "Tanishk Bagchi",
+            "Arijit Singh",
+            "Afsana Khan",
+            "Irshad Kamil"
+        ],
+        "credits": [
+            {
+                "artist": "Tanishk Bagchi",
+                "credit": ["Main Artist", "Composer"],
+                "artistId": "artist12887"
+            },
+            {
+                "artist": "Arijit Singh",
+                "credit": ["Main Artist"],
+                "artistId": "artist5tt4"
+            },
+            {
+                "artist": "Afsana Khan",
+                "credit": ["Main Artist"],
+                "artistId": "artist10oi"
+            }
+    ],
+    "song_thumb": "/song_thumbs/Tu_Hain_Toh_Main_Hoon.png"
+    },
+    {
         "title": "Abracadabra",
         "src": "/songs/Abracadabra.mp3",
         "canvas": "/canvas/Abracadabra.mp4",

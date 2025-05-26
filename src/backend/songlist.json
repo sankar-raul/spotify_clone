@@ -27,6 +27,39 @@
     "song_thumb": "/song_thumbs/Alone,_Pt._II.png"
     },
     {
+        "title": "Aasman Ko Chukar",
+        "src": "/songs/Aasman Ko Chukar.mp3",
+        "isLiked": true,
+        "artists": [
+            "Daler Mehndi",
+            "Hrishikesh",
+            "Neuman",
+            "FRANCO",
+            "Shazneen Arethna",
+            "Samantha",
+            "Sunayana",
+            "Tapas Relia"
+        ],
+        "credits": [
+            {
+                "artist": "Daler Mehndi",
+                "credit": ["Main Artist"],
+                "artistId": "artis343f3w"
+            },
+            {
+                "artist": "Hrishikesh",
+                "credit": ["Main Artist"],
+                "artistId": "artist10989"
+            },
+            {
+                "artist": "Neuman",
+                "credit": ["Main Artist"],
+                "artistId": "artis343hx"
+            }
+    ],
+    "song_thumb": "/song_thumbs/Aasman_Ko_Chukar.png"
+    },
+    {
         "title": "Tu Hain Toh Main Hoon (From \"Sky Force\")",
         "src": "/songs/Tu Hain Toh Main Hoon.mp3",
         "canvas": "/canvas/Tu Hain Toh Main Hoon.mp4",

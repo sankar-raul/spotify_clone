@@ -1,5 +1,30 @@
 [
     {
+        "title": "Bad Habits",
+        "src": "/songs/Bad Habits.mp3",
+        "canvas": "/canvas/Bad Habits.mp4",
+        "isLiked": true,
+        "artists": [
+            "Ed Sheeran"
+        ],
+        "credits": [
+            {
+                "artist": "Ed Sheeran",
+                "credit": ["Main Artist", "Composer", "Producer", "Lyricist"],
+                "artistId": "artist1i7d"
+            },
+            {
+                "artist": "Fred Gibson",
+                "credit": ["Composer", "Lyricist"]
+            },
+            {
+                "artist": "Johnny McDaid",
+                "credit": ["Composer", "Producer", "Lyricist"]
+            }
+    ],
+    "song_thumb": "/song_thumbs/Bad_Habits.jpg"
+    },
+    {
         "title": "Alone, Pt. II",
         "src": "/songs/Alone, Pt. II.mp3",
         "canvas": "/canvas/Alone, Pt. II.mp4",

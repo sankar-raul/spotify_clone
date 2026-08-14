@@ -5,7 +5,7 @@ import styles from './lyrics.module.css'
 import PropTypes from 'prop-types'
 import useGlobal from "../../context/Global"
 export const Lyrics = () => {
-    const {lyrics} = useLyrics()
+    const { lyrics } = useLyrics()
     const [displayComponent, setDisplayComponent] = useState(<Loading />)
     useEffect(() => {
         switch(lyrics) {
@@ -72,7 +72,7 @@ const ConstructLyricsLines = ({lyrics}) => {
           <div className={styles["lyrics-wraper"]}>
             {
                 typeof(lyrics) == 'object' ? lyrics?.map((data, idx) => {
-                    return <LyricsLine key={idx} timestamp={data?.seconds} lyrics={data?.lyrics} />
+                    return <LyricsLine key={idx} timestamp={data?.start_time / 1000} lyrics={data?.text} />
                 }) : <ErrorMsg />
             }
             </div>

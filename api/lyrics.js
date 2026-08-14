@@ -6,11 +6,11 @@ export default async function handler(req, res) {
 
   // Create an HTTPS agent with SSL verification disabled
   const httpsAgent = new https.Agent({
-    rejectUnauthorized: false, // Bypass SSL certificate validation
+    rejectUnauthorized: true, // Bypass SSL certificate validation
   });
 
   try {
-    const response = await axios.get('https://api.textyl.co/api/lyrics', {
+    const response = await axios.get('https://test-0k.onrender.com/lyrics', {
       params: { q },
       httpsAgent,
     });

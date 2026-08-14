@@ -25,8 +25,9 @@ useEffect(() => {
     setLyrics("loading")
     ;(async () => {
         try {
-            const songLines = await getLyrics(songData?.title);
-            setLyrics(songLines);
+            const songLines = await getLyrics(songData?.title, songData.artists[0]);
+            // console.log(songLines?.data?.timed_lyrics)
+            setLyrics(songLines?.data?.timed_lyrics);
         } catch(error) {
             console.log(error)
             setLyrics("error")

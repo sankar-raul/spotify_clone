@@ -10,10 +10,11 @@ export default defineConfig({
   server: {
     proxy: {
       '/api/lyrics': {
-          target: 'https://api.textyl.co',
+          target: 'https://test-0k.onrender.com',
           changeOrigin: true,
-          secure: false,
-          agent: new https.Agent({ rejectUnauthorized: false }),
+          rewrite: (path) => path.replace(/^\/api/, ''),
+          secure: true,
+          agent: new https.Agent({ rejectUnauthorized: true }),
       },
   },
   },

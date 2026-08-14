@@ -1,13 +1,13 @@
 import axios from 'axios'
 
 let controller = null
-export const getLyrics = async (song) => {
+export const getLyrics = async (songname, artist) => {
     if (controller)
         controller.abort()
     controller = new AbortController()
-    const apiEndPoint = (songName) => `/api/lyrics?q=${songName}`
+    const apiEndPoint = (songName) => `/api/lyrics/?artist=${artist}&song=${songName}&timestamps=true`
     try {
-        const data = await axios.get(apiEndPoint(song), {
+        const data = await axios.get(apiEndPoint(songname), {
             signal: controller.signal
         })
         return data.data

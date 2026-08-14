@@ -1,22 +1,24 @@
 import axios from 'axios';
-import https from 'https';
 
 export default async function handler(req, res) {
-  const { q } = req.query;
+  const { artist, song, timestamps = 'true' } = req.query;
 
-  // Create an HTTPS agent with SSL verification disabled
-  const httpsAgent = new https.Agent({
-    rejectUnauthorized: true, // Bypass SSL certificate validation
-  });
+  if (!artist || !song) {
+    return res.status(400).json({ error: 'artist and song are required' });
+  }
 
   try {
     const response = await axios.get('https://test-0k.onrender.com/lyrics', {
-      params: { q },
-      httpsAgent,
+      params: { artist, song, timestamps },
     });
+
+    res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate=604800');
     res.status(200).json(response.data);
   } catch (error) {
     console.error('Error fetching lyrics:', error);
-    res.status(500).json({ error: 'Unable to fetch lyrics', err: error});
+    res.status(error.response?.status || 500).json({
+      error: 'Unable to fetch lyrics',
+      details: error.response?.data || error.message,
+    });
   }
 }

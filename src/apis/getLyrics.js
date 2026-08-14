@@ -5,7 +5,11 @@ export const getLyrics = async (songname, artist) => {
     if (controller)
         controller.abort()
     controller = new AbortController()
-    const apiEndPoint = (songName) => `/api/lyrics/?artist=${artist}&song=${songName}&timestamps=true`
+    const apiEndPoint = (songName) => `/api/lyrics?${new URLSearchParams({
+        artist,
+        song: songName,
+        timestamps: 'true',
+    })}`
     try {
         const data = await axios.get(apiEndPoint(songname), {
             signal: controller.signal

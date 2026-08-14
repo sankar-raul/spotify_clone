@@ -1,452 +1,432 @@
 [
-    {
-        "title": "Bad Habits",
-        "src": "/songs/Bad Habits.mp3",
-        "canvas": "/canvas/Bad Habits.mp4",
-        "isLiked": true,
-        "artists": [
-            "Ed Sheeran"
-        ],
-        "credits": [
-            {
-                "artist": "Ed Sheeran",
-                "credit": ["Main Artist", "Composer", "Producer", "Lyricist"],
-                "artistId": "artist1i7d"
-            },
-            {
-                "artist": "Fred Gibson",
-                "credit": ["Composer", "Lyricist"]
-            },
-            {
-                "artist": "Johnny McDaid",
-                "credit": ["Composer", "Producer", "Lyricist"]
-            }
+  {
+    "title": "Khnoro Aamar Fossil",
+    "src": "/songs/Khnoro Aamar Fossil.mp3",
+    "isLiked": true,
+    "artists": ["Fossils", "Rupam Islam"],
+    "credits": [
+      {
+        "artist": "Fossils",
+        "credit": ["Main Artist", "Arranger", "Producer"],
+        "artistId": "artis3ref3w"
+      },
+      {
+        "artist": "Rupam Islam",
+        "credit": ["Main Artist", "Composer", "Lyricist"],
+        "artistId": "artist109y9"
+      }
+    ],
+    "song_thumb": "/song_thumbs/Khnoro_Aamar_Fossil.png"
+  },
+  {
+    "title": "Bad Habits",
+    "src": "/songs/Bad Habits.mp3",
+    "canvas": "/canvas/Bad Habits.mp4",
+    "isLiked": true,
+    "artists": ["Ed Sheeran"],
+    "credits": [
+      {
+        "artist": "Ed Sheeran",
+        "credit": ["Main Artist", "Composer", "Producer", "Lyricist"],
+        "artistId": "artist1i7d"
+      },
+      {
+        "artist": "Fred Gibson",
+        "credit": ["Composer", "Lyricist"]
+      },
+      {
+        "artist": "Johnny McDaid",
+        "credit": ["Composer", "Producer", "Lyricist"]
+      }
     ],
     "song_thumb": "/song_thumbs/Bad_Habits.jpg"
-    },
-    {
-        "title": "Alone, Pt. II",
-        "src": "/songs/Alone, Pt. II.mp3",
-        "canvas": "/canvas/Alone, Pt. II.mp4",
-        "isLiked": true,
-        "artists": [
-            "Alan Walker",
-            "Ava Max"
-        ],
-        "credits": [
-            {
-                "artist": "Alan Walker",
-                "credit": ["Main Artist", "Composer", "Producer"],
-                "artistId": "artist128a"
-            },
-            {
-                "artist": "Ava Max",
-                "credit": ["Main Artist"],
-                "artistId": "artist1009"
-            },
-            {
-                "artist": "Marcus Arnbekk",
-                "credit": ["Composer"]
-            }
+  },
+  {
+    "title": "Alone, Pt. II",
+    "src": "/songs/Alone, Pt. II.mp3",
+    "canvas": "/canvas/Alone, Pt. II.mp4",
+    "isLiked": true,
+    "artists": ["Alan Walker", "Ava Max"],
+    "credits": [
+      {
+        "artist": "Alan Walker",
+        "credit": ["Main Artist", "Composer", "Producer"],
+        "artistId": "artist128a"
+      },
+      {
+        "artist": "Ava Max",
+        "credit": ["Main Artist"],
+        "artistId": "artist1009"
+      },
+      {
+        "artist": "Marcus Arnbekk",
+        "credit": ["Composer"]
+      }
     ],
     "song_thumb": "/song_thumbs/Alone,_Pt._II.png"
-    },
-    {
-        "title": "Aasman Ko Chukar",
-        "src": "/songs/Aasman Ko Chukar.mp3",
-        "isLiked": true,
-        "artists": [
-            "Daler Mehndi",
-            "Hrishikesh",
-            "Neuman",
-            "FRANCO",
-            "Shazneen Arethna",
-            "Samantha",
-            "Sunayana",
-            "Tapas Relia"
-        ],
-        "credits": [
-            {
-                "artist": "Daler Mehndi",
-                "credit": ["Main Artist"],
-                "artistId": "artis343f3w"
-            },
-            {
-                "artist": "Hrishikesh",
-                "credit": ["Main Artist"],
-                "artistId": "artist10989"
-            },
-            {
-                "artist": "Neuman",
-                "credit": ["Main Artist"],
-                "artistId": "artis343hx"
-            }
+  },
+  {
+    "title": "Aasman Ko Chukar",
+    "src": "/songs/Aasman Ko Chukar.mp3",
+    "isLiked": true,
+    "artists": [
+      "Daler Mehndi",
+      "Hrishikesh",
+      "Neuman",
+      "FRANCO",
+      "Shazneen Arethna",
+      "Samantha",
+      "Sunayana",
+      "Tapas Relia"
+    ],
+    "credits": [
+      {
+        "artist": "Daler Mehndi",
+        "credit": ["Main Artist"],
+        "artistId": "artis343f3w"
+      },
+      {
+        "artist": "Hrishikesh",
+        "credit": ["Main Artist"],
+        "artistId": "artist10989"
+      },
+      {
+        "artist": "Neuman",
+        "credit": ["Main Artist"],
+        "artistId": "artis343hx"
+      }
     ],
     "song_thumb": "/song_thumbs/Aasman_Ko_Chukar.png"
-    },
-    {
-        "title": "Tu Hain Toh Main Hoon (From \"Sky Force\")",
-        "src": "/songs/Tu Hain Toh Main Hoon.mp3",
-        "canvas": "/canvas/Tu Hain Toh Main Hoon.mp4",
-        "isLiked": true,
-        "artists": [
-            "Tanishk Bagchi",
-            "Arijit Singh",
-            "Afsana Khan",
-            "Irshad Kamil"
-        ],
-        "credits": [
-            {
-                "artist": "Tanishk Bagchi",
-                "credit": ["Main Artist", "Composer"],
-                "artistId": "artist12887"
-            },
-            {
-                "artist": "Arijit Singh",
-                "credit": ["Main Artist"],
-                "artistId": "artist5tt4"
-            },
-            {
-                "artist": "Afsana Khan",
-                "credit": ["Main Artist"],
-                "artistId": "artist10oi"
-            }
+  },
+  {
+    "title": "Tu Hain Toh Main Hoon (From \"Sky Force\")",
+    "src": "/songs/Tu Hain Toh Main Hoon.mp3",
+    "canvas": "/canvas/Tu Hain Toh Main Hoon.mp4",
+    "isLiked": true,
+    "artists": [
+      "Tanishk Bagchi",
+      "Arijit Singh",
+      "Afsana Khan",
+      "Irshad Kamil"
+    ],
+    "credits": [
+      {
+        "artist": "Tanishk Bagchi",
+        "credit": ["Main Artist", "Composer"],
+        "artistId": "artist12887"
+      },
+      {
+        "artist": "Arijit Singh",
+        "credit": ["Main Artist"],
+        "artistId": "artist5tt4"
+      },
+      {
+        "artist": "Afsana Khan",
+        "credit": ["Main Artist"],
+        "artistId": "artist10oi"
+      }
     ],
     "song_thumb": "/song_thumbs/Tu_Hain_Toh_Main_Hoon.png"
-    },
-    {
-        "title": "Abracadabra",
-        "src": "/songs/Abracadabra.mp3",
-        "canvas": "/canvas/Abracadabra.mp4",
-        "isLiked": true,
-        "artists": [
-            "Lady Gaga"
-        ],
-        "credits": [
-            {
-                "artist": "Lady Gaga",
-                "credit": ["Main Artist", "Composer", "Producer"],
-                "artistId": "artistladygaga"
-            },
-            {
-                "artist": "Andrew Watt",
-                "credit": ["Composer", "Producer"]
-            },
-            {
-                "artist": "Henry Walter",
-                "credit": ["Composer"]
-            }
-        ],
-        "song_thumb": "/song_thumbs/Abracadabra.png"
-    },
-    {
-        "title": "Die With A Smile",
-        "src": "/songs/Die With A Smile.mp3",
-        "canvas": "/canvas/Die With A Smile.mp4",
-        "isLiked": true,
-        "artists": [
-            "Lady Gaga",
-            "Bruno Mars"
-        ],
-        "credits": [
-            {
-                "artist": "Lady Gaga",
-                "credit": ["Main Artist", "Composer", "Producer"],
-                "artistId": "artistladygaga"
-            },
-            {
-                "artist": "Bruno Mars",
-                "credit": ["Main Artist", "Composer", "Producer"],
-                "artistId": "artistbruno7"
-            },
-            {
-                "artist": "Dernst \"D'Mile\" Emile II",
-                "credit": ["Composer", "Producer"]
-            }
-        ],
-        "song_thumb": "/song_thumbs/Die_With_A_Smile.png"
-    },
-    {
-        "title": "Bye Bye Bye - From Deadpool and Wolverine Soundtrack",
-        "src": "/songs/Bye Bye Bye - From Deadpool and Wolverine Soundtrack.mp3",
-        "isLiked": true,
-        "artists": [
-            "*NSYNC"
-        ],
-        "credits": [
-            {
-                "artist": "*NSYNC",
-                "credit": ["Main Artist"],
-                "artistId": "artist128u"
-            },
-            {
-                "artist": "Kristian Lundin",
-                "credit": ["Composer", "Lyricist", "Producer"]
-            },
-            {
-                "artist": "Jacob Schulze",
-                "credit": ["Composer", "Lyricist"]
-            }
-        ],
-        "song_thumb": "/song_thumbs/Bye_Bye_Bye_-_From_Deadpool_and_Wolverine_Soundtrack.png"
-    },
-    {
-        "title": "Hope",
-        "src": "/songs/Hope.mp3",
-        "isLiked": true,
-        "artists": [
-            "XXXTENTACION"
-        ],
-        "credits": [
-            {
-                "artist": "XXXTENTACION",
-                "credit": ["Main Artist"],
-                "artistId": "artist343843xx"
-            },
-            {
-                "artist": "John Cunningham",
-                "credit": ["Composer", "Producer"]
-            },
-            {
-                "artist": "Jahseh Onfroy",
-                "credit": ["Composer"]
-            }
-        ],
-        "song_thumb": "/song_thumbs/Hope.png"
-    },
-    {
-        "title": "All Around the World (La La La)",
-        "src": "/songs/All Around the World (La La La).mp3",
-        "canvas": "/canvas/All Around the World (La La La).mp4",
-        "isLiked": true,
-        "artists": [
-            "R3HAB",
-            "A Touch Of Class"
-        ],
-        "credits": [
-            {
-                "artist": "R3HAB",
-                "credit": ["Main Artist", "Producer"],
-                "artistId": "artist129t"
-            },
-            {
-                "artist": "A Touch Of Class",
-                "credit": ["Main Artist"],
-                "artistId": "artist100t"
-            },
-            {
-                "artist": "Alex Christensen",
-                "credit": ["Composer"]
-            }
-        ],
-        "song_thumb": "/song_thumbs/R3HAB.png"
-    },
-    {
-        "title": "Skyfall",
-        "src": "/songs/Skyfall.mp3",
-        "isLiked": true,
-        "artists": [
-            "Adele"
-        ],
-        "credits": [
-            {
-                "artist": "Adele",
-                "credit": ["Main Artist"],
-                "artistId": "artist1aat"
-            },
-            {
-                "artist": "Adele Adkins",
-                "credit": ["Composer", "Lyricist"]
-            },
-            {
-                "artist": "Paul Epworth",
-                "credit": ["Composer", "Lyricist", "Producer"]
-            }
-        ],
-        "song_thumb": "/song_thumbs/Skyfall.png"
-    },
-    {
-        "title": "Let Me Love You",
-        "src": "/songs/Let Me Love You.mp3",
-        "canvas": "/canvas/Let Me Love You.mp4",
-        "isLiked": true,
-        "artists": [
-            "DJ Snake",
-            "Justin Bieber"
-        ],
-        "credits": [
-            {
-                "artist": "DJ Snake",
-                "credit": ["Main Artist", "Producer"],
-                "artistId": "artist129t"
-            },
-            {
-                "artist": "Justin Bieber",
-                "credit": ["Featured Artist", "Composer"],
-                "artistId": "artist100t"
-            },
-            {
-                "artist": "WATT",
-                "credit": ["Composer", "Producer"]
-            }
-        ],
-        "song_thumb": "/song_thumbs/Let_Me_Love_You.png"
-    },
-    {
-        "title": "Blinding Lights",
-        "src": "/songs/Blinding Lights.mp3",
-        "canvas": "/canvas/Blinding Lights.mp4",
-        "isLiked": true,
-        "artists": [
-            "The Weeknd"
-        ],
-        "credits": [
-            {
-                "artist": "The Weeknd",
-                "credit": ["Main Artist", "Producer"],
-                "artistId": "artist129t"
-            },
-            {
-                "artist": "Max Martin",
-                "credit": ["Composer", "Producer"]
-            },
-            {
-                "artist": "Oscar Holter",
-                "credit": ["Composer", "Producer"]
-            }
-        ],
-        "song_thumb": "/song_thumbs/blinding_lights.png"
-    },
-    {
-        "title": "1, 2, 3 (feat. Jason Derulo & De La Ghetto)",
-        "src": "/songs/1, 2, 3.mp3",
-        "canvas": "/canvas/1, 2, 3 (feat. Jason Derulo & De La Ghetto).mp4",
-        "isLiked": true,
-        "artists": [
-            "Sofía Reyes",
-            "Jason Derulo",
-            "De La Ghetto"
-        ],
-        "credits": [
-            {
-                "artist": "Sofía Reyes",
-                "credit": ["Main Artist", "Composer", "Writer"],
-                "artistId": "artist199t"
-            },
-            {
-                "artist": "Jason Derulo",
-                "credit": ["Main Artist", "Composer", "Writer"],
-                "artistId": "artist100t"
-            },
-            {
-                "artist": "De La Ghetto",
-                "credit": ["Main Artist", "Composer", "Writer"],
-                "artistId": "artist104r"
-            }
-        ],
-        "song_thumb": "/song_thumbs/1,2,3.png"
-    },
-    {
-        "title": "Dancin - Krono Remix",
-        "src": "/songs/Dancin Krono.mp3",
-        "isLiked": true,
-        "artists": [
-            "Aaron Smith",
-            "Luvli",
-            "Krono"
-        ],
-        "credits": [
-            {
-                "artist": "Aaron Smith",
-                "credit": ["Main Artist", "Writer"],
-                "artistId": "artist121b"
-            },
-            {
-                "artist": "Luvli",
-                "credit": ["Featured Artist"],
-                "artistId": "artist115d"
-            },
-            {
-                "artist": "Krono",
-                "credit": ["Remixer"],
-                "artistId": "artist113e"
-            }
-        ],
-        "song_thumb": "/song_thumbs/dancin_krono.png"
-    },
-    {
-        "title": "On The Floor",
-        "src": "/songs/On The Floor.mp3",
-        "isLiked": false,
-        "artists": [
-            "Jennifer Lopez",
-            "Pitbull"
-        ],
-        "credits": [
-            {
-                "artist": "Jennifer Lopez",
-                "credit": ["Main Artist"],
-                "artistId": "artist113b"
-            },
-            {
-                "artist": "Pitbull",
-                "credit": ["Featured Artist"],
-                "artistId": "artist113c"
-            },
-            {
-                "artist": "Nadir Khayat",
-                "credit": ["Composer"]
-            }
-        ],
-        "song_thumb": "/song_thumbs/on_the_floor.png"
-    },
-    {
-        "title": "Bad Boy",
-        "src": "/songs/Bad Boy.mp3",
-        "canvas": "/canvas/Bad Boy.mp4",
-        "isLiked": false,
-        "artists": [
-            "Marwa Loud"
-        ],
-        "credits": [
-            {
-                "artist": "Marwa Loud",
-                "credit": ["Main Artist"],
-                "artistId": "artist183a"
-            },
-            {
-                "artist": "Kevin Kali",
-                "credit": ["Composer"]
-            },
-            {
-                "artist": "oriba Konde",
-                "credit": ["Composer"]
-            }
-        ],
-        "song_thumb": "/song_thumbs/bad_boy.png"
-    },
-    {
-        "title": "Replay",
-        "src": "/songs/Replay.mp3",
-        "isLiked": false,
-        "artists": [
-            "Iyaz"
-        ],
-        "credits": [
-            {
-                "artist": "Iyaz",
-                "credit": ["Main Artist"],
-                "artistId": "artist123a"
-            },
-            {
-                "artist": "J.R. Rotem",
-                "credit": ["Producer"]
-            },
-            {
-                "artist": "Jason Desrouleaux",
-                "credit": ["Writer"]
-            }
-        ],
-        "song_thumb": "/song_thumbs/replay.png"
-    }
+  },
+  {
+    "title": "Abracadabra",
+    "src": "/songs/Abracadabra.mp3",
+    "canvas": "/canvas/Abracadabra.mp4",
+    "isLiked": true,
+    "artists": ["Lady Gaga"],
+    "credits": [
+      {
+        "artist": "Lady Gaga",
+        "credit": ["Main Artist", "Composer", "Producer"],
+        "artistId": "artistladygaga"
+      },
+      {
+        "artist": "Andrew Watt",
+        "credit": ["Composer", "Producer"]
+      },
+      {
+        "artist": "Henry Walter",
+        "credit": ["Composer"]
+      }
+    ],
+    "song_thumb": "/song_thumbs/Abracadabra.png"
+  },
+  {
+    "title": "Die With A Smile",
+    "src": "/songs/Die With A Smile.mp3",
+    "canvas": "/canvas/Die With A Smile.mp4",
+    "isLiked": true,
+    "artists": ["Lady Gaga", "Bruno Mars"],
+    "credits": [
+      {
+        "artist": "Lady Gaga",
+        "credit": ["Main Artist", "Composer", "Producer"],
+        "artistId": "artistladygaga"
+      },
+      {
+        "artist": "Bruno Mars",
+        "credit": ["Main Artist", "Composer", "Producer"],
+        "artistId": "artistbruno7"
+      },
+      {
+        "artist": "Dernst \"D'Mile\" Emile II",
+        "credit": ["Composer", "Producer"]
+      }
+    ],
+    "song_thumb": "/song_thumbs/Die_With_A_Smile.png"
+  },
+  {
+    "title": "Bye Bye Bye - From Deadpool and Wolverine Soundtrack",
+    "src": "/songs/Bye Bye Bye - From Deadpool and Wolverine Soundtrack.mp3",
+    "isLiked": true,
+    "artists": ["*NSYNC"],
+    "credits": [
+      {
+        "artist": "*NSYNC",
+        "credit": ["Main Artist"],
+        "artistId": "artist128u"
+      },
+      {
+        "artist": "Kristian Lundin",
+        "credit": ["Composer", "Lyricist", "Producer"]
+      },
+      {
+        "artist": "Jacob Schulze",
+        "credit": ["Composer", "Lyricist"]
+      }
+    ],
+    "song_thumb": "/song_thumbs/Bye_Bye_Bye_-_From_Deadpool_and_Wolverine_Soundtrack.png"
+  },
+  {
+    "title": "Hope",
+    "src": "/songs/Hope.mp3",
+    "isLiked": true,
+    "artists": ["XXXTENTACION"],
+    "credits": [
+      {
+        "artist": "XXXTENTACION",
+        "credit": ["Main Artist"],
+        "artistId": "artist343843xx"
+      },
+      {
+        "artist": "John Cunningham",
+        "credit": ["Composer", "Producer"]
+      },
+      {
+        "artist": "Jahseh Onfroy",
+        "credit": ["Composer"]
+      }
+    ],
+    "song_thumb": "/song_thumbs/Hope.png"
+  },
+  {
+    "title": "All Around the World (La La La)",
+    "src": "/songs/All Around the World (La La La).mp3",
+    "canvas": "/canvas/All Around the World (La La La).mp4",
+    "isLiked": true,
+    "artists": ["R3HAB", "A Touch Of Class"],
+    "credits": [
+      {
+        "artist": "R3HAB",
+        "credit": ["Main Artist", "Producer"],
+        "artistId": "artist129t"
+      },
+      {
+        "artist": "A Touch Of Class",
+        "credit": ["Main Artist"],
+        "artistId": "artist100t"
+      },
+      {
+        "artist": "Alex Christensen",
+        "credit": ["Composer"]
+      }
+    ],
+    "song_thumb": "/song_thumbs/R3HAB.png"
+  },
+  {
+    "title": "Skyfall",
+    "src": "/songs/Skyfall.mp3",
+    "isLiked": true,
+    "artists": ["Adele"],
+    "credits": [
+      {
+        "artist": "Adele",
+        "credit": ["Main Artist"],
+        "artistId": "artist1aat"
+      },
+      {
+        "artist": "Adele Adkins",
+        "credit": ["Composer", "Lyricist"]
+      },
+      {
+        "artist": "Paul Epworth",
+        "credit": ["Composer", "Lyricist", "Producer"]
+      }
+    ],
+    "song_thumb": "/song_thumbs/Skyfall.png"
+  },
+  {
+    "title": "Let Me Love You",
+    "src": "/songs/Let Me Love You.mp3",
+    "canvas": "/canvas/Let Me Love You.mp4",
+    "isLiked": true,
+    "artists": ["DJ Snake", "Justin Bieber"],
+    "credits": [
+      {
+        "artist": "DJ Snake",
+        "credit": ["Main Artist", "Producer"],
+        "artistId": "artist129t"
+      },
+      {
+        "artist": "Justin Bieber",
+        "credit": ["Featured Artist", "Composer"],
+        "artistId": "artist100t"
+      },
+      {
+        "artist": "WATT",
+        "credit": ["Composer", "Producer"]
+      }
+    ],
+    "song_thumb": "/song_thumbs/Let_Me_Love_You.png"
+  },
+  {
+    "title": "Blinding Lights",
+    "src": "/songs/Blinding Lights.mp3",
+    "canvas": "/canvas/Blinding Lights.mp4",
+    "isLiked": true,
+    "artists": ["The Weeknd"],
+    "credits": [
+      {
+        "artist": "The Weeknd",
+        "credit": ["Main Artist", "Producer"],
+        "artistId": "artist129t"
+      },
+      {
+        "artist": "Max Martin",
+        "credit": ["Composer", "Producer"]
+      },
+      {
+        "artist": "Oscar Holter",
+        "credit": ["Composer", "Producer"]
+      }
+    ],
+    "song_thumb": "/song_thumbs/blinding_lights.png"
+  },
+  {
+    "title": "1, 2, 3 (feat. Jason Derulo & De La Ghetto)",
+    "src": "/songs/1, 2, 3.mp3",
+    "canvas": "/canvas/1, 2, 3 (feat. Jason Derulo & De La Ghetto).mp4",
+    "isLiked": true,
+    "artists": ["Sofía Reyes", "Jason Derulo", "De La Ghetto"],
+    "credits": [
+      {
+        "artist": "Sofía Reyes",
+        "credit": ["Main Artist", "Composer", "Writer"],
+        "artistId": "artist199t"
+      },
+      {
+        "artist": "Jason Derulo",
+        "credit": ["Main Artist", "Composer", "Writer"],
+        "artistId": "artist100t"
+      },
+      {
+        "artist": "De La Ghetto",
+        "credit": ["Main Artist", "Composer", "Writer"],
+        "artistId": "artist104r"
+      }
+    ],
+    "song_thumb": "/song_thumbs/1,2,3.png"
+  },
+  {
+    "title": "Dancin - Krono Remix",
+    "src": "/songs/Dancin Krono.mp3",
+    "isLiked": true,
+    "artists": ["Aaron Smith", "Luvli", "Krono"],
+    "credits": [
+      {
+        "artist": "Aaron Smith",
+        "credit": ["Main Artist", "Writer"],
+        "artistId": "artist121b"
+      },
+      {
+        "artist": "Luvli",
+        "credit": ["Featured Artist"],
+        "artistId": "artist115d"
+      },
+      {
+        "artist": "Krono",
+        "credit": ["Remixer"],
+        "artistId": "artist113e"
+      }
+    ],
+    "song_thumb": "/song_thumbs/dancin_krono.png"
+  },
+  {
+    "title": "On The Floor",
+    "src": "/songs/On The Floor.mp3",
+    "isLiked": false,
+    "artists": ["Jennifer Lopez", "Pitbull"],
+    "credits": [
+      {
+        "artist": "Jennifer Lopez",
+        "credit": ["Main Artist"],
+        "artistId": "artist113b"
+      },
+      {
+        "artist": "Pitbull",
+        "credit": ["Featured Artist"],
+        "artistId": "artist113c"
+      },
+      {
+        "artist": "Nadir Khayat",
+        "credit": ["Composer"]
+      }
+    ],
+    "song_thumb": "/song_thumbs/on_the_floor.png"
+  },
+  {
+    "title": "Bad Boy",
+    "src": "/songs/Bad Boy.mp3",
+    "canvas": "/canvas/Bad Boy.mp4",
+    "isLiked": false,
+    "artists": ["Marwa Loud"],
+    "credits": [
+      {
+        "artist": "Marwa Loud",
+        "credit": ["Main Artist"],
+        "artistId": "artist183a"
+      },
+      {
+        "artist": "Kevin Kali",
+        "credit": ["Composer"]
+      },
+      {
+        "artist": "oriba Konde",
+        "credit": ["Composer"]
+      }
+    ],
+    "song_thumb": "/song_thumbs/bad_boy.png"
+  },
+  {
+    "title": "Replay",
+    "src": "/songs/Replay.mp3",
+    "isLiked": false,
+    "artists": ["Iyaz"],
+    "credits": [
+      {
+        "artist": "Iyaz",
+        "credit": ["Main Artist"],
+        "artistId": "artist123a"
+      },
+      {
+        "artist": "J.R. Rotem",
+        "credit": ["Producer"]
+      },
+      {
+        "artist": "Jason Desrouleaux",
+        "credit": ["Writer"]
+      }
+    ],
+    "song_thumb": "/song_thumbs/replay.png"
+  }
 ]

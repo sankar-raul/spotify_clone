@@ -52,15 +52,19 @@ const Loading = () => {
   );
 };
 const ConstructLyricsLines = ({ lyrics }) => {
+  const [isFirstTime, setIsFirstTime] = useState(true);
   const lyricsWraperRef = useRef(null);
-
   useEffect(() => {}, [lyrics]);
+  useEffect(() => {
+    setIsFirstTime(false);
+  }, []);
   return (
     <div ref={lyricsWraperRef} className={styles["lyrics-wraper"]}>
       {typeof lyrics == "object" ? (
         lyrics?.map((data, idx) => {
           return (
             <LyricsLine
+              isFirstTime={isFirstTime}
               parentRef={lyricsWraperRef}
               key={idx}
               end_time={data?.end_time / 1000}
@@ -78,7 +82,13 @@ const ConstructLyricsLines = ({ lyrics }) => {
 ConstructLyricsLines.propTypes = {
   lyrics: PropTypes.array,
 };
-const LyricsLine = ({ timestamp, lyrics, end_time, parentRef }) => {
+const LyricsLine = ({
+  timestamp,
+  lyrics,
+  end_time,
+  parentRef,
+  isFirstTime,
+}) => {
   const { currentTime, setCurrentTime, Player } = useVibes();
   const lyricsRef = useRef(HTMLParagraphElement);
   // console.log(timestamp)
@@ -95,9 +105,12 @@ const LyricsLine = ({ timestamp, lyrics, end_time, parentRef }) => {
   }, [parentRef, lyricsRef]);
   const dragToView = useCallback(() => {
     if (lyricsRef.current) {
-      // console.log(lyricsRef.current)
-      // console.log(lyricsRef.current.getBoundingClientRect())
-      if (currentTime >= timestamp && currentTime <= timestamp+0.5 && checkIsVisible()) {
+      if (
+        (currentTime >= timestamp &&
+          currentTime <= timestamp + 0.5 &&
+          checkIsVisible()) ||
+        (isFirstTime && currentTime >= timestamp && currentTime <= end_time)
+      ) {
         lyricsRef.current.scrollIntoView({
           behavior: "smooth",
           block: "center",
@@ -105,7 +118,7 @@ const LyricsLine = ({ timestamp, lyrics, end_time, parentRef }) => {
         });
       }
     }
-  }, [currentTime]);
+  }, [currentTime, isFirstTime]);
   const gotoTime = () => {
     setCurrentTime(timestamp);
     Player.currentTime = timestamp;
@@ -114,6 +127,13 @@ const LyricsLine = ({ timestamp, lyrics, end_time, parentRef }) => {
   useEffect(() => {
     dragToView();
   }, [currentTime]);
+  //   useEffect(() => {
+  //     lyricsRef.current.scrollIntoView({
+  //           behavior: "smooth",
+  //           block: "center",
+  //           inline: "nearest",
+  //         });
+  //   }, [])
   return (
     <p
       ref={lyricsRef}
@@ -130,5 +150,6 @@ LyricsLine.propTypes = {
   lyrics: PropTypes.string.isRequired,
   end_time: PropTypes.number.isRequired,
   parentRef: PropTypes.object.isRequired,
+  isFirstTime: PropTypes.bool.isRequired,
 };
 export default Lyrics;
